@@ -1,0 +1,2709 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>First Light — Site map</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --cream:#F6F2E8; --paper:#FFFFFF; --ink:#3A3158; --muted:#6E6784;
+  --lav:#D8CBEE; --lav-soft:#EFE9F8; --blush:#F6B1BC; --magenta:#A8246E;
+  --green:#1F7A4D; --green-bg:#E3F2EA; --amber:#8A5A00; --amber-bg:#FBF0D6;
+  --red:#B42331; --red-bg:#F9E3E5; --grey:#7B7686; --grey-bg:#EEECE7;
+  --line:#E6DFD0; --line-soft:#F0EADC;
+  --shadow:0 1px 2px rgba(58,49,88,.06), 0 8px 24px -12px rgba(58,49,88,.18);
+  --r:16px;
+}
+*{box-sizing:border-box}
+html,body{margin:0;height:100%}
+body{
+  background:var(--cream); color:var(--ink);
+  font-family:Poppins,system-ui,-apple-system,"Segoe UI",sans-serif;
+  font-size:15px; line-height:1.55; -webkit-font-smoothing:antialiased;
+  display:flex; flex-direction:column; height:100vh; overflow:hidden;
+}
+h1,h2,h3{font-family:"Playfair Display",Georgia,serif; font-weight:600; margin:0; letter-spacing:-.01em}
+button{font:inherit; color:inherit; cursor:pointer}
+
+/* ---------- header ---------- */
+header{padding:22px 28px 0; flex:0 0 auto}
+.brandline{display:flex; align-items:flex-start; gap:14px; flex-wrap:wrap}
+.mark{
+  width:44px;height:44px;border-radius:13px;flex:0 0 auto;
+  background:linear-gradient(150deg,var(--blush),var(--lav));
+  display:grid;place-items:center;color:#fff;font-weight:700;font-size:15px;letter-spacing:.02em;
+  box-shadow:inset 0 0 0 1px rgba(255,255,255,.5);
+}
+.titles h1{font-size:27px;line-height:1.15}
+.titles .sub{color:var(--muted);font-size:12.5px;margin-top:3px;max-width:720px}
+.stats{margin-left:auto;display:flex;gap:22px;padding-top:4px}
+.stat{text-align:right}
+.stat b{display:block;font-size:20px;font-weight:700;font-variant-numeric:tabular-nums;line-height:1.2}
+.stat span{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
+
+/* ---------- tabs ---------- */
+.tabs{display:flex;gap:6px;margin-top:18px;border-bottom:1px solid var(--line)}
+.tab{
+  background:none;border:none;padding:10px 14px;border-radius:10px 10px 0 0;
+  font-size:13.5px;font-weight:500;color:var(--muted);position:relative;top:1px;
+}
+.tab:hover{color:var(--ink);background:var(--lav-soft)}
+.tab.on{color:var(--ink);font-weight:600;background:var(--paper);border:1px solid var(--line);border-bottom-color:var(--paper)}
+.tab .n{display:inline-block;margin-left:6px;font-size:11px;padding:1px 6px;border-radius:20px;background:var(--lav-soft);color:var(--muted)}
+.tab.on .n{background:var(--lav);color:var(--ink)}
+
+/* ---------- toolbar ---------- */
+.toolbar{display:flex;gap:10px;align-items:center;padding:12px 0 10px;flex-wrap:wrap}
+.search{position:relative;flex:1 1 240px;max-width:340px}
+.search input{
+  width:100%;padding:9px 12px 9px 34px;border-radius:10px;border:1px solid var(--line);
+  background:var(--paper);font:inherit;font-size:13.5px;color:var(--ink);
+}
+.search input:focus{outline:2px solid var(--lav);outline-offset:1px;border-color:transparent}
+.search svg{position:absolute;left:11px;top:50%;transform:translateY(-50%);color:var(--muted)}
+.search kbd{position:absolute;right:9px;top:50%;transform:translateY(-50%);font:inherit;font-size:10px;color:var(--grey);background:var(--cream);border:1px solid var(--line);border-radius:5px;padding:1px 5px}
+#role-filter{display:flex;gap:5px;flex-wrap:wrap;align-items:center}
+.rf{
+  border:1px solid var(--line);background:var(--paper);border-radius:20px;padding:5px 11px;
+  font-size:12px;color:var(--muted);white-space:nowrap;
+}
+.rf:hover{border-color:var(--lav);color:var(--ink)}
+.rf.on{background:var(--ink);border-color:var(--ink);color:#fff;font-weight:500}
+.mini{display:flex;gap:4px;margin-left:auto}
+.mini button{border:1px solid var(--line);background:var(--paper);border-radius:8px;padding:5px 9px;font-size:11.5px;color:var(--muted)}
+.mini button:hover{color:var(--ink);border-color:var(--lav)}
+#filter-note{display:none;font-size:12px;color:var(--muted);padding:0 0 8px}
+#filter-note.show{display:block}
+
+/* ---------- views ---------- */
+main{flex:1 1 auto;min-height:0;min-width:0;padding:0 28px 14px;display:flex;flex-direction:column}
+.view{display:none;min-height:0;min-width:0}
+.view.on{display:block;flex:1 1 auto}
+#view-map{display:none;grid-template-columns:330px minmax(0,1fr);gap:18px}
+#view-map.on{display:grid;flex:1 1 auto;min-height:0;min-width:0}
+
+/* ---------- tree ---------- */
+.side{
+  background:var(--paper);border:1px solid var(--line);border-radius:var(--r);
+  padding:10px 8px;overflow:auto;height:100%;min-height:0;min-width:0;box-shadow:var(--shadow);
+}
+.side-head{display:flex;justify-content:space-between;align-items:center;padding:2px 8px 8px;font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
+.mod{margin-bottom:1px}
+.mod-head{
+  display:flex;align-items:center;gap:7px;padding:7px 8px;border-radius:9px;cursor:pointer;
+  font-size:13.5px;font-weight:600;
+}
+.mod-head:hover{background:var(--lav-soft)}
+.mod-head.sel{background:var(--lav);color:var(--ink)}
+.mod-head.dim{opacity:.32}
+.caret{background:none;border:none;padding:0;width:12px;height:12px;display:grid;place-items:center;color:var(--muted);transition:transform .15s}
+.caret[aria-expanded="true"]{transform:rotate(90deg)}
+.mod-title{flex:1 1 auto;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.count{font-size:10.5px;font-weight:500;color:var(--muted);background:var(--cream);border-radius:20px;padding:0 6px;min-width:20px;text-align:center}
+.mod-head.sel .count{background:rgba(255,255,255,.6)}
+.dot{width:6px;height:6px;border-radius:50%;flex:0 0 auto}
+.dot.st-spec{background:var(--green)}
+.dot.st-part{background:var(--amber)}
+.dot.st-open{background:var(--red)}
+.dot.st-oos{background:var(--grey)}
+.kids{padding:1px 0 5px 0}
+.kid{
+  display:flex;align-items:center;gap:8px;padding:5px 8px 5px 26px;cursor:pointer;
+  font-size:12.5px;color:var(--muted);border-radius:8px;line-height:1.35;
+}
+.kid:hover{background:var(--lav-soft);color:var(--ink)}
+.kid.sel{background:var(--lav-soft);color:var(--ink);font-weight:500}
+.kid.dim{opacity:.3}
+.kdot{width:4px;height:4px;border-radius:50%;background:var(--lav);flex:0 0 auto}
+.ktitle{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+
+/* ---------- detail ---------- */
+.detail{
+  background:var(--paper);border:1px solid var(--line);border-radius:var(--r);padding:26px 30px 34px;
+  overflow:auto;height:100%;min-height:0;min-width:0;box-shadow:var(--shadow);
+}
+.crumb{font-size:11px;text-transform:uppercase;letter-spacing:.09em;color:var(--grey);margin-bottom:10px;display:flex;gap:7px;align-items:center;flex-wrap:wrap}
+.crumb .seg{background:none;border:none;padding:0;font-size:11px;letter-spacing:.09em;text-transform:uppercase;color:var(--grey)}
+.crumb .seg:hover{color:var(--magenta)}
+.crumb .sep{opacity:.5}
+.crumb .seg-root{color:var(--grey)}
+.back{background:none;border:none;padding:0;color:var(--magenta);font-size:12.5px;margin-bottom:8px;font-weight:500}
+.back:hover{text-decoration:underline}
+.detail-head{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.detail-head h2{font-size:30px;line-height:1.2}
+.pill{font-size:10.5px;font-weight:600;padding:3px 9px;border-radius:20px;white-space:nowrap;letter-spacing:.02em}
+.pill.st-spec{background:var(--green-bg);color:var(--green)}
+.pill.st-part{background:var(--amber-bg);color:var(--amber)}
+.pill.st-open{background:var(--red-bg);color:var(--red)}
+.pill.st-oos{background:var(--grey-bg);color:var(--grey)}
+.meta-row{display:flex;gap:8px;align-items:baseline;margin-top:12px;font-size:12.5px;flex-wrap:wrap}
+.meta-row strong{font-size:10.5px;text-transform:uppercase;letter-spacing:.08em;color:var(--grey);font-weight:600;margin-right:4px}
+.srcline{color:var(--muted);font-variant-numeric:tabular-nums}
+.chip{
+  display:inline-block;background:var(--lav-soft);color:var(--ink);border-radius:7px;
+  padding:2px 8px;font-size:11.5px;margin-right:4px;font-weight:500;
+}
+.lede{font-size:15.5px;line-height:1.65;max-width:74ch;margin:18px 0 0;color:#4B4368}
+.opt-block{margin-top:24px;max-width:80ch}
+.opt-title{font-size:10.5px;text-transform:uppercase;letter-spacing:.1em;color:var(--grey);font-weight:600;margin-bottom:9px;display:flex;align-items:center;gap:10px}
+.opt-title::after{content:"";flex:1;height:1px;background:var(--line-soft)}
+.opt-title .cnt{font-weight:500;letter-spacing:0;color:var(--grey);font-size:10px;background:var(--cream);border-radius:20px;padding:0 6px}
+.list{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:4px}
+.list li{font-size:13.5px;color:#4B4368;padding:6px 11px;border-radius:8px;background:#FCFAF4;display:flex;gap:10px;align-items:baseline;line-height:1.5}
+.list .k{font-size:8.5px;text-transform:uppercase;letter-spacing:.07em;color:var(--grey);min-width:46px;text-align:right;flex:0 0 auto;font-weight:600;padding-top:2px}
+.list.shows li{background:#F7F4FF}
+.list.rules li{background:#FFF8F3;border-left:2px solid var(--blush);border-radius:0 8px 8px 0}
+.list li .t{flex:1 1 auto}
+.note{
+  display:flex;gap:10px;margin-top:18px;padding:12px 14px;border-radius:12px;
+  background:var(--amber-bg);color:#6B4600;font-size:13px;line-height:1.6;max-width:74ch;
+}
+.note-mark{flex:0 0 auto;width:18px;height:18px;border-radius:50%;background:var(--amber);color:#fff;display:grid;place-items:center;font-size:11px;font-weight:700;margin-top:1px}
+.callout{margin-top:18px;padding:11px 14px;border-left:3px solid var(--blush);background:#FFF8F9;border-radius:0 10px 10px 0;font-size:12.5px;color:#7A3A46;max-width:74ch}
+.sec-label{font-size:11px;text-transform:uppercase;letter-spacing:.09em;color:var(--grey);font-weight:600;margin:30px 0 12px;padding-bottom:8px;border-bottom:1px solid var(--line-soft)}
+.grid{min-width:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(268px,1fr));gap:12px}
+.card{
+  text-align:left;background:var(--paper);border:1px solid var(--line);border-radius:13px;
+  padding:14px 15px;display:flex;flex-direction:column;gap:7px;transition:border-color .15s,transform .15s,box-shadow .15s;
+}
+.card:hover{border-color:var(--lav);transform:translateY(-1px);box-shadow:0 6px 18px -10px rgba(58,49,88,.28)}
+.card-top{display:flex;justify-content:space-between;gap:10px;align-items:flex-start}
+.card-title{font-weight:600;font-size:13.5px;line-height:1.35}
+.card-desc{font-size:12px;color:var(--muted);line-height:1.5}
+.card-foot{display:flex;justify-content:space-between;gap:8px;font-size:10.5px;color:var(--grey);margin-top:2px}
+.card-foot .who{text-align:right;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:55%}
+.src{font-variant-numeric:tabular-nums}
+
+/* ---------- matrix ---------- */
+.panel{background:var(--paper);border:1px solid var(--line);border-radius:var(--r);padding:22px 24px;box-shadow:var(--shadow);overflow:auto;height:100%;min-height:0;min-width:0}
+.panel h2{font-size:24px;margin-bottom:6px}
+.panel .hint{font-size:12.5px;color:var(--muted);max-width:70ch;margin:0 0 18px}
+table.matrix{border-collapse:separate;border-spacing:0;width:100%;font-size:12px}
+table.matrix th,table.matrix td{padding:9px 6px;border-bottom:1px solid var(--line-soft);text-align:center}
+table.matrix thead th{font-size:10.5px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);font-weight:600;position:sticky;top:0;background:var(--paper);border-bottom:1px solid var(--line);vertical-align:bottom}
+table.matrix th.corner{text-align:left;min-width:170px}
+table.matrix th.rowhead{text-align:left;font-weight:600;font-size:12.5px;color:var(--ink);padding-left:10px;white-space:nowrap}
+table.matrix tbody tr:hover th,table.matrix tbody tr:hover td{background:#FCFAF4}
+td.yes{color:var(--ink);font-size:9px}
+td.no{color:#CFC8B8;font-size:12px}
+td.req{color:var(--amber);font-size:10px;font-weight:600}
+.legend{display:flex;gap:18px;margin-top:16px;font-size:11.5px;color:var(--muted);flex-wrap:wrap}
+.legend span b{color:var(--ink)}
+
+/* ---------- journey ---------- */
+.journey{max-width:820px;margin:0 auto;position:relative}
+.step{display:flex;gap:16px}
+.rail{flex:0 0 36px;display:flex;flex-direction:column;align-items:center}
+.rail-line{width:2px;flex:1 1 auto;min-height:10px;margin:6px 0 16px;border-radius:1px;background:var(--lav);opacity:.75}
+.step:last-child .rail-line{display:none}
+.step-n{
+  flex:0 0 auto;width:36px;height:36px;border-radius:50%;background:var(--paper);border:1.5px solid var(--lav);
+  display:grid;place-items:center;font-size:12px;font-weight:600;font-variant-numeric:tabular-nums;color:var(--magenta);
+}
+.step-body{flex:1 1 auto;background:var(--paper);border:1px solid var(--line);border-radius:13px;padding:13px 16px;margin-bottom:16px}
+.step-title{font-family:"Playfair Display",Georgia,serif;font-size:17px;font-weight:600}
+.step-gate{display:inline-block;margin:5px 0 7px;font-size:10.5px;font-weight:600;letter-spacing:.03em;background:var(--lav-soft);color:#4B3E77;border-radius:20px;padding:2px 9px}
+.step-desc{font-size:12.5px;color:var(--muted);line-height:1.55}
+.step-foot{display:flex;justify-content:space-between;gap:10px;margin-top:9px;font-size:10.5px;color:var(--grey)}
+
+/* ---------- gaps ---------- */
+.gaps{display:grid;grid-template-columns:repeat(auto-fill,minmax(370px,1fr));gap:14px}
+.gap{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:16px 18px;border-top:3px solid var(--grey)}
+.gap-high{border-top-color:var(--red)}
+.gap-medium{border-top-color:var(--amber)}
+.gap-low{border-top-color:var(--lav)}
+.gap-top{display:flex;gap:9px;align-items:baseline;flex-wrap:wrap}
+.gap h3{font-size:16.5px;line-height:1.3;flex:1 1 220px}
+.sev{font-size:9.5px;text-transform:uppercase;letter-spacing:.09em;font-weight:700;color:var(--grey);white-space:nowrap}
+.gap-high .sev{color:var(--red)} .gap-medium .sev{color:var(--amber)}
+.gap-where{font-size:10.5px;color:var(--grey);margin:7px 0 8px;font-variant-numeric:tabular-nums}
+.gap p{font-size:12.5px;color:var(--muted);line-height:1.6;margin:0}
+.gap-impact{margin-top:10px;padding-top:9px;border-top:1px dashed var(--line);font-size:11px;color:var(--grey)}
+
+/* ---------- footer ---------- */
+footer{flex:0 0 auto;padding:0 28px 16px;font-size:11px;color:var(--grey);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+
+/* ---------- responsive ---------- */
+@media (max-width: 980px){
+  #view-map.on{grid-template-columns:1fr}
+  body{overflow-y:auto;overflow-x:hidden;height:auto}
+  .side{height:auto;order:2;margin-top:12px}
+  .detail{height:auto;order:1;padding:20px}
+  .panel{height:auto}
+  .stats{display:none}
+  .detail-head h2{font-size:24px}
+  .tabs{overflow-x:auto;overflow-y:hidden;scrollbar-width:none}
+  .tabs::-webkit-scrollbar{display:none}
+  .tab{white-space:nowrap}
+}
+@media (max-width: 700px){
+  header{padding:16px 15px 0}
+  main{padding:0 15px 10px}
+  .mark{width:38px;height:38px;border-radius:11px;font-size:13px}
+  .titles h1{font-size:21px}
+  .titles .sub{font-size:11.5px}
+  .lede{font-size:14.5px}
+  .detail{padding:18px 16px 22px}
+  .detail-head h2{font-size:22px}
+  .panel{padding:16px 14px}
+  .grid{grid-template-columns:1fr}
+  .search{max-width:none;flex:1 1 100%}
+  .mini{margin-left:0}
+  .crumb{font-size:10px}
+  .step-n{width:30px;height:30px;font-size:11px}
+  .rail{flex:0 0 30px}
+  .journey{max-width:none}
+  .gaps{grid-template-columns:1fr}
+  footer{padding:0 15px 12px;font-size:10px}
+}
+@media print{
+  header,.tabs,.toolbar,footer,.side{display:none!important}
+  #view-map.on{grid-template-columns:1fr;display:block}
+  .detail{max-height:none;border:none;box-shadow:none;padding:0}
+  body{background:#fff}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="brandline">
+    <div class="mark">FL</div>
+    <div class="titles">
+      <h1>First Light — site map</h1>
+      <div class="sub">Application structure derived from the 14-document set, 22 November 2026. Staff app and client portal, by role, screen and source section.</div>
+    </div>
+    <div class="stats">
+      <div class="stat"><b id="stat-areas">–</b><span>areas</span></div>
+      <div class="stat"><b id="stat-screens">–</b><span>screens</span></div>
+      <div class="stat"><b>9</b><span>roles</span></div>
+      <div class="stat"><b>2</b><span>front ends</span></div>
+    </div>
+  </div>
+
+  <nav class="tabs">
+    <button class="tab on" data-tab="map">Site map</button>
+    <button class="tab" data-tab="matrix">Access matrix</button>
+    <button class="tab" data-tab="journey">Lead-to-warranty<span class="n">15</span></button>
+    <button class="tab" data-tab="gaps">Gaps found<span class="n">9</span></button>
+  </nav>
+</header>
+
+<main>
+  <div class="toolbar">
+    <div class="search">
+      <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><circle cx="7" cy="7" r="4.6" stroke="currentColor" stroke-width="1.6"/><path d="M10.6 10.6 14 14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+      <input id="search" type="search" placeholder="Search screens, roles, sections" aria-label="Search the site map" />
+      <kbd>/</kbd>
+    </div>
+    <div id="role-filter"></div>
+    <div class="mini">
+      <button id="expand-all">Expand all</button>
+      <button id="collapse-all">Collapse all</button>
+    </div>
+  </div>
+  <div id="filter-note"></div>
+
+  <section class="view on" id="view-map">
+    <aside class="side">
+      <div class="side-head"><span>Areas</span><span id="tree-count"></span></div>
+      <div id="tree"></div>
+    </aside>
+    <article class="detail" id="detail"></article>
+  </section>
+
+  <section class="view" id="view-matrix">
+    <div class="panel">
+      <h2>Who can reach what</h2>
+      <p class="hint">Built from the role lists in the specification. A filled dot means the role has this area in their navigation or their stated duties. <b>Req</b> means access only by requesting it from someone already on the project.</p>
+      <div id="matrix-host"></div>
+      <div class="legend">
+        <span><b>●</b> has access</span>
+        <span><b>req</b> by request only</span>
+        <span><b>·</b> no access</span>
+        <span><b>—</b> internal area, client never sees it</span>
+        <span>The MD sits on every area by the access rule.</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="view" id="view-journey">
+    <div class="panel">
+      <h2>One client, end to end</h2>
+      <p class="hint">The 15 steps the documents describe, with the gate that must pass before the next step opens. The four payment gates are the only ones that move money.</p>
+      <div class="journey" id="journey-host"></div>
+    </div>
+  </section>
+
+  <section class="view" id="view-gaps">
+    <div class="panel">
+      <h2>What the documents leave unresolved</h2>
+      <p class="hint">Found while mapping the set. These are observations from the documents, not decisions for the owner. Each one changes the structure of the map, so none of them is cosmetic.</p>
+      <div class="gaps" id="gaps-host"></div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <span>First Light · site map v1 · built from Specification v19, App Flow v15, Architecture v20, UI/UX Brief v1, Mobile Design Brief v1, Tenant Settings v8, PRD v3</span>
+  <span>Palette and type from the Mobile Design Brief</span>
+</footer>
+
+<script>
+/* First Light — site map data. Derived from the v1 document set (22 Nov 2026). */
+
+const ROLES = [
+  { id: "md", name: "MD", full: "Managing Director", note: "The only chair. Confirms every client payment, approves all spend, sets tenant rules." },
+  { id: "sh", name: "Sales Head", full: "Sales Head", note: "Receives every lead. Groups and assigns. Sees a live project only by requesting access." },
+  { id: "rep", name: "Sales rep", full: "Sales representative", note: "Calls leads, records outcomes, books meetings. Owns complaints and warranty decisions." },
+  { id: "dh", name: "Design Head", full: "Design Head", note: "Approves renders and quotations before they reach the client. Approves design estimates." },
+  { id: "dp", name: "Design partner", full: "Design partner", note: "Closes the deal, owns the client through design, approves on the client's behalf. 5% share, no salary." },
+  { id: "ph", name: "Production Head", full: "Production Head", note: "Checks production expenses before the MD. Owns the vendor list and crew cover." },
+  { id: "pm", name: "Production Mgr", full: "Production Manager", note: "BOQ, inventory, vendors, crew, delivery and installation dates." },
+  { id: "mh", name: "Marketing Head", full: "Marketing Head", note: "Brand template, content pipeline, funnel per post, spend requests." },
+  { id: "cl", name: "Client", full: "Client", note: "Sees only their own project, through the portal or WhatsApp. Never sees costs or vendors." },
+  { id: "st", name: "All staff", full: "All staff", note: "Every internal role in the tenant." },
+  { id: "all", name: "Everyone", full: "Everyone", note: "Staff and clients." }
+];
+
+const TREE = [
+  {
+    id: "entry",
+    title: "Entry & access",
+    roles: ["st", "cl"],
+    status: "spec",
+    src: "Spec §22 · App Flow §1",
+    desc: "Two front doors on one tenant. Staff sign in with a business email on the company domain. Clients sign in with the mobile number the lead was created with. The session is remembered for 15 days from the last visit and resets on every open.",
+    children: [
+      { id: "signin-staff", title: "Staff sign-in", roles: ["st"], status: "spec", src: "Spec §22.1", desc: "Email on the Miles Web company domain. The MD creates every account; nobody self-registers. 15-day rolling session, editable by the MD." },
+      { id: "signin-client", title: "Client sign-in — mobile + OTP", roles: ["cl"], status: "spec", src: "Spec §22.2", desc: "Number must match the lead number. One-time code is the main method; Google can be linked as an option. OTP is required before the token payment and the invoice." },
+      { id: "session", title: "Session & device control", roles: ["md", "st"], status: "spec", src: "Spec §22.3 · §24", desc: "The MD can end any session at once, for a lost device or a leaver. Changing the login ID ends every session on that account. The person is signed out and gets a WhatsApp message saying so." },
+      { id: "notifications", title: "Notifications (in-app)", roles: ["all"], status: "part", src: "UI/UX §5", desc: "In-app list. Access-change notices land here and never on WhatsApp. No tab is allocated to it in either navigation brief." },
+      { id: "account-state", title: "Account states", roles: ["md"], status: "spec", src: "Spec §24", desc: "Active, hibernated, deleted. Deleting removes only the login: projects stay and the name is labelled former staff. Hibernation can be reactivated." }
+    ]
+  },
+  {
+    id: "dashboards",
+    title: "Home & dashboards",
+    roles: ["all"],
+    status: "spec",
+    src: "Spec §15, §26.7 · UI/UX §4",
+    desc: "Every role opens on a default layout of charts. Each person can change their own charts and the choice follows them across devices. Charts are semicircle gauges and simple charts, always with the value written as words beside them.",
+    children: [
+      { id: "home-md", title: "MD home", roles: ["md"], status: "spec", src: "Spec §26.7", desc: "Payments received against due, team performance, pipeline funnel, delivery problems. Also a count of failed alerts." },
+      { id: "home-sh", title: "Sales Head home", roles: ["sh"], status: "spec", src: "Spec §26.7", desc: "Lead sources, conversion funnel, call outcomes, team and project ratings." },
+      { id: "home-rep", title: "Sales rep home", roles: ["rep"], status: "spec", src: "Spec §26.7", desc: "My calls today, my follow-ups due, my weekly count, my rating." },
+      { id: "home-dh", title: "Design Head home", roles: ["dh"], status: "spec", src: "Spec §26.7", desc: "Renders and quotations awaiting approval, meetings this week, team and project ratings, estimates pending." },
+      { id: "home-dp", title: "Design partner home", roles: ["dp"], status: "spec", src: "Spec §26.7", desc: "Temporary projects before the token, live projects with stage and days left, next deliverables, new client requirements and add-ons, time left on each design phase, payments due to me, my ledger, my rating." },
+      { id: "home-ph", title: "Production Head home", roles: ["ph"], status: "spec", src: "Spec §26.7", desc: "Projects reaching production, expenses awaiting approval, crew on site, vendor spend." },
+      { id: "home-pm", title: "Production Manager home", roles: ["pm"], status: "spec", src: "Spec §26.7", desc: "Deliveries and installations this week, material payments due, crew attendance, my rating." },
+      { id: "home-mh", title: "Marketing Head home", roles: ["mh"], status: "spec", src: "Spec §26.7", desc: "Funnel per post, channel performance, spend requests and status, brand template status." },
+      { id: "home-cl", title: "Client home", roles: ["cl"], status: "spec", src: "Mobile §7", desc: "Their project: stage, days left, next date, approved files, payment due with a pay-or-upload action, call-the-office." },
+      { id: "chart-library", title: "Choose my charts", roles: ["all"], status: "spec", src: "Spec §15", desc: "Each person picks charts from a wide set. Saved to the account, follows the person across devices. The MD can change the role defaults." },
+      { id: "targets", title: "Targets & success metrics", roles: ["md"], status: "spec", src: "PRD §4", desc: "Ten starting targets, each with a definition and an owner. Dashboard lines only: a miss signals review and never blocks work or sends an alert." }
+    ]
+  },
+  {
+    id: "leads",
+    title: "Leads & groups",
+    roles: ["sh", "rep", "md"],
+    status: "spec",
+    src: "Spec §3, §6, §26.2 · App Flow §2",
+    desc: "Every enquiry enters as a lead with its source recorded, and all of them go to the Sales Head. The AI sorts leads into groups using eight fixed options only, then the Sales Head assigns a group to a representative with call windows and limits. He keeps full control: pull, reassign, hold or regroup at any time.",
+    children: [
+      { id: "intake", title: "Lead intake", roles: ["sh"], status: "spec", src: "Spec §3", desc: "Leads arrive from the calculator now, later from campaigns and estimate tools. Each records its source; a calculator quotation travels with the lead." },
+      { id: "inbox", title: "Lead inbox — every lead", roles: ["sh"], status: "spec", src: "Spec §3", desc: "One list of all new leads before grouping. Nothing is lost between intake, the call and the meeting." },
+      { id: "lead-card", title: "Lead card", roles: ["sh", "rep", "dh", "dp"], status: "spec", src: "Spec §4, §7", desc: "Client details from the first lead, full call and meeting history, transcripts, calculator quote, and every staff action under the client ID." },
+      { id: "groups", title: "Lead groups — AI grouping", roles: ["sh"], status: "spec", src: "Spec §3", desc: "A group is defined only by the eight fixed options. No free keyword, ever. A group can be split into smaller parts using the same options." },
+      { id: "group-builder", title: "Group builder — the eight options", roles: ["sh"], status: "spec", src: "Spec §3", desc: "State or city, project type, budget range, timeline, lead source, property type, client status, lead age. These eight and no others.", note: "The fixed list is a hard constraint in the spec, not a default." },
+      { id: "assign", title: "Assign a group", roles: ["sh"], status: "spec", src: "App Flow §2", desc: "Assign a group to a sales representative and set the call windows and the call limit for that group." },
+      { id: "group-actions", title: "Pull · reassign · hold · regroup", roles: ["sh"], status: "spec", src: "App Flow §2", desc: "The Sales Head can take a lead back, give it to someone else, park it, or move it into another group at any time." },
+      { id: "closed-leads", title: "Closed-leads file", roles: ["sh", "md", "dh", "dp", "rep"], status: "spec", src: "Spec §23.1", desc: "Quoted leads that never paid the token. Kept apart from live projects. Heads and the MD see all; design partners and reps see only the ones they worked on." },
+      { id: "unresponsive", title: "Unresponsive archive", roles: ["rep", "sh", "md"], status: "spec", src: "Spec §26.2", desc: "Separate from closed leads and from the cold archive. A rep sees their own; the Sales Head and MD see all. Reps can call again or set a return date with a separate button, which moves the lead to its own scheduled list.", note: "A lead returns on the scheduled date with the project brief." },
+      { id: "stalled", title: "Stalled quotes", roles: ["rep", "sh"], status: "spec", src: "Spec §26.2 · Settings §5", desc: "A client holding a quote who keeps stalling. Follow up after 3 days of silence, up to 3 rounds, a new meeting after round 2 on the same temporary project, then not won after round 3. The lead stays live throughout." },
+      { id: "cold", title: "Cold archive", roles: ["sh"], status: "spec", src: "Spec §6", desc: "Not interested leads are archived as cold under their client ID, so a returning client is found by ID with the whole history ready." }
+    ]
+  },
+  {
+    id: "calls",
+    title: "Calls & retry",
+    roles: ["rep", "sh"],
+    status: "spec",
+    src: "Spec §4, §26.2 · App Flow §3",
+    desc: "The representative works a queue and records exactly one outcome after each call. A lead that is not reached enters the retry cycle: three calls and three WhatsApp messages, a seven-day wait, a second pass, then the unresponsive archive.",
+    children: [
+      { id: "queue", title: "Today's calls", roles: ["rep"], status: "spec", src: "Mobile §7", desc: "The day's queue with the group name and how many leads are left. One primary action: save and show the next lead." },
+      { id: "call-card", title: "Call card", roles: ["rep"], status: "spec", src: "Mobile §7", desc: "Client, source, budget, attempt count out of the limit, and the required outcome field. Notes are optional." },
+      { id: "outcome", title: "Call outcome form", roles: ["rep"], status: "part", src: "Spec §26.2 · App Flow §3", desc: "The seven settled outcomes: meeting set, connected but no meeting, warm not now, not interested, not reached, indefinite delay, active but not responding. Choosing one reveals the next step.", note: "App Flow v15, the AI brief and the UI/UX brief still say four outcomes. The seven were settled in change request 1, Part A. This form must ship with seven." },
+      { id: "meeting-set", title: "Meeting set", roles: ["rep"], status: "spec", src: "App Flow §3", desc: "Choose a date and time, tag a design partner, add a comment. The design partner must approve it and the Design Head is notified." },
+      { id: "retry", title: "Retry cycle view", roles: ["rep", "sh"], status: "spec", src: "Spec §26.2", desc: "Pass one: call, catalogues; call, three hours later testimonials; call, sample videos. Then a seven-day wait. Pass two repeats it once, then the unresponsive archive. Every message sits inside 8 a.m. to 10 p.m." },
+      { id: "callback", title: "Call-back and delay", roles: ["rep"], status: "spec", src: "App Flow §3", desc: "A time given by the client is booked as a call the next day and logged. A postponement with no date marks the lead indefinite delay and moves it to the archive." },
+      { id: "call-history", title: "Call & contact history", roles: ["rep", "sh", "dp"], status: "spec", src: "Spec §4", desc: "Every call, meeting and transcript kept in the client's history, with the end note and AI comments stored separately for each meeting." }
+    ]
+  },
+  {
+    id: "meetings",
+    title: "Meetings",
+    roles: ["rep", "dp", "dh", "cl"],
+    status: "spec",
+    src: "Spec §26.11 · App Flow §17",
+    desc: "A meeting is agreed on a call, approved by the design partner, and given a Google Meet link automatically from one company Workspace account. Nobody logs in to create it.",
+    children: [
+      { id: "meeting-book", title: "Meeting booking", roles: ["rep", "dp"], status: "spec", src: "App Flow §3", desc: "Date and time, tagged design partner, comment. The booking is what creates the temporary project once the design partner approves." },
+      { id: "meeting-accept", title: "Design partner accept / reject", roles: ["dp"], status: "spec", src: "Spec §5", desc: "Accept to close the deal. Reject only with a written reason, which is logged and visible to the rep, the Sales Head and the Design Head." },
+      { id: "meeting-link", title: "Google Meet link", roles: ["all"], status: "spec", src: "Spec §26.11", desc: "Created when a time is agreed. Posted to the project group if the client is in it, otherwise sent to the client's private number with a one-tap WhatsApp button." },
+      { id: "meeting-reminder", title: "Meeting reminder", roles: ["rep", "cl"], status: "spec", src: "Settings §13", desc: "A pre-written, approved template sent automatically from the company number." },
+      { id: "meeting-transcript", title: "Transcript & notes", roles: ["rep", "dp", "dh"], status: "open", src: "Spec §23.4", desc: "Meetbook or a similar plugin supplies the transcript and approval proof. Held until the architecture decision, so no screen is built yet." },
+      { id: "meeting-list", title: "Meetings this week", roles: ["dh", "dp", "rep"], status: "spec", src: "UI/UX §4", desc: "The week's meetings for the person, reachable from the tab bar for sales and design roles." }
+    ]
+  },
+  {
+    id: "projects",
+    title: "Projects",
+    roles: ["md", "dh", "dp", "pm", "ph", "rep", "sh", "cl"],
+    status: "spec",
+    src: "Spec §7, §23 · App Flow §5, §9",
+    desc: "A project starts temporary, visible only to the design partner, and becomes permanent when the token is paid. It carries its stage, timer, files, team and history, and only the people on it can see it.",
+    children: [
+      { id: "temp-project", title: "Temporary project (pre-token)", roles: ["dp", "dh", "md"], status: "spec", src: "Spec §23.1", desc: "Created when the first meeting is approved. Visible to the design partner. Becomes permanent only when the token is paid." },
+      { id: "token", title: "Token & handover", roles: ["dp", "md", "cl"], status: "spec", src: "Spec §23.1, §23.5", desc: "The token is 10% of the accepted estimate. The client pays by UPI and sends proof; the MD confirms; only then does the project become permanent." },
+      { id: "project-team", title: "Project team", roles: ["md", "dh", "dp"], status: "spec", src: "Spec §7", desc: "Design partner, Design Head, booking representative and the company WhatsApp number. Anyone added to the project is added to its group by the software." },
+      { id: "project-home", title: "Project home / stage board", roles: ["md", "dh", "dp", "pm", "ph", "rep", "cl"], status: "spec", src: "UI/UX §5", desc: "Current stage, traffic light with a word, days left, next date, files and payments. One primary action per screen." },
+      { id: "stage-timeline", title: "Stage timeline", roles: ["all"], status: "spec", src: "Spec §21.2", desc: "Append-only log of every stage change, read-only, newest first, open to everyone on the project. A client-caused pause shows as paused by client and never yellow or red." },
+      { id: "access-request", title: "Access request", roles: ["sh", "md", "dh", "dp", "rep"], status: "spec", src: "Spec §23.6", desc: "The Sales Head sees a live project only by requesting access. Anyone already on the project can approve and add people. Requests and grants are logged." },
+      { id: "paused", title: "Paused by client", roles: ["all"], status: "spec", src: "Spec §6", desc: "A client who pays the token and then stops is paused at the current stage. Nothing is closed and files stay readable until it resumes." },
+      { id: "closed-project", title: "Closed project", roles: ["md"], status: "spec", src: "Spec §9", desc: "Finished projects stay in the client dashboard. The MD can write over a closed project, for example to record a refund. Human-only and logged." },
+      { id: "project-rating", title: "Project rating", roles: ["md", "dh", "ph", "sh"], status: "spec", src: "Spec §14", desc: "Each project carries its own rating, reviewed on the Monday-to-Monday cycle." },
+      { id: "client-id", title: "Client ID & returning clients", roles: ["sh", "md", "dh"], status: "spec", src: "Spec §6", desc: "Every client has one ID holding all meetings, transcripts, files and actions. A returning client gets a new, separate project: old projects are never linked to new ones." }
+    ]
+  },
+  {
+    id: "design",
+    title: "Design & approvals",
+    roles: ["dp", "dh", "pm", "cl"],
+    status: "spec",
+    src: "Spec §8, §21.1, §23.3 · App Flow §6",
+    desc: "The design partner uploads renders and quotations and nothing reaches the client until the Design Head approves. Technical files go to the Production Manager instead. Every version is kept and every approval is logged in the client's name.",
+    children: [
+      { id: "design-upload", title: "Upload renders & quotations", roles: ["dp"], status: "spec", src: "App Flow §6", desc: "Uploads go to the Design Head first. Nothing is delivered to the client directly." },
+      { id: "design-approval", title: "Design Head approval queue", roles: ["dh"], status: "spec", src: "Spec §8", desc: "Renders and quotations awaiting approval, each as an approval card with approve and reject-with-reason. Only after approval does the file reach the client, through the company number." },
+      { id: "technical-files", title: "Technical files", roles: ["pm", "dh"], status: "spec", src: "Spec §8", desc: "Technical files go to the Production Manager, who approves them, then to the client for verification. The Design Head does not approve technical files." },
+      { id: "versions", title: "Version history & brief of change", roles: ["all"], status: "spec", src: "Spec §21.1", desc: "Every file keeps its own version history with a short brief of what changed in each version. Older versions are view-only and sit in a dated section the client opens on purpose." },
+      { id: "pinned", title: "Pinned files", roles: ["dp", "cl"], status: "spec", src: "Spec §21.1", desc: "The design partner pins the files that sit at the front of the client dashboard. The latest version of each file always shows." },
+      { id: "on-behalf", title: "Approve on the client's behalf", roles: ["dp"], status: "spec", src: "Spec §23.3", desc: "The design partner approves for the client by default on every item. When the client agrees by call, WhatsApp or Meet, the partner records the client's words and a timestamp, and the log shows the client's name with the partner beside it." },
+      { id: "change-requests", title: "Client-requested changes & add-ons", roles: ["dp", "dh"], status: "spec", src: "UI/UX §5", desc: "Change requests and add-ons raised since the person's last visit, surfaced on the design partner home." },
+      { id: "rejected-versions", title: "Rejected versions", roles: ["dh", "dp", "md"], status: "spec", src: "Spec §21.1", desc: "Rejected versions stay visible to the team with the reason attached. The client never sees them." }
+    ]
+  },
+  {
+    id: "quotes",
+    title: "Quotations",
+    roles: ["dp", "dh", "md", "cl"],
+    status: "spec",
+    src: "Spec §9",
+    desc: "The first quotation is an estimate and can be revised at any time. Every revision is versioned, approved by the tagged person and logged, and the signed quotation is locked.",
+    children: [
+      { id: "quote-estimate", title: "Estimate", roles: ["dp", "dh"], status: "spec", src: "Spec §9", desc: "The opening quotation. The client is not shown it until the Design Head approves it." },
+      { id: "quote-revision", title: "Revision", roles: ["dp"], status: "spec", src: "Spec §9", desc: "Revise at any time. Quotations are versioned and never overwritten; each revision needs the tagged person's approval and is logged." },
+      { id: "quote-approved", title: "Approved quotation", roles: ["dp", "dh", "md"], status: "spec", src: "Spec §9", desc: "The payment split is always computed on the latest accepted quotation, minus what has already been paid." },
+      { id: "quote-signed", title: "Signed quotation", roles: ["pm", "md"], status: "spec", src: "Spec §21.2", desc: "Locked and versioned, and it travels to production with the approved design files." },
+      { id: "quote-calculator", title: "Calculator quotation", roles: ["sh", "rep"], status: "spec", src: "Spec §3", desc: "If a calculator quotation exists it travels with the lead. The calculator logic belongs to Blue Light Codex and is not changed." }
+    ]
+  },
+  {
+    id: "payments",
+    title: "Client payments",
+    roles: ["md", "dp", "cl"],
+    status: "spec",
+    src: "Spec §9, §23.5, §23.7, §26.1 · App Flow §7",
+    desc: "The split is 10% token, 50% before production, 35% near completion and 5% at handover, each stage calculated on the latest accepted quotation. Only the MD confirms a payment. There is no backup approver.",
+    children: [
+      { id: "split", title: "Payment schedule", roles: ["md", "dp", "cl"], status: "spec", src: "Spec §9", desc: "10 / 50 / 35 / 5 by default, set by the MD per project or company-wide. A company-wide change applies to new projects only and needs confirmation, a password and notifications." },
+      { id: "payment-request", title: "Payment request to client", roles: ["dp", "cl"], status: "spec", src: "Spec §9", desc: "The client receives a request for the amount due and pays by UPI." },
+      { id: "proof", title: "Proof upload", roles: ["cl", "dp"], status: "spec", src: "Spec §9", desc: "The client sends proof on WhatsApp. The design partner forwards it to the MD. Nobody copies files across by hand." },
+      { id: "confirm", title: "MD confirmation queue", roles: ["md"], status: "spec", src: "Spec §23.5", desc: "The MD checks every proof against the amount and confirms or rejects it. Every confirmation, flag and rejection is logged. Payment confirmation is never voice-approved." },
+      { id: "proof-reader", title: "Optional proof reader", roles: ["md"], status: "part", src: "Spec §23.7", desc: "The reader may suggest the amount from the proof image. It is optional and checks nothing. No metric or screen may imply the software confirmed a payment." },
+      { id: "payment-reject", title: "Reject with reason", roles: ["md", "dh"], status: "spec", src: "Spec §26.1", desc: "The rejection goes to the department head who owns the project: the Design Head for a client payment. He fixes it himself or tags the people involved. A tagged person sees the rejection and that project only." },
+      { id: "payment-resubmit", title: "Resubmission", roles: ["cl", "dp", "md"], status: "spec", src: "Spec §26.1", desc: "The client resubmits a corrected proof and the stage waits until the MD confirms it." },
+      { id: "receipt", title: "Automatic receipt", roles: ["cl"], status: "spec", src: "Spec §9", desc: "On confirmation the design partner is notified on WhatsApp and the client receives a receipt showing the amount received and the remaining balance." },
+      { id: "ledger", title: "Ledger & reconciliation", roles: ["md", "dp"], status: "spec", src: "Spec §9", desc: "The worked reconciliation example on a 2,00,000 quote is the authority. Money is stored in paise and rounded only at the final step, with the reconciliation shown." },
+      { id: "payment-lock", title: "Locked payments & corrections", roles: ["md"], status: "spec", src: "Spec §9, §16", desc: "A received payment is locked and immutable. A correction is a new logged entry, and the MD is notified whenever a correction touches a payment." }
+    ]
+  },
+  {
+    id: "internal-money",
+    title: "Internal money",
+    roles: ["md", "ph", "pm", "dp", "mh"],
+    status: "spec",
+    src: "Spec §9, §14 · App Flow §13",
+    desc: "Pay, share, expenses and spend all run through the MD. Every request is raised by one role, checked by a head, and paid and approved by the MD with a logged acknowledgement back to the requester.",
+    children: [
+      { id: "dp-ledger", title: "Design partner ledger & 5% share", roles: ["dp", "md"], status: "spec", src: "Spec §14", desc: "The 5% share is paid in step with the client: 1.5% after the token, 1.5% after the 50%, 1% after the 35%, 1% at the end. The ledger shows what the company owes each partner in each pay window." },
+      { id: "pay-window", title: "Pay windows", roles: ["md", "dp"], status: "spec", src: "Settings §8", desc: "Design partners are paid on the 10th, 20th and 30th. Salaried staff are paid on the 30th, and the MD may pay off-schedule." },
+      { id: "salary", title: "Salary — default, limit, per-payment", roles: ["md"], status: "spec", src: "Spec §14", desc: "The MD sets each person's default amount and one visible limit, and may change the amount for a single payment before sending it for approval." },
+      { id: "payslip", title: "Payslip approval", roles: ["md", "st"], status: "spec", src: "Spec §14", desc: "The receiver approves with a payslip or receipt. Payslips are visible only to the receiver and the MD." },
+      { id: "reimbursement", title: "Reimbursements", roles: ["st", "md"], status: "spec", src: "Spec §9", desc: "Anyone claims for site visits and travel with amount, region and timing. The MD approves and pays. Receipts are kept separately." },
+      { id: "production-expense", title: "Production expenses", roles: ["pm", "ph", "md"], status: "spec", src: "Spec §9", desc: "The PM raises it, the Production Head checks and approves, the MD pays and marks it approved, and the PM acknowledges. Visible only to those three roles." },
+      { id: "marketing-spend", title: "Marketing spend", roles: ["mh", "md"], status: "spec", src: "Spec §9", desc: "The Marketing Head raises it and sees the full status: approved, declined or paid. The MD approves." }
+    ]
+  },
+  {
+    id: "production",
+    title: "Production & inventory",
+    roles: ["pm", "ph", "md"],
+    status: "spec",
+    src: "Spec §10, §13, §21.3 · App Flow §8",
+    desc: "Once the 50% is confirmed the MD assigns a Production Manager, who builds the BOQ from the approved quotation and runs materials, vendors, crew and dates. Each PM keeps a standalone workspace that travels with him.",
+    children: [
+      { id: "boq", title: "BOQ builder", roles: ["pm"], status: "spec", src: "Spec §10", desc: "Built from the approved quotation. It can be changed at any time and every change is logged. The signed quotation travels with the project." },
+      { id: "materials", title: "Material lines", roles: ["pm"], status: "spec", src: "Spec §10", desc: "Each line carries quantity, rate, payment date and receiving date, tracked separately: either can come first." },
+      { id: "boq-stages", title: "Staged purchases", roles: ["pm"], status: "spec", src: "Spec §10", desc: "Purchases can be staged with buy and receive dates per stage, and the BOQ can be filtered by stage." },
+      { id: "inventory", title: "Project inventory", roles: ["pm", "ph", "md"], status: "spec", src: "Spec §10", desc: "Each project has its own inventory record built from the BOQ, shared with the Production Head and the MD." },
+      { id: "pm-workspace", title: "PM workspace", roles: ["pm"], status: "spec", src: "Spec §10", desc: "Standalone: site tabs, a general tab, a table builder and a crew directory. Starter categories are laminates, plywood and boards, hardware, worktops and backsplash, lighting, adhesives and consumables." },
+      { id: "stock", title: "Stock & material payments due", roles: ["pm"], status: "spec", src: "Spec §26.7", desc: "Material payments due on the Production Manager home, with stock reachable from the tab bar." },
+      { id: "vendors", title: "Vendor list & catalogues", roles: ["pm", "ph"], status: "spec", src: "Spec §10", desc: "The Production Head maintains the vendor list and sees every vendor catalogue and price list. Rates are tracked for comparison." },
+      { id: "invoices", title: "Vendor invoices", roles: ["pm", "ph"], status: "spec", src: "Spec §10", desc: "A vendor gets an ID when an invoice is tagged to a project. Each invoice belongs to both the vendor record and the project. A wrong tag is corrected by the PM and the Production Head is notified." },
+      { id: "deliveries", title: "Deliveries & receiving", roles: ["pm"], status: "spec", src: "Spec §10", desc: "Vendor deliveries follow the receiving date. Installation trips follow the crew assignments." },
+      { id: "schedule", title: "Delivery & installation schedule", roles: ["pm", "ph"], status: "spec", src: "Spec §10", desc: "The PM sets delivery and installation dates with the client. This week's deliveries and installations sit on the home screen." },
+      { id: "crew", title: "Crew directory & assignments", roles: ["pm", "ph"], status: "spec", src: "Spec §10", desc: "Crew assignments and attendance are visible only to the PM who owns that crew. The Production Head can open any PM's profile and see where each crew member is." },
+      { id: "attendance", title: "Crew attendance", roles: ["pm", "ph"], status: "spec", src: "Spec §10", desc: "Tracked inside the platform. There are no fixed check-in or check-out times, because the company is remote." },
+      { id: "double-booking", title: "Double-booking warning", roles: ["pm"], status: "spec", src: "Spec §10", desc: "The platform warns the PM when the same crew member or vehicle is booked on two projects on one day." },
+      { id: "snags", title: "Snags & quality checks", roles: ["pm"], status: "oos", src: "Spec §10", desc: "Handled offline. The platform does not track them in this version, so there is no screen." }
+    ]
+  },
+  {
+    id: "portal",
+    title: "Client portal",
+    roles: ["cl"],
+    status: "spec",
+    src: "Spec §21.1, §23.2 · Mobile §7",
+    desc: "A client sees only their own project, in one calm column. Everything is approved before it appears, and money never shows an amount without a due date.",
+    children: [
+      { id: "portal-home", title: "Project home", roles: ["cl"], status: "spec", src: "Mobile §7", desc: "Stage and days left, next date, payment due with one pay-or-upload action, and the last approved files." },
+      { id: "portal-files", title: "Files", roles: ["cl"], status: "spec", src: "Spec §21.1", desc: "Approved versions only, pinned first. Current versions download; older versions open in a dated history and are view-only." },
+      { id: "portal-payments", title: "Payments & receipts", roles: ["cl"], status: "spec", src: "Spec §9", desc: "Amount due with its due date, the pay or proof-upload action, and every receipt with the remaining balance." },
+      { id: "portal-messages", title: "Messages", roles: ["cl"], status: "spec", src: "Spec §11", desc: "The conversation with the company number, including the project group once they join it." },
+      { id: "portal-warranty", title: "Warranty status", roles: ["cl"], status: "spec", src: "Spec §11", desc: "10 years from handover, which is the final payment. A covered claim goes to the PM; an uncovered one gets a written reason." },
+      { id: "portal-feedback", title: "Feedback at close", roles: ["cl"], status: "spec", src: "Spec §11", desc: "At project close the system asks for feedback on WhatsApp with review links." },
+      { id: "portal-contact", title: "Contact the office", roles: ["cl"], status: "spec", src: "Mobile §7", desc: "One tap to call the office number. The client is never required to use the portal at all." }
+    ]
+  },
+  {
+    id: "comms",
+    title: "Communication",
+    roles: ["all"],
+    status: "spec",
+    src: "Spec §26.4, §26.8, §26.12, §26.14 · App Flow §17, §18",
+    desc: "One company WhatsApp number carries every client message and file. Staff never copy files across by hand. Groups run on a separate company number, and every automatic message is an approved template sent inside the 8 a.m. to 10 p.m. window.",
+    children: [
+      { id: "company-number", title: "Company WhatsApp number", roles: ["all"], status: "spec", src: "Spec §11", desc: "The only channel for alerts and file delivery to clients. Twilio carries the messages." },
+      { id: "project-group", title: "Project WhatsApp group", roles: ["all"], status: "spec", src: "Spec §26.4", desc: "Created at handover with the representative, the design partner, the Design Head and the company number. Created through Meta's Groups API; messages go on Twilio." },
+      { id: "group-invite", title: "Group invitation", roles: ["cl"], status: "spec", src: "Spec §26.4, §26.13", desc: "Participants cannot be added directly per Meta's documentation, so the client receives an approved template with an invitation link. Until they join, messages go to their private number." },
+      { id: "message-library", title: "Pre-written message library", roles: ["md", "st"], status: "spec", src: "Spec §26.12", desc: "Eight situations: first contact, meeting link, meeting reminder, catalogue, testimonial, sample videos, request for a call time, group invitation. Client name and project details fill in automatically. Anyone may edit the text; a change needs template approval again." },
+      { id: "one-off-message", title: "One-off messages", roles: ["md", "st"], status: "spec", src: "Spec §26.14", desc: "Free text from the company number only within 24 hours of the client's last message, and editable right before sending. Outside that window an approved template is required. A manual send from the person's own WhatsApp is free and untracked." },
+      { id: "templates", title: "Templates & content SIDs", roles: ["md"], status: "spec", src: "Spec §26.12", desc: "Every pre-written message is an approved template sent by content SID, supervised by the MD." },
+      { id: "messaging-window", title: "8 a.m. to 10 p.m. window", roles: ["md"], status: "spec", src: "Spec §26.8", desc: "Every WhatsApp message, automatic or manual, sits inside the window. A retry that falls outside waits until 8 a.m. Pre-token stage timing counts hours only inside the window." }
+    ]
+  },
+  {
+    id: "alerts",
+    title: "Alerts & delivery",
+    roles: ["md", "dh", "ph", "sh"],
+    status: "spec",
+    src: "Spec §12, §26.3 · Architecture d7, d8",
+    desc: "Core alerts are WhatsApp only, sent as approved templates, with no phone calls. A failed alert is retried on a fixed schedule, and when attempts run out it lands in Delivery Problems.",
+    children: [
+      { id: "alert-classes", title: "Alert classes", roles: ["md"], status: "spec", src: "Settings §6", desc: "Time-critical, standard, digest and exit notice, each with its own attempts, gaps and window. The exit notice is a single attempt and is not changeable." },
+      { id: "alert-retry", title: "Retry schedule", roles: ["md"], status: "spec", src: "Settings §6", desc: "Gaps with plus or minus 20 percent jitter, changeable by the MD. A read receipt never stops the scheduled second message in a different style." },
+      { id: "delivery-problems", title: "Delivery Problems list", roles: ["md", "dh", "ph"], status: "open", src: "UI/UX §9", desc: "Failed alerts with recipient, alert, attempts and last reason. Proposal is one list, newest first, filtrable by class, with a single Mark as handled action. Awaiting owner approval (open item 16)." },
+      { id: "alert-metric", title: "Alert delivery metric", roles: ["md"], status: "spec", src: "PRD §4", desc: "Share of alerts delivered after retries: 98 percent, with zero Delivery Problems open at week end. Delivery counts, not reads." }
+    ]
+  },
+  {
+    id: "people",
+    title: "People, leave & performance",
+    roles: ["md", "sh", "dh", "ph", "st"],
+    status: "spec",
+    src: "Spec §13, §14, §24 · App Flow §12, §14",
+    desc: "Leave runs up the chain to the approver, cover is scoped by the head, and performance is reviewed Monday to Monday. The MD onboards every account and decides what happens to a leaver's login.",
+    children: [
+      { id: "leave-apply", title: "Apply for leave", roles: ["st"], status: "spec", src: "Spec §13", desc: "Reps apply to the Sales Head, designers to the Design Head, production staff to the Production Head, and heads to the MD. The MD does not take leave. Overlapping leave is not blocked." },
+      { id: "leave-approve", title: "Leave approvals", roles: ["md", "sh", "dh", "ph"], status: "spec", src: "Spec §13", desc: "An approval card in the approver's queue, the same component as design and payment approvals." },
+      { id: "cover", title: "Cover scope", roles: ["md", "sh", "dh", "ph"], status: "spec", src: "Spec §13", desc: "The head chooses everything the absent person owns, or selected projects and tasks. Crew linked to those projects move with them and nothing else." },
+      { id: "return", title: "Return & handover", roles: ["st", "md"], status: "spec", src: "App Flow §12", desc: "The absent person marks themselves back, the cover person hands the projects and crew back, and the head is notified." },
+      { id: "directory", title: "Staff directory", roles: ["md", "sh", "dh", "ph"], status: "spec", src: "UI/UX §4", desc: "Every person with their role, reporting line, salary limit and current rating." },
+      { id: "onboard", title: "Onboard staff", roles: ["md"], status: "spec", src: "Spec §22.1", desc: "The MD creates every account. Nobody self-registers." },
+      { id: "salary-settings", title: "Salary settings", roles: ["md"], status: "spec", src: "Spec §14", desc: "Each person's default amount and one visible limit, changeable at any time." },
+      { id: "performance", title: "Performance & ratings", roles: ["all"], status: "spec", src: "Spec §14", desc: "Each person sees their own rating and weekly count of completed stages. Heads see their team and projects. The MD sees everyone on one page." },
+      { id: "weekly-review", title: "Monday review", roles: ["md", "sh", "dh", "ph"], status: "spec", src: "PRD §4", desc: "Performance runs Monday to Monday with Monday as the review day. The target is 100 percent of staff cards reviewed by Monday." },
+      { id: "leaver", title: "Leaver flow", roles: ["md"], status: "spec", src: "Spec §24", desc: "Reassign open projects first, then download the data and delete, or hibernate. The old owner keeps read access to project history only. Notifications and WhatsApp stop at once, with one final message." },
+      { id: "hibernated", title: "Hibernated & deleted accounts", roles: ["md"], status: "spec", src: "Spec §24", desc: "One list. A department head requests access to one hibernated account at a time; the MD approves and removes it, and the head is notified either way." },
+      { id: "access-notice", title: "Access-change notices", roles: ["all"], status: "spec", src: "Spec §24", desc: "Department heads get these inside the app only, never on WhatsApp, and they appear in the activity log." }
+    ]
+  },
+  {
+    id: "marketing",
+    title: "Marketing",
+    roles: ["mh", "md"],
+    status: "spec",
+    src: "Spec §15, §21.5 · App Flow §13",
+    desc: "The Marketing Head sets the brand template, runs the content pipeline, and reads a funnel for every post and channel. Finished projects arrive as a package with the final files and brief and no client details.",
+    children: [
+      { id: "brand-template", title: "Brand template", roles: ["mh"], status: "spec", src: "Spec §15", desc: "Logo, colours and fonts. Editable at any time, with every change kept as a version. The platform chooses the AI model." },
+      { id: "posts", title: "Posts & scheduling", roles: ["mh"], status: "spec", src: "Spec §15", desc: "The system generates and schedules posts across the chosen channels, handles comments and replies, and returns responses and lead data." },
+      { id: "post-history", title: "Post history & performance", roles: ["mh"], status: "spec", src: "Spec §21.5", desc: "Each published post is kept with its performance numbers." },
+      { id: "funnel", title: "Funnel per post and channel", roles: ["mh", "md"], status: "spec", src: "Spec §15", desc: "Leads, meetings and converted clients with the percentage at each step, per post and per channel." },
+      { id: "content-pipeline", title: "Content pipeline", roles: ["mh"], status: "spec", src: "Spec §15", desc: "The Marketing Head supervises the pipeline and adds his own content. Leads are passed to the Sales Head, who groups them." },
+      { id: "spend-requests", title: "Spend requests", roles: ["mh", "md"], status: "spec", src: "Spec §9", desc: "Raised by the Marketing Head, approved by the MD, with the status visible at every step." },
+      { id: "project-packages", title: "Finished project packages", roles: ["mh"], status: "spec", src: "Spec §15", desc: "Final files and the brief only, with no client details, shared by the MD when a project finishes." }
+    ]
+  },
+  {
+    id: "logs",
+    title: "Logs & audit",
+    roles: ["all", "md"],
+    status: "spec",
+    src: "Spec §16",
+    desc: "Everything that happens is logged, including the MD's own actions. Entries are fixed once written. A mistake is corrected by a new entry that points at the original, which stays visible.",
+    children: [
+      { id: "activity-log", title: "Activity log", roles: ["all"], status: "spec", src: "Spec §16", desc: "Each person sees their own actions, heads see their teams, the MD sees everything. Append-only, newest first." },
+      { id: "corrections", title: "Corrections", roles: ["all"], status: "spec", src: "Spec §16", desc: "A new entry with the reason optional. Nothing is overwritten silently and nothing is deleted." },
+      { id: "payment-correction", title: "Payment correction notice", roles: ["md"], status: "spec", src: "Spec §16", desc: "Corrections notify nobody automatically, except that the MD is notified whenever a correction touches a payment." },
+      { id: "log-scope", title: "Who sees which log", roles: ["md", "sh", "dh", "ph"], status: "spec", src: "Spec §16", desc: "Own actions, team logs, or the full correction log. The log integrity target is zero edits or deletes." }
+    ]
+  },
+  {
+    id: "settings",
+    title: "Tenant settings",
+    roles: ["md"],
+    status: "spec",
+    src: "Settings §3 to §13",
+    desc: "Every value a company can change lives here with its default, who may change it and what gets logged. Each tenant holds its own copy. Nothing here is hard-coded.",
+    children: [
+      { id: "set-messaging", title: "Messaging & timing", roles: ["md"], status: "spec", src: "Settings §3", desc: "Window start 8 a.m., window end 10 p.m., pre-token stage timing in hours, retries outside the window wait until the start." },
+      { id: "set-retry", title: "Call retry cycle & archive", roles: ["md"], status: "spec", src: "Settings §4", desc: "Three hours to the follow-up message, one day to the next-day call, seven days to the next pass, two passes before the archive. Return dates are the rep's, with no default." },
+      { id: "set-stalled", title: "Stalled quotes", roles: ["md"], status: "spec", src: "Settings §5", desc: "Three days of silence, three rounds, a new meeting after round two, not won after round three." },
+      { id: "set-alerts", title: "Alert retries", roles: ["md"], status: "spec", src: "Settings §6", desc: "Attempts, gaps, windows and jitter per class. The exit notice is not changeable." },
+      { id: "set-whatsapp", title: "WhatsApp group & meetings", roles: ["md"], status: "spec", src: "Settings §7", desc: "Invitation link is the only join route and cannot be changed. Invitation template, Meet links and the Workspace account are set here. Groups use a separate company number." },
+      { id: "set-payments", title: "Payments & pay", roles: ["md"], status: "spec", src: "Settings §8", desc: "Client split 10/50/35/5, design partner share 1.5/1.5/1/1, salary date, partner pay dates and each person's limit." },
+      { id: "set-stages", title: "Stages & performance", roles: ["md"], status: "spec", src: "Settings §9", desc: "Design 15 days from the token, production 45 from the 50 percent, installation 5 from the 35 percent, the yellow and red thresholds, and the Monday-to-Monday cycle." },
+      { id: "set-warranty", title: "Warranty & sessions", roles: ["md"], status: "spec", src: "Settings §10", desc: "Warranty 10 years from handover, sign-in session 15 days rolling, per person, and the MD can end any session." },
+      { id: "set-dashboards", title: "Dashboard defaults", roles: ["md"], status: "spec", src: "Settings §11", desc: "The default charts per role, changeable by the MD. Each person still picks their own." },
+      { id: "set-targets", title: "Targets", roles: ["md"], status: "spec", src: "Settings §12", desc: "The ten starting targets. Dashboard lines only; they never block work." },
+      { id: "set-messages", title: "Pre-written messages", roles: ["md"], status: "spec", src: "Settings §13", desc: "The library of eight situations and their approval state." },
+      { id: "set-history", title: "Change history", roles: ["md"], status: "spec", src: "Settings §2", desc: "Who changed what, when, from which value to which, and why. Changes apply to new items only unless the owner says otherwise." },
+      { id: "set-guard", title: "Company-wide change guard", roles: ["md"], status: "part", src: "Settings §2", desc: "A company-wide change applies to new projects only and needs confirmation, a password and notifications. The spec names the rules but not the screen." }
+    ]
+  },
+  {
+    id: "plugins",
+    title: "Optional plugins",
+    roles: ["md", "st"],
+    status: "open",
+    src: "Spec §12 · AI brief §21",
+    desc: "Three optional features a firm can switch off. The core platform works fully without any of them, and defaults for a new tenant are still open.",
+    children: [
+      { id: "call-agent", title: "Call agent", roles: ["st"], status: "open", src: "Spec §12", desc: "Staff only, never clients. Reminders, check-ins and decision prompts. Every reply becomes a pending action a person confirms on screen. Payment confirmation is never voice-approved." },
+      { id: "overseer", title: "Overseer", roles: ["md"], status: "open", src: "Spec §12", desc: "A company-wide AI that answers across the business under the same access rules. Built after the core and off unless a firm opts in." },
+      { id: "transcript-plugin", title: "Transcript & approval proof", roles: ["all"], status: "open", src: "Spec §23.4", desc: "Meetbook or a similar tool. Held until the architecture decision, so no screen is defined." }
+    ]
+  },
+  {
+    id: "not-in-v1",
+    title: "Not in First Light",
+    roles: ["md"],
+    status: "oos",
+    src: "PRD §6 · Spec §17",
+    desc: "Named in the documents as out of scope or deliberately removed. Listed so nobody builds them by mistake, and so the gaps are visible rather than silent.",
+    children: [
+      { id: "bank-match", title: "Bank statement matching", roles: ["md"], status: "oos", src: "PRD §6", desc: "Out of scope for this version." },
+      { id: "office-expense", title: "Office expense categories & limits", roles: ["md"], status: "oos", src: "PRD §6", desc: "Out of scope. Reimbursements exist; office spend does not." },
+      { id: "blacklist", title: "Blacklisting", roles: ["md"], status: "oos", src: "Spec §6", desc: "Handled outside the platform." },
+      { id: "history-request", title: "History requests", roles: ["md"], status: "oos", src: "Spec §17", desc: "Removed in v8. A new request for history is not part of the flow." },
+      { id: "platform-admin", title: "Platform / tenant admin console", roles: ["md"], status: "oos", src: "Not specified", desc: "The aggregator model implies Shukra onboards tenants and rents the platform, but no document defines that console. Recorded as a gap, not a design.", note: "This is the largest structural hole in the set. Nothing in the 14 documents describes how a firm is created, billed or branded on the platform." }
+    ]
+  }
+];
+
+/* End-to-end journey with its gates, in the order the documents describe it. */
+const JOURNEY = [
+  { n: 1, title: "Enquiry arrives", who: "Sales Head", gate: "Source recorded", desc: "From the calculator, a campaign or the website. All leads go to the Sales Head and none is lost.", src: "Spec §3" },
+  { n: 2, title: "AI groups the lead", who: "AI, confirmed by Sales Head", gate: "Eight fixed options", desc: "No free keyword grouping and no other dimension.", src: "Spec §3" },
+  { n: 3, title: "Group assigned", who: "Sales Head", gate: "Call window and limit set", desc: "Assigned to a representative, who can be pulled, reassigned, held or regrouped at any time.", src: "App Flow §2" },
+  { n: 4, title: "Call and outcome", who: "Sales rep", gate: "One of seven outcomes", desc: "Every call logged with its time and result. Not reached enters the retry cycle.", src: "Spec §4, §26.2" },
+  { n: 5, title: "Retry cycle", who: "System and rep", gate: "Two passes, then archive", desc: "Three calls and three messages, a seven-day wait, one repeat, then the unresponsive archive. Messages 8 a.m. to 10 p.m. only.", src: "Spec §26.2" },
+  { n: 6, title: "Meeting set", who: "Sales rep", gate: "Design partner approves", desc: "Date, time, tagged design partner, comment. A Meet link is created automatically and the Design Head is notified.", src: "App Flow §3, §17" },
+  { n: 7, title: "Temporary project", who: "Design partner", gate: "First meeting approved", desc: "Visible to the design partner only, until the token is paid.", src: "Spec §23.1" },
+  { n: 8, title: "Token — 10%", who: "Client pays, MD confirms", gate: "Payment gate", desc: "UPI, proof on WhatsApp, forwarded to the MD. Only on confirmation does the project become permanent.", src: "Spec §9, §23.5" },
+  { n: 9, title: "Design phase", who: "Design partner, Design Head", gate: "15-day stage timer", desc: "Renders and quotations uploaded, approved by the Design Head, then delivered to the client through the company number.", src: "Spec §8" },
+  { n: 10, title: "50% before production", who: "Client, MD", gate: "Payment gate", desc: "On confirmation the MD assigns a Production Manager and the production timer starts.", src: "Spec §9, §10" },
+  { n: 11, title: "Production", who: "Production Manager", gate: "45-day stage timer", desc: "BOQ from the approved quotation, materials, vendors, crew, delivery dates.", src: "Spec §10" },
+  { n: 12, title: "35% near completion", who: "Client, MD", gate: "Payment gate", desc: "The installation timer starts from this payment.", src: "Spec §9" },
+  { n: 13, title: "Installation", who: "Production Manager", gate: "5-day stage timer", desc: "Installation trips follow the crew assignments.", src: "Spec §10" },
+  { n: 14, title: "Handover — final 5%", who: "Client, MD", gate: "Warranty starts", desc: "The project WhatsApp group is created at handover, the client joins by invitation, and the 10-year warranty runs from this final payment.", src: "Spec §11, §26.4" },
+  { n: 15, title: "Warranty and feedback", who: "Sales rep, Production Head", gate: "Covered or written reason", desc: "The rep decides coverage and responds in 24 to 48 hours. At close the client is asked for feedback on WhatsApp.", src: "Spec §11" }
+];
+
+/* Contradictions and holes found while mapping the set. These are observations, not decisions. */
+const GAPS = [
+  {
+    id: "g1",
+    sev: "high",
+    title: "Call outcomes: four in the documents, seven in the decision",
+    where: "App Flow v15 §3 · AI brief §6 · UI/UX §5 vs change request 1, Part A",
+    body: "The App Flow, the AI context brief and the UI/UX brief all still describe four outcomes, and the UI/UX brief specifies a form with four. The settled decision is seven. A site map cannot place a single form until this is resolved, so the map shows the seven and flags the form as partial.",
+    impact: "Affects: Calls, dashboards, metrics, QA tests."
+  },
+  {
+    id: "g2",
+    sev: "high",
+    title: "Two different bottom tab bars for the same eight roles",
+    where: "UI/UX Brief §4 vs Mobile Design Brief §6",
+    body: "The UI/UX brief gives the MD Approvals, Payments, Projects, Staff, More with no Home. The Mobile brief gives Home, Approvals, Payments, Projects, More and drops Staff. Sales is Leads, Groups, Team versus Home, Leads, Calls, Meetings. Design partner is Projects, Requests, Payments versus Home, Projects, Approvals, Meetings. Production Head is Projects, Expenses, Crew versus Home, Schedule, Stock, Crew. At most one of these can be built.",
+    impact: "Affects: every screen's reachability, and the Groups, Staff, Requests and Expenses modules, which have no tab in the newer brief."
+  },
+  {
+    id: "g3",
+    sev: "medium",
+    title: "Two visual directions in one document set",
+    where: "Visual Direction v1 §2 vs Mobile Design Brief §5",
+    body: "Visual Direction proposes deep slate #1F2A36, powder blue #3E6E8C, blush #F2A49A and peach #F6C7AE. The Mobile Design Brief, which says it uses the company brand for this build, proposes ink #3A3158, cream #F6F2E8, lavender #D8CBEE and blush #F6B1BC, with Playfair Display and Poppins. The UI/UX brief still calls visual style open. This map uses the Mobile brief's palette.",
+    impact: "Affects: every screen, and the token layer."
+  },
+  {
+    id: "g4",
+    sev: "high",
+    title: "No platform or tenant admin console anywhere in the set",
+    where: "Missing from all 14 documents",
+    body: "The model is an aggregator: Shukra owns the platform and rents it to firms, each under its own brand. Tenant settings exist inside a tenant, but nothing describes creating a tenant, provisioning its number or Workspace account, billing the rent, or platform-level support. This is a whole application with no site map, no screens and no schema.",
+    impact: "Affects: onboarding, billing, and the per-tenant brand decision (M19)."
+  },
+  {
+    id: "g5",
+    sev: "medium",
+    title: "Modules with no home in the navigation",
+    where: "UI/UX §4 vs Mobile §6",
+    body: "Four modules have a tab in one brief and none in the other: Lead groups (Sales Head), Staff (MD), Requests (design partner, undefined label), and Expenses (Production Head). If the Mobile brief wins, each of these has to live under More, which contradicts the brief's own rule that nothing is hidden behind a menu.",
+    impact: "Affects: Leads, People, Internal money, Projects."
+  },
+  {
+    id: "g6",
+    sev: "medium",
+    title: "Delivery Problems screen is still a proposal",
+    where: "UI/UX §9, open item 16",
+    body: "The screen the MD and department heads need when alerts fail is drafted but not approved, and the design partner absence alert wording is still a draft. The map shows the screen as open rather than specified.",
+    impact: "Affects: Alerts, MD home, alert delivery metric."
+  },
+  {
+    id: "g7",
+    sev: "low",
+    title: "Notifications has no entry point",
+    where: "UI/UX §5",
+    body: "The brief says access-change notices sit in an in-app notifications list and never on WhatsApp, but neither navigation brief allocates a tab, bell or row for it. As mapped, the list is unreachable.",
+    impact: "Affects: Entry & access, People."
+  },
+  {
+    id: "g8",
+    sev: "low",
+    title: "Plugin screens are named but not designed",
+    where: "Spec §12, §23.4",
+    body: "The call agent, the overseer and the transcript plugin are described in prose with no screens, and the call agent's pending-actions review is central to how it is supposed to stay safe. Defaults for a new tenant are also undecided.",
+    impact: "Affects: Plugins, Meetings."
+  },
+  {
+    id: "g9",
+    sev: "low",
+    title: "Performance review has charts but no screen",
+    where: "Spec §14 vs UI/UX §5",
+    body: "Ratings appear on dashboards and in the metrics, but no brief defines the person-level performance screen, the weekly count of completed stages, or where a head records the Monday review. The map places them under People as an inferred screen.",
+    impact: "Affects: People, dashboards."
+  }
+];
+
+</script>
+<script>
+/* Page-level detail, part 1: entry, dashboards, leads, calls, meetings.
+   Shape per page: entry, options [text, kind], shows [], rules [].
+   kind: action | field | section | state | rule */
+
+var ENRICH = (typeof window !== "undefined" ? (window.ENRICH = window.ENRICH || {}) : {});
+Object.assign(ENRICH, {
+  "entry": { entry: "App launch, logged out" },
+  "signin-staff": {
+    entry: "Launch, logged out",
+    options: [
+      ["Business email field, domain locked to the company", "field"],
+      ["Password field with show/hide", "field"],
+      ["Sign in", "action"],
+      ["Keep this device signed in for 15 days", "state"],
+      ["No create-account link; text tells the person to ask the MD", "rule"]
+    ],
+    shows: ["Company logo and name", "One error line under the field that failed"],
+    rules: ["The MD creates every account, nobody self-registers", "The session resets on every open", "Changing the login ID ends all sessions"]
+  },
+  "signin-client": {
+    entry: "Portal launch or invite link, logged out",
+    options: [
+      ["Mobile number field, must match the number on the lead", "field"],
+      ["Send one-time code", "action"],
+      ["Six-digit code field with resend timer", "field"],
+      ["Continue with Google (optional link)", "action"],
+      ["Sign in", "action"]
+    ],
+    shows: ["Their project name once recognised"],
+    rules: ["OTP is required before the token payment and the invoice", "Nobody signs in on a client's behalf", "The client is never required to use the portal"]
+  },
+  "session": {
+    entry: "More ▸ Security, or the MD's staff record",
+    options: [
+      ["List of active sessions with device, place and last seen", "section"],
+      ["End this session", "action"],
+      ["End all sessions for an account (MD only)", "action"],
+      ["End session on login-ID change, automatic", "state"]
+    ],
+    rules: ["The person is signed out and gets a WhatsApp message saying so", "Every ending is logged"]
+  },
+  "notifications": {
+    entry: "Top bar, bell",
+    options: [
+      ["List, newest first", "section"],
+      ["Filter by kind: approvals, access changes, alerts", "action"],
+      ["Mark as read", "action"],
+      ["Open the item the notice is about", "action"]
+    ],
+    shows: ["Access-change notices: who was given access to what, and by whom"],
+    rules: ["Access changes appear here and never on WhatsApp"]
+  },
+  "account-state": {
+    entry: "Staff record ▸ Status",
+    options: [
+      ["Status chip: active, hibernated, deleted", "state"],
+      ["Filter the staff list by status", "action"],
+      ["Reactivate a hibernated account (MD)", "action"]
+    ],
+    rules: ["Deleting removes the login only; papers stay and the name reads former staff", "Hibernation keeps the account for reactivation"]
+  },
+
+  "dashboards": { entry: "Home tab, first screen after sign-in" },
+  "home-md": {
+    entry: "Home",
+    options: [
+      ["Hero card: payments received against due this month", "section"],
+      ["Pipeline funnel", "section"],
+      ["Team performance list", "section"],
+      ["Delivery problems card with a count, opens the list", "action"],
+      ["Approve shortcut to the approvals queue", "action"],
+      ["Customise my charts", "action"]
+    ],
+    shows: ["Payments received against due", "Team performance", "Pipeline funnel", "Delivery problems"],
+    rules: ["Every chart carries its value as words", "A miss on a target is a line on a chart, never an alert"]
+  },
+  "home-sh": {
+    entry: "Home",
+    options: [
+      ["Lead sources chart", "section"],
+      ["Conversion funnel by step", "section"],
+      ["Call outcomes chart", "section"],
+      ["Team and project ratings", "section"],
+      ["Open leads, groups or team", "action"]
+    ],
+    shows: ["Lead sources", "Conversion funnel", "Call outcomes", "Team and project ratings"]
+  },
+  "home-rep": {
+    entry: "Home",
+    options: [
+      ["My calls today, with a start-calling action", "action"],
+      ["My follow-ups due", "section"],
+      ["My weekly count", "section"],
+      ["My rating", "section"]
+    ]
+  },
+  "home-dh": {
+    entry: "Home",
+    options: [
+      ["Renders and quotations awaiting approval, opens the queue", "action"],
+      ["Meetings this week", "section"],
+      ["Team and project ratings", "section"],
+      ["Design estimates pending", "section"]
+    ]
+  },
+  "home-dp": {
+    entry: "Home",
+    options: [
+      ["Temporary projects before the token", "section"],
+      ["Live projects with stage and days left", "section"],
+      ["Next deliverables due", "section"],
+      ["New client requirements and add-ons since my last visit", "section"],
+      ["Payments due to me and my ledger", "action"],
+      ["My rating", "section"]
+    ],
+    rules: ["A project here before the token is visible to this partner only"]
+  },
+  "home-ph": {
+    entry: "Home",
+    options: [
+      ["Projects reaching production", "section"],
+      ["Expenses awaiting my approval", "action"],
+      ["Crew on site today", "section"],
+      ["Vendor spend", "section"]
+    ]
+  },
+  "home-pm": {
+    entry: "Home",
+    options: [
+      ["Deliveries and installations this week", "section"],
+      ["Material payments due", "section"],
+      ["Crew attendance today", "section"],
+      ["My rating", "section"]
+    ]
+  },
+  "home-mh": {
+    entry: "Home",
+    options: [
+      ["Funnel per post", "section"],
+      ["Channel performance", "section"],
+      ["Spend requests and their status", "action"],
+      ["Brand template status", "section"]
+    ]
+  },
+  "home-cl": {
+    entry: "Project (first tab)",
+    options: [
+      ["Project stage with a traffic light and a word", "section"],
+      ["Days left on the current stage", "section"],
+      ["Next date", "section"],
+      ["Payment due, with a pay or upload-proof action", "action"],
+      ["Approved files, pinned first", "action"],
+      ["Call the office", "action"]
+    ],
+    rules: ["Only approved files appear", "No amount without its due date"]
+  },
+  "chart-library": {
+    entry: "Settings ▸ My dashboard, or the pencil on Home",
+    options: [
+      ["Chart picker grouped by kind: money, pipeline, people, stages", "section"],
+      ["Add chart, remove chart, reorder", "action"],
+      ["Preview at phone width", "action"],
+      ["Save to my account", "action"],
+      ["Reset to the role default", "action"]
+    ],
+    rules: ["Choices follow the person across devices", "The MD sets the role defaults"]
+  },
+  "targets": {
+    entry: "Settings ▸ Targets",
+    options: [
+      ["Table of ten metrics with definition, owner and target", "section"],
+      ["Edit a target (MD)", "action"],
+      ["Show the metric on the owner's dashboard", "state"]
+    ],
+    rules: ["Targets never block work and never send an alert"]
+  },
+
+  "leads": { entry: "Leads tab (Sales Head), or More" },
+  "intake": {
+    entry: "Leads ▸ New",
+    options: [
+      ["List of arriving leads with source and time", "section"],
+      ["Open a lead", "action"],
+      ["Filter by source: calculator, campaign, website", "action"]
+    ],
+    shows: ["Calculator quotation, if one travelled with the lead"],
+    rules: ["Every lead records its source", "All leads go to the Sales Head"]
+  },
+  "inbox": {
+    entry: "Leads",
+    options: [
+      ["Search by client ID, name or number", "field"],
+      ["Filter by source, status, age", "action"],
+      ["Sort newest or oldest", "action"],
+      ["Open lead card", "action"],
+      ["Select several and put them in a group", "action"]
+    ]
+  },
+  "lead-card": {
+    entry: "Any lead row",
+    options: [
+      ["Header: name, number, city, source, budget, age", "section"],
+      ["Call from here", "action"],
+      ["WhatsApp from here", "action"],
+      ["Move to another group or representative", "action"],
+      ["Hold the lead", "action"],
+      ["Open the project, if one exists", "action"],
+      ["Open the full history and log", "action"],
+      ["Copy the client ID", "action"]
+    ],
+    shows: ["Every call, meeting and transcript", "Calculator quote", "Files", "The group it sits in"]
+  },
+  "groups": {
+    entry: "Leads ▸ Groups (Sales Head)",
+    options: [
+      ["Group list with lead count and age", "section"],
+      ["New group", "action"],
+      ["Split a group", "action"],
+      ["Rename a group", "action"],
+      ["Assign to a representative", "action"],
+      ["Open the group", "action"]
+    ],
+    rules: ["A group is defined only by the eight fixed options"]
+  },
+  "group-builder": {
+    entry: "Groups ▸ New, or Split",
+    options: [
+      ["State or city selector", "field"],
+      ["Project type selector", "field"],
+      ["Budget range selector", "field"],
+      ["Timeline selector", "field"],
+      ["Lead source selector", "field"],
+      ["Property type selector", "field"],
+      ["Client status selector", "field"],
+      ["Lead age selector", "field"],
+      ["Live count of matching leads", "section"],
+      ["Save group", "action"]
+    ],
+    rules: ["These eight options and no free keyword", "A group can be split again using the same eight"]
+  },
+  "assign": {
+    entry: "Groups ▸ Assign",
+    options: [
+      ["Pick the representative", "field"],
+      ["Call window start and end", "field"],
+      ["Call limit per day", "field"],
+      ["Note to the representative", "field"],
+      ["Assign and notify", "action"]
+    ]
+  },
+  "group-actions": {
+    entry: "Group row, long press or More",
+    options: [
+      ["Pull a lead back to the Sales Head", "action"],
+      ["Reassign to another representative", "action"],
+      ["Hold", "action"],
+      ["Move to another group", "action"],
+      ["Reason, optional", "field"]
+    ],
+    rules: ["The Sales Head keeps full control at any time"]
+  },
+  "closed-leads": {
+    entry: "Leads ▸ Closed",
+    options: [
+      ["List with outcome, owner and date", "section"],
+      ["Filter by owner or outcome", "action"],
+      ["Open the client record", "action"],
+      ["Bring a lead back (head or MD)", "action"]
+    ],
+    rules: ["Heads and the MD see all; a design partner or representative sees only the ones they worked on"]
+  },
+  "unresponsive": {
+    entry: "Leads ▸ Unresponsive, or Calls ▸ Archive",
+    options: [
+      ["My unresponsive leads, with attempts and last contact", "section"],
+      ["Call again now", "action"],
+      ["Set a return date", "action"],
+      ["Open the project brief for the return", "action"],
+      ["Scheduled returns list", "section"]
+    ],
+    rules: ["Separate from closed leads and the cold archive", "A representative cannot delete them", "A return date moves the lead into its own scheduled list"]
+  },
+  "stalled": {
+    entry: "Leads ▸ Stalled quotes",
+    options: [
+      ["List with days of silence and round number", "section"],
+      ["Add a follow-up: catalogue, sample work, video or call", "action"],
+      ["Book a new meeting after round 2", "action"],
+      ["Mark not won after round 3 and move to closed leads", "action"]
+    ],
+    rules: ["Follow up after 3 days of silence, up to 3 rounds; values change in tenant settings"]
+  },
+  "cold": {
+    entry: "Leads ▸ Archive ▸ Cold",
+    options: [
+      ["List of cold leads by client ID", "section"],
+      ["Open the client record and full history", "action"]
+    ],
+    rules: ["A returning client is found by ID and gets a new project, never a linked one"]
+  },
+
+  "calls": { entry: "Calls tab (sales roles)" },
+  "queue": {
+    entry: "Calls",
+    options: [
+      ["Today's list with group name and leads left", "section"],
+      ["Start calling", "action"],
+      ["Skip to the next lead", "action"],
+      ["Open the lead card", "action"]
+    ]
+  },
+  "call-card": {
+    entry: "Calls ▸ lead",
+    options: [
+      ["Client, number, city", "section"],
+      ["Source, budget, attempt count of the limit", "section"],
+      ["Call button and WhatsApp button", "action"],
+      ["Outcome field, required", "field"],
+      ["Notes, optional", "field"],
+      ["Save and show next lead", "action"]
+    ]
+  },
+  "outcome": {
+    entry: "Call card ▸ Outcome",
+    options: [
+      ["Meeting set: date, time, design partner tag, comment", "action"],
+      ["Connected, not yet a meeting", "action"],
+      ["Warm, not now: future date", "action"],
+      ["Not interested: moves to the cold archive", "action"],
+      ["Not reached: enters the retry cycle", "action"],
+      ["Indefinite delay: client postponed with no date", "action"],
+      ["Active but not responding: read, no reply", "action"]
+    ],
+    rules: ["Exactly one outcome per call", "Choosing an outcome reveals the next step in one line", "The settled decision is seven outcomes, though three documents still say four"]
+  },
+  "meeting-set": {
+    entry: "Outcome ▸ Meeting set",
+    options: [
+      ["Date picker", "field"],
+      ["Time picker", "field"],
+      ["Design partner picker", "field"],
+      ["Comment", "field"],
+      ["Save and request approval", "action"]
+    ],
+    rules: ["The design partner must approve", "The Design Head is notified of every meeting"]
+  },
+  "retry": {
+    entry: "Call card ▸ Retry, or a lead marked not reached",
+    options: [
+      ["First pass timeline: call, catalogues, call, testimonials 3 hours later, call, videos", "section"],
+      ["Seven-day wait, shown as a countdown", "state"],
+      ["Second pass", "section"],
+      ["Send the next message now", "action"],
+      ["Move to the unresponsive archive", "action"]
+    ],
+    rules: ["Messages only between 8 a.m. and 10 p.m.; outside the window they wait until 8 a.m.", "Hours and days are tenant settings"]
+  },
+  "callback": {
+    entry: "Outcome ▸ warm or call-back",
+    options: [
+      ["Date and time given by the client", "field"],
+      ["Book as a call tomorrow", "action"],
+      ["Mark indefinite delay", "action"]
+    ]
+  },
+  "call-history": {
+    entry: "Lead card ▸ History",
+    options: [
+      ["Timeline of calls, messages, meetings and notes, newest first", "section"],
+      ["Open a meeting, its end note and AI comments kept separately", "action"],
+      ["View-only", "state"]
+    ]
+  },
+
+  "meetings": { entry: "Meetings tab (sales, design)" },
+  "meeting-book": {
+    entry: "Lead card ▸ Book meeting",
+    options: [
+      ["Date and time", "field"],
+      ["Tag a design partner", "field"],
+      ["Comment", "field"],
+      ["Send for design partner approval", "action"]
+    ]
+  },
+  "meeting-accept": {
+    entry: "Design partner ▸ Requests",
+    options: [
+      ["Meeting details and client history", "section"],
+      ["Accept", "action"],
+      ["Reject with a written reason, required", "action"]
+    ],
+    rules: ["A rejection reason is visible to the representative, the Sales Head and the Design Head, and is logged", "Accepting creates the temporary project"]
+  },
+  "meeting-link": {
+    entry: "Meeting detail, or the group thread",
+    options: [
+      ["Join with Google Meet", "action"],
+      ["Send to the project group", "action"],
+      ["Send to the client's number with one tap", "action"],
+      ["Copy the link", "action"]
+    ],
+    rules: ["Created automatically from one company Workspace account; nobody logs in", "Posted to the group if the client is in it, otherwise to the private number"]
+  },
+  "meeting-reminder": {
+    entry: "Automatic",
+    options: [
+      ["Reminder sent as an approved template", "state"],
+      ["Edit the reminder text (needs template approval)", "action"]
+    ]
+  },
+  "meeting-transcript": {
+    entry: "Meeting detail ▸ Transcript",
+    options: [
+      ["Transcript and approval proof, from the plugin", "section"],
+      ["Attach to the client history", "action"]
+    ],
+    rules: ["Held until the architecture decision, so no screen is built"]
+  },
+  "meeting-list": {
+    entry: "Meetings",
+    options: [
+      ["This week, grouped by day", "section"],
+      ["Open a meeting", "action"],
+      ["Filter by role of the person in the meeting", "action"]
+    ]
+  }
+});
+
+</script>
+<script>
+/* Page-level detail, part 2: projects, design, quotations, client payments, internal money. */
+
+var ENRICH = (typeof window !== "undefined" ? (window.ENRICH = window.ENRICH || {}) : {});
+Object.assign(ENRICH, {
+  "projects": { entry: "Projects tab" },
+  "temp-project": {
+    entry: "Projects ▸ Temporary",
+    options: [
+      ["Temporary badge and the token that is due", "state"],
+      ["Client details and meeting history", "section"],
+      ["Upload a render or quotation", "action"],
+      ["Request the token payment", "action"],
+      ["Open the project brief", "action"]
+    ],
+    rules: ["Visible to the design partner only", "Becomes permanent only when the token is confirmed"]
+  },
+  "token": {
+    entry: "Temporary project ▸ Token",
+    options: [
+      ["Amount due, calculated as 10% of the accepted estimate", "section"],
+      ["Send the payment request", "action"],
+      ["Upload the proof the client sent on WhatsApp", "action"],
+      ["Status: awaiting proof, with MD, rejected", "state"],
+      ["Receipt, once confirmed", "section"]
+    ],
+    rules: ["Only the MD confirms", "The project moves forward only after confirmation"]
+  },
+  "project-team": {
+    entry: "Project ▸ Team",
+    options: [
+      ["Member list with role on the project", "section"],
+      ["Add a person, which also adds them to the group", "action"],
+      ["Remove a person, logged", "action"],
+      ["See the company WhatsApp number used", "section"]
+    ],
+    shows: ["Design partner", "Design Head", "Booking representative", "Company number"]
+  },
+  "project-home": {
+    entry: "Projects ▸ project, or the client's Project tab",
+    options: [
+      ["Stage with traffic light and word", "section"],
+      ["Days left on the stage timer", "section"],
+      ["Next date", "section"],
+      ["Files, pinned first", "action"],
+      ["Payments due and paid", "action"],
+      ["Approvals waiting on me", "action"],
+      ["Project menu: team, access, pause, log", "action"]
+    ],
+    rules: ["A client-caused pause reads paused by client and never yellow or red"]
+  },
+  "stage-timeline": {
+    entry: "Project ▸ Stage history",
+    options: [
+      ["Append-only list, newest first", "section"],
+      ["Filter by stage", "action"],
+      ["Open the entry behind a stage change", "action"]
+    ],
+    rules: ["Read-only for everyone on the project", "Nothing can be edited or deleted"]
+  },
+  "access-request": {
+    entry: "A live project the Sales Head is not on",
+    options: [
+      ["Request access from a representative, design partner, MD or Design Head", "action"],
+      ["Add a line saying why", "field"],
+      ["Approve a request and add the person (anyone on the project)", "action"],
+      ["Decline with a reason", "action"]
+    ],
+    rules: ["Every request and grant is logged", "History requests were removed in v8"]
+  },
+  "paused": {
+    entry: "Project ▸ Status",
+    options: [
+      ["Pause with a reason and who caused it", "action"],
+      ["Resume", "action"],
+      ["Paused by client badge, timer held", "state"]
+    ],
+    rules: ["Nothing closes while paused; files and history stay readable"]
+  },
+  "closed-project": {
+    entry: "Projects ▸ Closed",
+    options: [
+      ["Read the closed record and its files", "section"],
+      ["Write over the record, for example a refund (MD only)", "action"],
+      ["Reason for the write-over", "field"]
+    ],
+    rules: ["Human-only and logged", "The original entry stays visible"]
+  },
+  "project-rating": {
+    entry: "Project ▸ Rating",
+    options: [
+      ["Rating for this week with the drivers", "section"],
+      ["Open the stage history that fed it", "action"]
+    ],
+    rules: ["Reviewed Monday to Monday"]
+  },
+  "client-id": {
+    entry: "Search by client ID",
+    options: [
+      ["Search by ID or number", "field"],
+      ["Client record with every meeting, transcript, file and action", "section"],
+      ["Create a new project for a returning client", "action"]
+    ],
+    rules: ["Old projects are never linked to new ones", "Blacklisting is handled outside the platform"]
+  },
+
+  "design": { entry: "Projects ▸ Design, or Approvals" },
+  "design-upload": {
+    entry: "Project ▸ Design ▸ Upload",
+    options: [
+      ["Choose file, render or quotation", "field"],
+      ["Short brief of what changed in this version", "field"],
+      ["Send to the Design Head", "action"],
+      ["Save as draft", "action"]
+    ],
+    rules: ["Nothing reaches the client before Design Head approval", "Each upload keeps its own version history"]
+  },
+  "design-approval": {
+    entry: "Approvals tab (Design Head)",
+    options: [
+      ["Queue of renders and quotations awaiting approval", "section"],
+      ["Approval card: what, amount or date, requester", "section"],
+      ["Approve", "action"],
+      ["Reject with a reason, required", "action"],
+      ["Open the file and its previous versions", "action"],
+      ["Approve several at once", "action"]
+    ],
+    rules: ["Only after approval does the file reach the client, through the company number"]
+  },
+  "technical-files": {
+    entry: "Project ▸ Design ▸ Technical",
+    options: [
+      ["Upload a technical file", "action"],
+      ["Approve (Production Manager)", "action"],
+      ["Send to the client for verification", "action"]
+    ],
+    rules: ["The Design Head does not approve technical files"]
+  },
+  "versions": {
+    entry: "Any file ▸ Versions",
+    options: [
+      ["Latest version, always shown first", "section"],
+      ["Dated history, opened on purpose", "section"],
+      ["Brief of change per version", "section"],
+      ["Download the current version", "action"],
+      ["Open an old version, view-only", "action"]
+    ],
+    rules: ["The client sees approved versions only", "Rejected versions stay with the team, with the reason"]
+  },
+  "pinned": {
+    entry: "File ▸ Pin",
+    options: [
+      ["Pin to the client dashboard", "action"],
+      ["Unpin", "action"],
+      ["Reorder pinned files", "action"]
+    ]
+  },
+  "on-behalf": {
+    entry: "Approval card ▸ Approve for the client",
+    options: [
+      ["Record the client's words", "field"],
+      ["Timestamp, added automatically", "state"],
+      ["Approve in the client's name", "action"],
+      ["See who approved and alongside which partner", "section"]
+    ],
+    rules: ["The design partner approves for the client by default on every item", "The log shows the client's name with the partner beside it"]
+  },
+  "change-requests": {
+    entry: "Project ▸ Changes and add-ons",
+    options: [
+      ["List of client requests raised since the last visit", "section"],
+      ["Open a request", "action"],
+      ["Turn a request into an add-on with a price", "action"],
+      ["Send for approval", "action"]
+    ]
+  },
+  "rejected-versions": {
+    entry: "File ▸ Rejected",
+    options: [
+      ["Rejected versions with the reason", "section"],
+      ["Restore as a new version", "action"]
+    ],
+    rules: ["The client never sees a rejected version"]
+  },
+
+  "quotes": { entry: "Project ▸ Quotations" },
+  "quote-estimate": {
+    entry: "Project ▸ Quotations ▸ New",
+    options: [
+      ["Line items with description, quantity, rate", "field"],
+      ["Add a line, duplicate a line, remove a line", "action"],
+      ["Total with Indian digit grouping", "section"],
+      ["Send for Design Head approval", "action"]
+    ],
+    rules: ["The first quotation is an estimate and can be revised"]
+  },
+  "quote-revision": {
+    entry: "Quotation ▸ Revise",
+    options: [
+      ["Copy of the last version to edit", "section"],
+      ["Change quantities or rates", "field"],
+      ["Brief of what changed", "field"],
+      ["Send for approval by the tagged person", "action"],
+      ["Compare with the previous version", "action"]
+    ],
+    rules: ["Versioned and never overwritten", "Every revision is logged"]
+  },
+  "quote-approved": {
+    entry: "Quotation ▸ Approved",
+    options: [
+      ["Accepted version with its date", "section"],
+      ["See the payment split computed on it", "action"],
+      ["Supersede with a new revision", "action"]
+    ],
+    rules: ["The split is always computed on the latest accepted quotation, minus what is paid"]
+  },
+  "quote-signed": {
+    entry: "Project ▸ Quotations ▸ Signed",
+    options: [
+      ["Signed copy, locked", "section"],
+      ["Download", "action"],
+      ["Attach to production", "action"]
+    ],
+    rules: ["Locked and versioned", "Travels to production with the approved design files"]
+  },
+  "quote-calculator": {
+    entry: "Lead card ▸ Calculator quote",
+    options: [
+      ["Read the calculator quotation that came with the lead", "section"],
+      ["Copy the figures into a quotation", "action"]
+    ],
+    rules: ["The calculator logic belongs to Blue Light Codex and is not changed"]
+  },
+
+  "payments": { entry: "Payments tab (MD), or the client's Payments tab" },
+  "split": {
+    entry: "Project ▸ Payments ▸ Schedule",
+    options: [
+      ["Four stages with percentage and amount", "section"],
+      ["Edit the split for this project", "action"],
+      ["Apply a company-wide split (new projects only)", "action"],
+      ["Confirm with password and notifications", "action"],
+      ["See what is paid against each stage", "section"]
+    ],
+    rules: ["Default 10 / 50 / 35 / 5 on the latest accepted quotation", "A company-wide change needs confirmation, a password and notifications"]
+  },
+  "payment-request": {
+    entry: "Project ▸ Payments ▸ Request",
+    options: [
+      ["Amount due and due date", "section"],
+      ["Send the request on WhatsApp", "action"],
+      ["Copy the UPI details", "action"],
+      ["Mark as sent", "state"]
+    ]
+  },
+  "proof": {
+    entry: "Project ▸ Payments ▸ Proof",
+    options: [
+      ["Upload the proof image from WhatsApp", "action"],
+      ["Attach the amount the client says they paid", "field"],
+      ["Forward to the MD", "action"],
+      ["See the status: with the MD, rejected, confirmed", "state"]
+    ]
+  },
+  "confirm": {
+    entry: "Payments ▸ Awaiting confirmation (MD)",
+    options: [
+      ["Queue of proofs with client, project and stage", "section"],
+      ["Open the proof image full size", "action"],
+      ["Amount field, prefilled and editable", "field"],
+      ["Confirm receipt", "action"],
+      ["Flag or reject with a reason", "action"],
+      ["See the running reconciliation for the project", "section"]
+    ],
+    rules: ["Only the MD confirms; there is no backup approver", "Payment confirmation is never voice-approved", "Every confirmation, flag and rejection is logged"]
+  },
+  "proof-reader": {
+    entry: "Payment confirmation card",
+    options: [
+      ["Suggested amount from the proof image, marked as a suggestion", "section"],
+      ["Accept the suggestion into the amount field", "action"],
+      ["Ignore it", "action"]
+    ],
+    rules: ["Optional and checks nothing", "No screen may imply the software confirmed a payment"]
+  },
+  "payment-reject": {
+    entry: "Payment ▸ Reject",
+    options: [
+      ["Reason field, required", "field"],
+      ["Send the rejection to the department head who owns the project", "action"],
+      ["Tag the people involved", "action"]
+    ],
+    shows: ["Only the tagged person sees the rejection and the related project"],
+    rules: ["For a client payment the owning head is the Design Head", "Work can pass both ways along the chain"]
+  },
+  "payment-resubmit": {
+    entry: "Rejected payment ▸ Resubmit",
+    options: [
+      ["Upload the corrected proof", "action"],
+      ["Send back to the MD", "action"],
+      ["Stage held until the MD confirms", "state"]
+    ]
+  },
+  "receipt": {
+    entry: "Payment ▸ Receipt (client)",
+    options: [
+      ["Receipt with amount received and remaining balance", "section"],
+      ["Download or share", "action"]
+    ],
+    rules: ["Sent automatically on confirmation", "The design partner is told on WhatsApp at the same time"]
+  },
+  "ledger": {
+    entry: "Project ▸ Payments ▸ Ledger",
+    options: [
+      ["Stage by stage: due, paid, balance", "section"],
+      ["Reconciliation against the quotation example", "section"],
+      ["Correction entry linked to the original", "action"]
+    ],
+    rules: ["Money is stored in paise and rounded only at the final step"]
+  },
+  "payment-lock": {
+    entry: "Payment ▸ Correction",
+    options: [
+      ["Locked payment, read-only", "state"],
+      ["New correcting entry with a reason", "action"],
+      ["Notify the MD when a correction touches a payment", "rule"]
+    ],
+    rules: ["A received payment is immutable", "The original stays visible"]
+  },
+
+  "internal-money": { entry: "More ▸ Money (MD)" },
+  "dp-ledger": {
+    entry: "Money ▸ Design partners",
+    options: [
+      ["Per partner: share earned, paid, pending", "section"],
+      ["Pay window breakdown: 10th, 20th, 30th", "section"],
+      ["Open a partner's statement", "action"],
+      ["Mark a share as paid", "action"]
+    ],
+    rules: ["1.5% after the token, 1.5% after 50%, 1% after 35%, 1% at the end"]
+  },
+  "pay-window": {
+    entry: "Money ▸ Pay windows",
+    options: [
+      ["Calendar of the three partner dates and the salary date", "section"],
+      ["Pay off-schedule (MD)", "action"],
+      ["See what falls in each window", "section"]
+    ]
+  },
+  "salary": {
+    entry: "Money ▸ Salary",
+    options: [
+      ["Per person: default amount and visible limit", "section"],
+      ["Change the default", "action"],
+      ["Change the amount for one payment only", "action"],
+      ["Send to the person for approval", "action"]
+    ],
+    rules: ["The receiver approves with a payslip or receipt", "The person sees their limit and the amount paid each time"]
+  },
+  "payslip": {
+    entry: "My pay, or the salary row",
+    options: [
+      ["Payslip or receipt attached", "section"],
+      ["Approve and acknowledge", "action"],
+      ["Query the amount", "action"]
+    ],
+    rules: ["Visible only to the receiver and the MD"]
+  },
+  "reimbursement": {
+    entry: "More ▸ Reimbursements",
+    options: [
+      ["Amount", "field"],
+      ["Region", "field"],
+      ["When it was spent", "field"],
+      ["Attach the receipt", "action"],
+      ["Submit", "action"],
+      ["Approve and pay (MD)", "action"]
+    ],
+    rules: ["Receipts are kept separately"]
+  },
+  "production-expense": {
+    entry: "Expenses (Production Head), or the PM's request",
+    options: [
+      ["Request with amount, vendor and reason", "field"],
+      ["Approve as Production Head", "action"],
+      ["Pay and mark approved (MD)", "action"],
+      ["Acknowledge receipt (PM)", "action"]
+    ],
+    rules: ["Visible only to the PM, the Production Head and the MD", "The same chain applies to PM bills"]
+  },
+  "marketing-spend": {
+    entry: "Spend (Marketing Head)",
+    options: [
+      ["Request with amount, channel and purpose", "field"],
+      ["Status: raised, approved, declined, paid", "state"],
+      ["Approve (MD)", "action"],
+      ["See the reason on a decline", "section"]
+    ]
+  }
+});
+
+</script>
+<script>
+/* Page-level detail, part 3: production, client portal, communication, alerts, people. */
+
+var ENRICH = (typeof window !== "undefined" ? (window.ENRICH = window.ENRICH || {}) : {});
+Object.assign(ENRICH, {
+  "production": { entry: "Production workspace (Production Manager, Production Head)" },
+  "boq": {
+    entry: "Project ▸ BOQ",
+    options: [
+      ["Lines built from the approved quotation", "section"],
+      ["Add a line manually", "action"],
+      ["Edit quantity or rate, logged", "action"],
+      ["See what changed the quotation against the BOQ", "action"],
+      ["Attach the signed quotation for reference", "section"]
+    ],
+    rules: ["The BOQ can change at any time and every change is logged", "Only the PM builds it, once the MD assigns them"]
+  },
+  "materials": {
+    entry: "BOQ ▸ line",
+    options: [
+      ["Quantity", "field"],
+      ["Rate", "field"],
+      ["Payment date", "field"],
+      ["Receiving date", "field"],
+      ["Mark as paid", "action"],
+      ["Mark as received", "action"]
+    ],
+    rules: ["Payment and receiving dates are tracked separately; either can come first"]
+  },
+  "boq-stages": {
+    entry: "BOQ ▸ Stages",
+    options: [
+      ["Buy and receive dates per stage", "field"],
+      ["Filter the BOQ by stage", "action"],
+      ["See what is bought or arrived in each stage", "section"]
+    ]
+  },
+  "inventory": {
+    entry: "Project ▸ Inventory",
+    options: [
+      ["Inventory built from the BOQ", "section"],
+      ["Adjust a quantity with a reason", "action"],
+      ["Share with the Production Head and MD, automatic", "state"]
+    ]
+  },
+  "pm-workspace": {
+    entry: "More ▸ My workspace",
+    options: [
+      ["Site tabs, one per site", "section"],
+      ["General tab across sites", "section"],
+      ["Table builder for custom columns", "action"],
+      ["Crew directory", "action"],
+      ["Starter categories: laminates, plywood and boards, hardware, worktops and backsplash, lighting, adhesives and consumables", "section"]
+    ],
+    rules: ["Each PM keeps a standalone workspace that travels with him"]
+  },
+  "stock": {
+    entry: "Stock (Production Manager)",
+    options: [
+      ["Material payments due this week", "section"],
+      ["Stock by category", "section"],
+      ["Add stock in", "action"],
+      ["Flag a shortfall", "action"]
+    ]
+  },
+  "vendors": {
+    entry: "More ▸ Vendors",
+    options: [
+      ["Vendor list with catalogues and price lists", "section"],
+      ["Add a vendor (Production Head)", "action"],
+      ["Compare rates across vendors", "action"],
+      ["Open a vendor's invoices", "action"]
+    ]
+  },
+  "invoices": {
+    entry: "Project ▸ Invoices, or Vendors ▸ invoices",
+    options: [
+      ["Upload an invoice", "action"],
+      ["Tag it to a project, which gives the vendor an ID", "action"],
+      ["Correct a wrong tag with a reason", "action"],
+      ["See the rate history", "section"]
+    ],
+    rules: ["Each invoice belongs to both the vendor record and the project", "A correction notifies the Production Head; the original stays in the log"]
+  },
+  "deliveries": {
+    entry: "Project ▸ Deliveries",
+    options: [
+      ["Expected deliveries by receiving date", "section"],
+      ["Mark a delivery received", "action"],
+      ["Report a short or damaged delivery", "action"]
+    ]
+  },
+  "schedule": {
+    entry: "Schedule tab",
+    options: [
+      ["This week's deliveries and installations", "section"],
+      ["Set an installation date with the client", "action"],
+      ["Reschedule with a reason", "action"],
+      ["See the double-booking warning on a date", "state"]
+    ]
+  },
+  "crew": {
+    entry: "Crew tab",
+    options: [
+      ["Crew directory with skills and availability", "section"],
+      ["Assign crew to a project and date", "action"],
+      ["See who is on which site today", "section"],
+      ["Open a PM's crew profile (Production Head)", "action"]
+    ],
+    rules: ["Crew assignments and attendance are visible only to the PM who owns that crew"]
+  },
+  "attendance": {
+    entry: "Crew ▸ Attendance",
+    options: [
+      ["Mark present, absent or half day", "action"],
+      ["Day and week view", "section"],
+      ["Export for pay", "action"]
+    ],
+    rules: ["No fixed check-in or check-out times, the company is remote"]
+  },
+  "double-booking": {
+    entry: "Automatic, on assignment",
+    options: [
+      ["Warning naming the crew member or vehicle and the clashing project", "state"],
+      ["Go ahead anyway", "action"],
+      ["Change the date", "action"]
+    ]
+  },
+  "snags": {
+    entry: "None",
+    options: [],
+    rules: ["Handled offline; no screen in this version"]
+  },
+
+  "portal": { entry: "Client sign-in" },
+  "portal-home": {
+    entry: "Project tab",
+    options: [
+      ["Stage with traffic light and word", "section"],
+      ["Days left", "section"],
+      ["Next date and what happens", "section"],
+      ["Payment due with pay or upload proof", "action"],
+      ["Approved files, pinned first", "action"],
+      ["Call the office", "action"]
+    ]
+  },
+  "portal-files": {
+    entry: "Files tab",
+    options: [
+      ["Approved files, pinned first", "section"],
+      ["Download the current version", "action"],
+      ["Open the dated history of an earlier version", "action"],
+      ["See the brief of what changed", "section"]
+    ],
+    rules: ["Old versions are view-only", "Nothing unapproved ever appears"]
+  },
+  "portal-payments": {
+    entry: "Payments tab",
+    options: [
+      ["Amount due with its due date", "section"],
+      ["Pay by UPI", "action"],
+      ["Upload the payment proof", "action"],
+      ["Receipts with the remaining balance", "section"]
+    ],
+    rules: ["No amount is shown without its due date", "Payment is confirmed only by the MD, never by the app"]
+  },
+  "portal-messages": {
+    entry: "Messages tab",
+    options: [
+      ["Conversation with the company number", "section"],
+      ["Project group thread once joined", "section"],
+      ["Join the project group from the invitation", "action"]
+    ],
+    rules: ["Until the client joins the group, messages go to their private number"]
+  },
+  "portal-warranty": {
+    entry: "More ▸ Warranty",
+    options: [
+      ["Warranty status and end date", "section"],
+      ["Raise a claim", "action"],
+      ["Read the written reason for an uncovered claim", "section"]
+    ],
+    rules: ["Ten years from handover, which is the final payment", "The sales representative decides coverage"]
+  },
+  "portal-feedback": {
+    entry: "WhatsApp at project close",
+    options: [
+      ["Feedback request with review links", "section"],
+      ["Open the review link", "action"]
+    ]
+  },
+  "portal-contact": {
+    entry: "More, or the call row on Home",
+    options: [
+      ["Call the office", "action"],
+      ["WhatsApp the office", "action"]
+    ],
+    rules: ["The client is never required to use the portal"]
+  },
+
+  "comms": { entry: "Automatic, plus More ▸ Messages (MD)" },
+  "company-number": {
+    entry: "Settings ▸ WhatsApp",
+    options: [
+      ["See which number carries client messages", "section"],
+      ["See which provider carries which message", "section"]
+    ],
+    rules: ["One number carries all client messages and file deliveries", "Twilio carries the messages; groups use a separate number"]
+  },
+  "project-group": {
+    entry: "Project ▸ WhatsApp group",
+    options: [
+      ["Group status: created, client joined", "state"],
+      ["Send the invitation again", "action"],
+      ["See participants and who added them", "section"]
+    ],
+    rules: ["Created at handover with the representative, design partner, Design Head and company number", "Created through Meta Groups API, messages on Twilio", "Anyone added to the project is added to its group by the software"]
+  },
+  "group-invite": {
+    entry: "WhatsApp, from the company number",
+    options: [
+      ["Invitation link in an approved template", "action"],
+      ["Resend the invitation", "action"]
+    ],
+    rules: ["Participants cannot be added directly per Meta documentation", "The invitation link is the only route in"]
+  },
+  "message-library": {
+    entry: "More ▸ Messages ▸ Library (MD), editable by anyone",
+    options: [
+      ["Eight situations, each with its text", "section"],
+      ["Edit the text", "action"],
+      ["Send for template approval after an edit", "action"],
+      ["See which template a message uses", "section"],
+      ["Preview with a real client filled in", "action"]
+    ],
+    shows: ["First contact, meeting link, meeting reminder, catalogue, testimonial, sample videos, call-time request, group invitation"],
+    rules: ["Client name and project details fill in automatically", "A changed message needs template approval before it is used"]
+  },
+  "one-off-message": {
+    entry: "Lead or client ▸ Message",
+    options: [
+      ["Free-text box, only within 24 hours of the client's last message", "field"],
+      ["Send from the company number", "action"],
+      ["Send from my own WhatsApp, untracked", "action"],
+      ["Blocked state outside the window, template required", "state"]
+    ],
+    rules: ["Manual sends from a personal WhatsApp are free and not tracked"]
+  },
+  "templates": {
+    entry: "More ▸ Messages ▸ Templates",
+    options: [
+      ["List of approved templates with content SID", "section"],
+      ["Approval state per template", "state"],
+      ["Open a template for editing", "action"]
+    ]
+  },
+  "messaging-window": {
+    entry: "Settings ▸ Messaging",
+    options: [
+      ["Window start and end", "field"],
+      ["Behaviour for a retry that falls outside", "field"],
+      ["Save", "action"]
+    ],
+    rules: ["Every message, automatic or manual, sits inside 8 a.m. to 10 p.m.", "A retry outside waits until 8 a.m."]
+  },
+
+  "alerts": { entry: "Settings ▸ Alerts, or the MD's Delivery Problems" },
+  "alert-classes": {
+    entry: "Settings ▸ Alerts ▸ Classes",
+    options: [
+      ["Class list with attempts, gaps and window", "section"],
+      ["Edit a class (MD)", "action"],
+      ["Locked exit notice", "state"]
+    ],
+    rules: ["Exit notice is one attempt and not changeable"]
+  },
+  "alert-retry": {
+    entry: "Settings ▸ Alerts ▸ Retry",
+    options: [
+      ["Gaps per attempt", "field"],
+      ["Jitter plus or minus 20 percent", "field"],
+      ["Window for each class", "field"],
+      ["Save and log the change", "action"]
+    ],
+    rules: ["A read receipt never stops the scheduled second message"]
+  },
+  "delivery-problems": {
+    entry: "Home card, or More ▸ Delivery problems",
+    options: [
+      ["One list, newest first", "section"],
+      ["Filter by alert class", "action"],
+      ["Row detail: recipient, alert, attempts, last reason", "section"],
+      ["Mark as handled, which writes a log entry", "action"]
+    ],
+    rules: ["Only the MD and the named role can mark a problem handled", "Screen is proposed, not yet approved"]
+  },
+  "alert-metric": {
+    entry: "Home ▸ Alerts",
+    options: [
+      ["Delivery share after retries", "section"],
+      ["Open problems still open at week end", "action"]
+    ],
+    rules: ["Counts delivery, not reads"]
+  },
+
+  "people": { entry: "More ▸ People, or the Team tab" },
+  "leave-apply": {
+    entry: "More ▸ Leave ▸ Apply",
+    options: [
+      ["From and to dates", "field"],
+      ["Reason, optional", "field"],
+      ["Who approves, shown read-only", "section"],
+      ["Submit", "action"],
+      ["Cancel a pending request", "action"]
+    ],
+    rules: ["Reps apply to the Sales Head, designers to the Design Head, production to the Production Head, heads to the MD", "The MD does not take leave", "Overlapping leave is not blocked"]
+  },
+  "leave-approve": {
+    entry: "Approvals ▸ Leave",
+    options: [
+      ["Queue of requests with the person and dates", "section"],
+      ["Approve", "action"],
+      ["Reject with a reason", "action"],
+      ["Choose the cover scope on approval", "action"]
+    ]
+  },
+  "cover": {
+    entry: "Leave approval ▸ Cover",
+    options: [
+      ["Everything the person owns", "action"],
+      ["Selected projects and tasks", "action"],
+      ["Crew linked to those projects moves with them", "state"],
+      ["Notify the cover person", "action"]
+    ],
+    rules: ["Crew go with the project and nothing else", "The absent person can view all of his projects at any time"]
+  },
+  "return": {
+    entry: "More ▸ Leave ▸ I am back",
+    options: [
+      ["Mark myself back", "action"],
+      ["Cover person confirms handover of projects and crew", "action"],
+      ["Head is notified", "state"]
+    ]
+  },
+  "directory": {
+    entry: "More ▸ Staff",
+    options: [
+      ["List with role, reporting line, status", "section"],
+      ["Open a person's profile", "action"],
+      ["Filter by department or status", "action"],
+      ["See a person's rating and current load", "section"]
+    ]
+  },
+  "onboard": {
+    entry: "Staff ▸ Add",
+    options: [
+      ["Name, business email, role, reporting line", "field"],
+      ["Default salary and limit", "field"],
+      ["Create the account", "action"],
+      ["Send the first sign-in details", "action"]
+    ]
+  },
+  "salary-settings": {
+    entry: "Staff ▸ person ▸ Pay",
+    options: [
+      ["Default amount", "field"],
+      ["Visible limit", "field"],
+      ["Save, logged", "action"]
+    ]
+  },
+  "performance": {
+    entry: "More ▸ My performance",
+    options: [
+      ["My rating and my weekly count of completed stages", "section"],
+      ["My stage history behind the rating", "action"],
+      ["Team view for a head", "section"]
+    ],
+    rules: ["A delay counts against a person only when it holds a project back"]
+  },
+  "weekly-review": {
+    entry: "More ▸ Reviews (heads, MD)",
+    options: [
+      ["Cards for the team, one per person", "section"],
+      ["Mark reviewed", "action"],
+      ["Add a note", "field"],
+      ["See who is not yet reviewed", "section"]
+    ],
+    rules: ["Monday to Monday; the target is every card reviewed by Monday"]
+  },
+  "leaver": {
+    entry: "Staff ▸ person ▸ Leave the company",
+    options: [
+      ["Reassign open projects first", "action"],
+      ["Download the person's data", "action"],
+      ["Delete the account", "action"],
+      ["Hibernate the account", "action"]
+    ],
+    rules: ["Deleting removes the login only; the name stays as former staff", "Notifications and WhatsApp stop at once, with one final message"]
+  },
+  "hibernated": {
+    entry: "Staff ▸ Inactive",
+    options: [
+      ["List of hibernated and deleted accounts", "section"],
+      ["Request access to one account (head)", "action"],
+      ["Approve or remove access, one person at a time (MD)", "action"]
+    ],
+    rules: ["The head is notified when access is given or removed"]
+  },
+  "access-notice": {
+    entry: "Notifications",
+    options: [
+      ["Notice with who was given access, to what, and by whom", "section"],
+      ["Open the person or project", "action"]
+    ],
+    rules: ["In the app only, never on WhatsApp", "Appears in the activity log"]
+  }
+});
+
+</script>
+<script>
+/* Page-level detail, part 4: marketing, logs, tenant settings, plugins, out of scope. */
+
+var ENRICH = (typeof window !== "undefined" ? (window.ENRICH = window.ENRICH || {}) : {});
+Object.assign(ENRICH, {
+  "marketing": { entry: "Posts, Spend and Brand tabs (Marketing Head)" },
+  "brand-template": {
+    entry: "Brand tab",
+    options: [
+      ["Logo upload", "action"],
+      ["Colours", "field"],
+      ["Fonts", "field"],
+      ["Save a new version", "action"],
+      ["Restore an earlier version", "action"],
+      ["See the version history", "section"]
+    ],
+    rules: ["Every change is kept as a version", "The platform chooses the AI model"]
+  },
+  "posts": {
+    entry: "Posts tab",
+    options: [
+      ["Generate a post from the brand template", "action"],
+      ["Choose channels", "field"],
+      ["Schedule a date and time", "action"],
+      ["Edit copy and media", "action"],
+      ["See comments and replies", "section"],
+      ["Publish or queue", "action"]
+    ]
+  },
+  "post-history": {
+    entry: "Posts ▸ History",
+    options: [
+      ["Published posts with their numbers", "section"],
+      ["Open a post and its funnel", "action"],
+      ["Reuse a post as a draft", "action"]
+    ]
+  },
+  "funnel": {
+    entry: "Posts ▸ Funnel, or Home",
+    options: [
+      ["Funnel per post: leads, meetings, converted, with percentages", "section"],
+      ["Funnel per channel", "section"],
+      ["Change the date range", "field"],
+      ["Open the leads behind a step", "action"]
+    ]
+  },
+  "content-pipeline": {
+    entry: "Posts ▸ Pipeline",
+    options: [
+      ["Stages of content from idea to published", "section"],
+      ["Add my own content", "action"],
+      ["Move an item to the next stage", "action"],
+      ["Hand leads to the Sales Head", "action"]
+    ]
+  },
+  "spend-requests": {
+    entry: "Spend tab",
+    options: [
+      ["Request with amount, channel and purpose", "field"],
+      ["Submit", "action"],
+      ["See status: raised, approved, declined, paid", "state"],
+      ["Approve (MD)", "action"]
+    ]
+  },
+  "project-packages": {
+    entry: "More ▸ Project packages",
+    options: [
+      ["Finished package with final files and the brief", "section"],
+      ["Download", "action"],
+      ["Approve use of a package", "action"]
+    ],
+    rules: ["No client details in a package", "The MD shares access"]
+  },
+
+  "logs": { entry: "More ▸ Activity" },
+  "activity-log": {
+    entry: "More ▸ Activity, or a project's log",
+    options: [
+      ["Append-only list, newest first", "section"],
+      ["Filter by person, object or date", "action"],
+      ["Open an entry with its before and after values", "action"],
+      ["Export", "action"]
+    ],
+    rules: ["Nothing can be edited or deleted", "Each person sees their own; heads see their team; the MD sees all"]
+  },
+  "corrections": {
+    entry: "Log entry ▸ Correct",
+    options: [
+      ["New correcting entry", "action"],
+      ["Reason, optional", "field"],
+      ["Link to the original entry", "state"],
+      ["See both entries side by side", "section"]
+    ],
+    rules: ["The original stays visible", "Nothing is overwritten silently"]
+  },
+  "payment-correction": {
+    entry: "Automatic notice to the MD",
+    options: [
+      ["Notice naming the payment, the correction and who made it", "section"],
+      ["Open the payment", "action"]
+    ],
+    rules: ["The only correction that notifies anyone automatically"]
+  },
+  "log-scope": {
+    entry: "Settings ▸ Log visibility",
+    options: [
+      ["Own actions", "state"],
+      ["Team logs, for a head", "state"],
+      ["Full correction log, for the MD", "state"]
+    ],
+    rules: ["Log integrity target is zero edits or deletes"]
+  },
+
+  "settings": { entry: "More ▸ Settings (MD)" },
+  "set-messaging": {
+    entry: "Settings ▸ Messaging",
+    options: [
+      ["Window start time", "field"],
+      ["Window end time", "field"],
+      ["Pre-token stage timing in hours, inside the window", "field"],
+      ["What happens to a retry outside the window", "field"],
+      ["Save, logged with old and new value", "action"]
+    ],
+    rules: ["Changes apply to new items; running items keep the value they started with"]
+  },
+  "set-retry": {
+    entry: "Settings ▸ Call retry",
+    options: [
+      ["Hours to the follow-up message", "field"],
+      ["Days between the day-one and next-day call", "field"],
+      ["Days before the next pass", "field"],
+      ["Number of passes before the archive", "field"],
+      ["Catalogue, testimonial and video content", "action"],
+      ["Save", "action"]
+    ],
+    rules: ["Return date for an unresponsive lead is the representative's, with no default"]
+  },
+  "set-stalled": {
+    entry: "Settings ▸ Stalled quotes",
+    options: [
+      ["Days of silence before a follow-up", "field"],
+      ["Follow-up rounds", "field"],
+      ["Round after which a new meeting is booked", "field"],
+      ["Round after which the lead is not won", "field"],
+      ["Save", "action"]
+    ]
+  },
+  "set-alerts": {
+    entry: "Settings ▸ Alerts",
+    options: [
+      ["Attempts per class", "field"],
+      ["Gaps per attempt", "field"],
+      ["Jitter", "field"],
+      ["Window per class", "field"],
+      ["Save", "action"]
+    ],
+    rules: ["The exit notice is not changeable"]
+  },
+  "set-whatsapp": {
+    entry: "Settings ▸ WhatsApp and meetings",
+    options: [
+      ["Invitation template", "field"],
+      ["Google Meet link creation on or off", "field"],
+      ["Google Workspace account used", "field"],
+      ["Group number (separate company number, decided)", "section"],
+      ["Direct add of the client to the group, not possible and not changeable", "state"]
+    ],
+    rules: ["The invitation link is the only join route and cannot be changed"]
+  },
+  "set-payments": {
+    entry: "Settings ▸ Payments and pay",
+    options: [
+      ["Client split percentages, four stages", "field"],
+      ["Design partner share per client payment", "field"],
+      ["Salary pay date", "field"],
+      ["Partner pay dates", "field"],
+      ["Salary limit per person", "action"],
+      ["Save; a company-wide change needs a password and notifications", "action"]
+    ]
+  },
+  "set-stages": {
+    entry: "Settings ▸ Stages",
+    options: [
+      ["Design days from the token", "field"],
+      ["Production days from the 50%", "field"],
+      ["Installation days from the 35%", "field"],
+      ["Yellow threshold", "field"],
+      ["Red threshold", "field"],
+      ["Performance cycle", "field"],
+      ["Save", "action"]
+    ]
+  },
+  "set-warranty": {
+    entry: "Settings ▸ Warranty and sessions",
+    options: [
+      ["Warranty period in years", "field"],
+      ["Sign-in session window in days", "field"],
+      ["End any session now", "action"],
+      ["Save", "action"]
+    ]
+  },
+  "set-dashboards": {
+    entry: "Settings ▸ Dashboards",
+    options: [
+      ["Default charts per role", "section"],
+      ["Add or remove a default chart for a role", "action"],
+      ["Preview as that role", "action"],
+      ["Save", "action"]
+    ]
+  },
+  "set-targets": {
+    entry: "Settings ▸ Targets",
+    options: [
+      ["Ten metrics with their target values", "field"],
+      ["Save", "action"],
+      ["Restore the starting targets", "action"]
+    ]
+  },
+  "set-messages": {
+    entry: "Settings ▸ Pre-written messages",
+    options: [
+      ["Library of eight situations", "section"],
+      ["Edit text", "action"],
+      ["Approval state per message", "state"],
+      ["Send for template approval", "action"]
+    ]
+  },
+  "set-history": {
+    entry: "Settings ▸ Change history",
+    options: [
+      ["List of changes: who, when, old value, new value, reason", "section"],
+      ["Filter by setting", "action"],
+      ["Open a change", "action"]
+    ],
+    rules: ["Every change is logged with its reason"]
+  },
+  "set-guard": {
+    entry: "Any company-wide change",
+    options: [
+      ["Confirmation step", "action"],
+      ["Password entry", "field"],
+      ["Notifications to affected people", "state"],
+      ["Applies to new projects only", "rule"]
+    ],
+    rules: ["The spec names the rules but not the screen"]
+  },
+
+  "plugins": { entry: "Settings ▸ Plugins (MD)" },
+  "call-agent": {
+    entry: "Settings ▸ Plugins",
+    options: [
+      ["Switch on or off for the firm", "action"],
+      ["Choose staff who may use it", "field"],
+      ["Review pending actions it proposes", "action"],
+      ["Confirm or dismiss a pending action", "action"]
+    ],
+    rules: ["Staff only, never clients", "It never approves, rejects, pays or deletes", "Payment confirmation is never voice-approved"]
+  },
+  "overseer": {
+    entry: "More ▸ Ask (MD)",
+    options: [
+      ["Ask a question across the business", "field"],
+      ["Read the answer with its sources", "section"],
+      ["Switch on or off", "action"]
+    ],
+    rules: ["Respects the same access rules as the person asking", "Off by default unless a firm opts in"]
+  },
+  "transcript-plugin": {
+    entry: "Settings ▸ Plugins",
+    options: [
+      ["Choose a provider: Meetbook or similar", "field"],
+      ["Switch on or off", "action"]
+    ],
+    rules: ["Held until the architecture decision"]
+  },
+
+  "not-in-v1": { entry: "None" },
+  "bank-match": { entry: "None", options: [], rules: ["Out of scope for this version"] },
+  "office-expense": { entry: "None", options: [], rules: ["Out of scope; reimbursements exist, office spend does not"] },
+  "blacklist": { entry: "None", options: [], rules: ["Handled outside the platform"] },
+  "history-request": { entry: "None", options: [], rules: ["Removed in v8"] },
+  "platform-admin": {
+    entry: "None",
+    options: [],
+    rules: ["No document defines a tenant or platform console. Recorded as a gap, not a design."]
+  }
+});
+
+</script>
+<script>
+/* First Light site map — rendering. Plain DOM, no dependencies. */
+
+const ROLE_BY_ID = Object.fromEntries(ROLES.map(r => [r.id, r]));
+const NODES = {};
+let selectedId = null;
+const expanded = new Set();
+let roleFilter = null;
+let query = "";
+
+/* ---- model ---- */
+function walk(nodes, parent) {
+  nodes.forEach(n => {
+    NODES[n.id] = n;
+    n.parent = parent ? parent.id : null;
+    n.depth = parent ? parent.depth + 1 : 0;
+    if (n.children) walk(n.children, n);
+  });
+}
+walk(TREE, null);
+
+function screenCount(node) {
+  if (!node.children) return 0;
+  return node.children.length;
+}
+function allDescendants(node) {
+  if (!node.children) return [];
+  return node.children.flatMap(c => [c].concat(allDescendants(c)));
+}
+function roleNames(ids) {
+  return ids.map(id => (ROLE_BY_ID[id] ? ROLE_BY_ID[id].name : id));
+}
+function matchesRole(node) {
+  if (!roleFilter) return true;
+  if (node.roles.includes(roleFilter)) return true;
+  if (node.roles.includes("all")) return true;
+  if (roleFilter !== "cl" && node.roles.includes("st") && roleFilter !== "all") return true;
+  return false;
+}
+function nodeMatchesQuery(node) {
+  if (!query) return true;
+  const hay = (node.title + " " + (node.desc || "") + " " + (node.src || "")).toLowerCase();
+  return hay.includes(query);
+}
+function subtreeVisible(node) {
+  if (nodeMatchesQuery(node) && matchesRole(node)) return true;
+  return (node.children || []).some(subtreeVisible);
+}
+
+/* ---- status + kind ---- */
+const STATUS = {
+  spec: { label: "Specified", cls: "st-spec", title: "The documents define this screen or rule." },
+  part: { label: "Partly specified", cls: "st-part", title: "Defined in outline, or two documents disagree about it." },
+  open: { label: "Open", cls: "st-open", title: "Named but not decided. Do not build yet." },
+  oos: { label: "Out of scope", cls: "st-oos", title: "Deliberately not in First Light." }
+};
+
+/* ---- tree ---- */
+function renderTree() {
+  const host = document.getElementById("tree");
+  host.innerHTML = "";
+  TREE.forEach(mod => {
+    if (!subtreeVisible(mod)) return;
+    host.appendChild(renderModule(mod));
+  });
+  const visible = TREE.filter(subtreeVisible).length;
+  document.getElementById("tree-count").textContent =
+    (query || roleFilter) ? visible + " of " + TREE.length + " areas" : TREE.length + " areas";
+}
+
+function renderModule(mod) {
+  const wrap = document.createElement("div");
+  wrap.className = "mod";
+  const isOpen = expanded.has(mod.id) || (query && subtreeVisible(mod));
+
+  const head = document.createElement("div");
+  head.className = "mod-head" + (selectedId === mod.id ? " sel" : "") + (matchesRole(mod) && nodeMatchesQuery(mod) ? "" : " dim");
+  head.dataset.id = mod.id;
+  head.innerHTML =
+    '<button class="caret" aria-label="Toggle" aria-expanded="' + isOpen + '">' +
+      '<svg viewBox="0 0 12 12" width="10" height="10"><path d="M3 1.5 L8.5 6 L3 10.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>' +
+    "</button>" +
+    '<span class="mod-title">' + esc(mod.title) + "</span>" +
+    '<span class="count">' + screenCount(mod) + "</span>" +
+    '<span class="dot ' + STATUS[mod.status].cls + '" title="' + STATUS[mod.status].label + '"></span>';
+
+  head.querySelector(".caret").addEventListener("click", e => {
+    e.stopPropagation();
+    if (expanded.has(mod.id)) expanded.delete(mod.id); else expanded.add(mod.id);
+    renderTree();
+  });
+  head.addEventListener("click", () => select(mod.id));
+
+  wrap.appendChild(head);
+
+  if (isOpen && mod.children) {
+    const ul = document.createElement("div");
+    ul.className = "kids";
+    mod.children.filter(subtreeVisible).forEach(ch => {
+      const row = document.createElement("div");
+      row.className = "kid" + (selectedId === ch.id ? " sel" : "") + (matchesRole(ch) && nodeMatchesQuery(ch) ? "" : " dim");
+      row.innerHTML = '<span class="kdot"></span><span class="ktitle">' + esc(ch.title) + "</span>";
+      row.addEventListener("click", () => select(ch.id));
+      ul.appendChild(row);
+    });
+    wrap.appendChild(ul);
+  }
+  return wrap;
+}
+
+/* ---- detail ---- */
+function select(id) {
+  selectedId = id;
+  const n = NODES[id];
+  if (n && n.parent) expanded.add(n.parent);
+  renderTree();
+  renderDetail();
+  document.getElementById("detail").scrollTop = 0;
+  writeHash("map", id);
+}
+
+function cardHTML(c) {
+  const cst = STATUS[c.status];
+  return '<button class="card" data-goto="' + c.id + '">' +
+    '<div class="card-top"><span class="card-title">' + esc(c.title) + "</span>" +
+    '<span class="pill ' + cst.cls + '">' + cst.label + "</span></div>" +
+    '<div class="card-desc">' + esc(c.desc || "") + "</div>" +
+    '<div class="card-foot"><span class="src">' + esc(c.src || "") + "</span>" +
+    '<span class="who">' + esc(roleNames(c.roles).join(" · ")) + "</span></div>" +
+  "</button>";
+}
+
+function renderDetail() {
+  const n = NODES[selectedId] || NODES["entry"];
+  const st = STATUS[n.status];
+  const trail = [{ id: null, title: "Site map" }];
+  let p = n.parent ? NODES[n.parent] : null;
+  while (p) { trail.push({ id: p.id, title: p.title }); p = p.parent ? NODES[p.parent] : null; }
+  const crumb = trail.map((t, i) =>
+    (i ? '<span class="sep">/</span>' : "") +
+    (t.id ? '<button class="seg" data-goto="' + t.id + '">' + esc(t.title) + "</button>" : '<span class="seg-root">' + esc(t.title) + "</span>")
+  ).join("");
+
+  const roleChips = n.roles.map(r => {
+    const ro = ROLE_BY_ID[r];
+    return '<span class="chip" title="' + esc(ro ? ro.note : "") + '">' + esc(ro ? ro.name : r) + "</span>";
+  }).join("");
+
+  let kids = "";
+  if (n.children) {
+    kids = '<div class="sec-label">' + n.children.length + " screens in this area</div><div class=\"grid\">" + n.children.map(cardHTML).join("") + "</div>";
+  } else if (n.parent) {
+    const sibs = NODES[n.parent].children.filter(c => c.id !== n.id);
+    if (sibs.length) {
+      kids = '<div class="sec-label">Also in ' + esc(NODES[n.parent].title) + "</div><div class=\"grid\">" + sibs.map(cardHTML).join("") + "</div>";
+    }
+  }
+
+  const KIND = { action: "Action", field: "Field", section: "Section", state: "State", rule: "Rule" };
+  const en = (window.ENRICH || {})[n.id] || {};
+  const block = (title, items, cls, withKind) => items.length
+    ? '<div class="opt-block"><div class="opt-title">' + title + '<span class="cnt">' + items.length + "</span></div>" +
+      '<ul class="list ' + cls + '">' + items.map(it => {
+        const text = Array.isArray(it) ? it[0] : it;
+        const kind = Array.isArray(it) ? (KIND[it[1]] || "Action") : "";
+        return '<li><span class="t">' + esc(text) + "</span>" +
+          (withKind ? '<span class="k">' + esc(kind) + "</span>" : "") + "</li>";
+      }).join("") + "</ul></div>"
+    : "";
+
+  const extras =
+    block("Options", en.options || [], "options", true) +
+    block("Shows", en.shows || [], "shows", false) +
+    block("Rules", en.rules || [], "rules", false);
+
+  document.getElementById("detail").innerHTML =
+    '<div class="crumb">' + crumb + "</div>" +
+    '<div class="detail-head">' +
+      "<h2>" + esc(n.title) + "</h2>" +
+      '<span class="pill ' + st.cls + '" title="' + st.title + '">' + st.label + "</span>" +
+    "</div>" +
+    '<div class="meta-row"><span class="srcline"><strong>Source</strong> ' + esc(n.src || "—") + "</span>" +
+      (en.entry ? '<span class="srcline"><strong>Entry</strong> ' + esc(en.entry) + "</span>" : "") + "</div>" +
+    '<div class="meta-row roles"><strong>Who</strong> ' + roleChips + "</div>" +
+    '<p class="lede">' + esc(n.desc || "") + "</p>" +
+    (n.note ? '<div class="note"><span class="note-mark">!</span><div>' + esc(n.note) + "</div></div>" : "") +
+    extras +
+    kids +
+    (n.roles.includes("cl") && !n.roles.includes("st") ? '<div class="callout">Client-facing surface. Anything shown here must be approved first, and never carries internal cost or vendor detail.</div>' : "");
+
+  document.getElementById("detail").querySelectorAll("[data-goto]").forEach(el => {
+    el.addEventListener("click", () => select(el.dataset.goto));
+  });
+}
+
+/* ---- matrix ---- */
+function renderMatrix() {
+  const cols = ROLES.filter(r => ["md", "sh", "rep", "dh", "dp", "ph", "pm", "mh", "cl"].includes(r.id));
+  const exceptions = { "projects": { sh: "req" } };
+  let html = '<table class="matrix"><thead><tr><th class="corner">Area</th>' +
+    cols.map(c => '<th title="' + esc(c.note) + '">' + esc(c.name) + "</th>").join("") + "</tr></thead><tbody>";
+
+  TREE.forEach(mod => {
+    const ex = exceptions[mod.id] || {};
+    html += '<tr><th class="rowhead">' + esc(mod.title) + "</th>" +
+      cols.map(c => {
+        const base = mod.roles.includes(c.id) || mod.roles.includes("all") ||
+          (c.id !== "cl" && mod.roles.includes("st"));
+        if (ex[c.id] === "req") return '<td class="req" title="Access by request only">req</td>';
+        if (c.id === "md") return '<td class="yes" title="The MD sees everything">●</td>';
+        if (c.id === "cl" && mod.roles.includes("st") && !mod.roles.includes("cl")) return '<td class="no">—</td>';
+        if (base) return '<td class="yes">●</td>';
+        return '<td class="no">·</td>';
+      }).join("") + "</tr>";
+  });
+  html += "</tbody></table>";
+  document.getElementById("matrix-host").innerHTML = html;
+}
+
+/* ---- journey ---- */
+function renderJourney() {
+  document.getElementById("journey-host").innerHTML = JOURNEY.map(s => (
+    '<div class="step">' +
+      '<div class="rail">' +
+        '<div class="step-n">' + String(s.n).padStart(2, "0") + "</div>" +
+        '<div class="rail-line"></div>' +
+      "</div>" +
+      '<div class="step-body">' +
+        '<div class="step-title">' + esc(s.title) + "</div>" +
+        '<div class="step-gate">' + esc(s.gate) + "</div>" +
+        '<div class="step-desc">' + esc(s.desc) + "</div>" +
+        '<div class="step-foot"><span>' + esc(s.who) + '</span><span class="src">' + esc(s.src) + "</span></div>" +
+      "</div>" +
+    "</div>"
+  )).join("");
+}
+
+/* ---- gaps ---- */
+function renderGaps() {
+  const label = { high: "Structural", medium: "Major", low: "Minor" };
+  document.getElementById("gaps-host").innerHTML = GAPS.map(g => (
+    '<article class="gap gap-' + g.sev + '">' +
+      '<div class="gap-top"><span class="sev">' + label[g.sev] + "</span>" +
+        '<h3>' + esc(g.title) + "</h3></div>" +
+      '<div class="gap-where">' + esc(g.where) + "</div>" +
+      '<p>' + esc(g.body) + "</p>" +
+      '<div class="gap-impact">' + esc(g.impact) + "</div>" +
+    "</article>"
+  )).join("");
+}
+
+/* ---- controls ---- */
+function buildRoleChips() {
+  const host = document.getElementById("role-filter");
+  host.innerHTML = '<button class="rf on" data-role="">All roles</button>' +
+    ROLES.filter(r => r.id !== "st" && r.id !== "all").map(r =>
+      '<button class="rf" data-role="' + r.id + '" title="' + esc(r.note) + '">' + esc(r.name) + "</button>"
+    ).join("");
+  host.querySelectorAll(".rf").forEach(b => {
+    b.addEventListener("click", () => {
+      host.querySelectorAll(".rf").forEach(x => x.classList.remove("on"));
+      b.classList.add("on");
+      roleFilter = b.dataset.role || null;
+      renderTree();
+      updateFilterNote();
+    });
+  });
+}
+
+function updateFilterNote() {
+  const el = document.getElementById("filter-note");
+  if (!roleFilter) { el.textContent = ""; el.classList.remove("show"); return; }
+  const r = ROLE_BY_ID[roleFilter];
+  el.textContent = "Showing what " + r.name + " can reach. Dimmed rows are other roles' screens.";
+  el.classList.add("show");
+}
+
+function setTab(name, silent) {
+  document.querySelectorAll(".tab").forEach(t => t.classList.toggle("on", t.dataset.tab === name));
+  document.querySelectorAll(".view").forEach(v => v.classList.toggle("on", v.id === "view-" + name));
+  if (name === "matrix") renderMatrix();
+  if (name === "journey") renderJourney();
+  if (name === "gaps") renderGaps();
+  if (!silent) writeHash(name, name === "map" ? selectedId : null);
+}
+
+function writeHash(tab, id) {
+  const h = "#/" + tab + (id && tab === "map" ? "/" + id : "");
+  if (location.hash !== h) history.replaceState(null, "", h);
+}
+
+function readHash() {
+  const parts = (location.hash || "").replace(/^#\/?/, "").split("/").filter(Boolean);
+  const tab = ["map", "matrix", "journey", "gaps"].includes(parts[0]) ? parts[0] : "map";
+  setTab(tab, true);
+  if (tab === "map") select(parts[1] && NODES[parts[1]] ? parts[1] : "entry");
+}
+
+function esc(s) {
+  return String(s == null ? "" : s).replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+}
+
+/* ---- boot ---- */
+document.addEventListener("DOMContentLoaded", () => {
+  TREE.forEach(m => expanded.add(m.id));
+  const total = TREE.reduce((a, m) => a + (m.children ? m.children.length : 0), 0);
+  document.getElementById("stat-areas").textContent = TREE.length;
+  document.getElementById("stat-screens").textContent = total;
+
+  buildRoleChips();
+  renderTree();
+  renderMatrix();
+  renderJourney();
+  renderGaps();
+  readHash();
+  window.addEventListener("hashchange", readHash);
+
+  document.querySelectorAll(".tab").forEach(t => t.addEventListener("click", () => setTab(t.dataset.tab)));
+
+  const search = document.getElementById("search");
+  search.addEventListener("input", () => {
+    query = search.value.trim().toLowerCase();
+    renderTree();
+    if (query) {
+      const first = Object.values(NODES).find(n => nodeMatchesQuery(n) && (n.parent || !n.children));
+      if (first && (first.title.toLowerCase().includes(query) || (first.desc || "").toLowerCase().includes(query))) select(first.id);
+    }
+  });
+  document.addEventListener("keydown", e => {
+    if (e.key === "/" && document.activeElement !== search) { e.preventDefault(); search.focus(); }
+    if (e.key === "Escape" && document.activeElement === search) { search.value = ""; query = ""; renderTree(); search.blur(); }
+  });
+  document.getElementById("expand-all").addEventListener("click", () => {
+    TREE.forEach(m => expanded.add(m.id)); renderTree();
+  });
+  document.getElementById("collapse-all").addEventListener("click", () => {
+    expanded.clear(); renderTree();
+  });
+});
+
+</script>
+</body>
+</html>

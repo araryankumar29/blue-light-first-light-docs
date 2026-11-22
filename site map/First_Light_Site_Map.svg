@@ -1,0 +1,688 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2314" height="1974" viewBox="0 0 2314 1974" font-family="Poppins, Inter, Segoe UI, sans-serif">
+<defs><filter id="sh" x="-8%" y="-8%" width="116%" height="120%"><feDropShadow dx="0" dy="2" stdDeviation="6" flood-color="#3A3158" flood-opacity="0.07"/></filter></defs>
+<rect width="2314" height="1974" fill="#F6F2E8"/>
+<text x="72" y="96" font-family="Playfair Display, Georgia, serif" font-size="46" font-weight="600" fill="#3A3158">First Light — site map</text>
+<text x="72" y="128" font-size="17" fill="#6E6784">Staff app and client portal · 20 areas · 156 screens · 9 roles</text>
+<text x="72" y="152" font-size="14" fill="#7B7686">Derived from the 14-document set, 22 November 2026. Each row carries the source section.</text>
+<circle cx="77" cy="186" r="5" fill="#1F7A4D"/>
+<text x="89" y="191" font-size="13" fill="#6E6784">Specified</text>
+<circle cx="179.39999999999998" cy="186" r="5" fill="#8A5A00"/>
+<text x="191.39999999999998" y="191" font-size="13" fill="#6E6784">Partly specified</text>
+<circle cx="335" cy="186" r="5" fill="#B42331"/>
+<text x="347" y="191" font-size="13" fill="#6E6784">Open</text>
+<circle cx="399.4" cy="186" r="5" fill="#7B7686"/>
+<text x="411.4" y="191" font-size="13" fill="#6E6784">Out of scope</text>
+<line x1="72" y1="194" x2="2242" y2="194" stroke="#D8CBEE" stroke-width="2"/>
+<line x1="86" y1="194" x2="86" y2="210" stroke="#D8CBEE" stroke-width="2"/>
+<line x1="636" y1="194" x2="636" y2="210" stroke="#D8CBEE" stroke-width="2"/>
+<line x1="1186" y1="194" x2="1186" y2="210" stroke="#D8CBEE" stroke-width="2"/>
+<line x1="1736" y1="194" x2="1736" y2="210" stroke="#D8CBEE" stroke-width="2"/>
+<rect x="72" y="220" width="520" height="190" rx="14" fill="#FFFFFF" stroke="#E6DFD0" filter="url(#sh)"/>
+<rect x="72" y="232" width="4" height="166" rx="2" fill="#8A5A00"/>
+<text x="94" y="254" font-family="Playfair Display, Georgia, serif" font-size="21" font-weight="600" fill="#3A3158">Entry &amp; access</text>
+<text x="94" y="274" font-size="11.5" fill="#7B7686">5 screens · Spec §22 · App Flow §1</text>
+<circle cx="98" cy="297" r="3.4" fill="#1F7A4D"/>
+<text x="110" y="300" font-size="12.5" fill="#3A3158">Staff sign-in</text>
+<text x="574" y="300" font-size="9.5" fill="#7B7686" text-anchor="end">staff</text>
+<rect x="84" y="310" width="496" height="22" rx="5" fill="#FCFAF4"/>
+<circle cx="98" cy="319" r="3.4" fill="#1F7A4D"/>
+<text x="110" y="322" font-size="12.5" fill="#3A3158">Client sign-in — mobile + OTP</text>
+<text x="574" y="322" font-size="9.5" fill="#7B7686" text-anchor="end">CL</text>
+<circle cx="98" cy="341" r="3.4" fill="#1F7A4D"/>
+<text x="110" y="344" font-size="12.5" fill="#3A3158">Session &amp; device control</text>
+<text x="574" y="344" font-size="9.5" fill="#7B7686" text-anchor="end">MD staff</text>
+<rect x="84" y="354" width="496" height="22" rx="5" fill="#FCFAF4"/>
+<circle cx="98" cy="363" r="3.4" fill="#8A5A00"/>
+<text x="110" y="366" font-size="12.5" fill="#3A3158">Notifications (in-app)</text>
+<text x="574" y="366" font-size="9.5" fill="#7B7686" text-anchor="end">all</text>
+<circle cx="98" cy="385" r="3.4" fill="#1F7A4D"/>
+<text x="110" y="388" font-size="12.5" fill="#3A3158">Account states</text>
+<text x="574" y="388" font-size="9.5" fill="#7B7686" text-anchor="end">MD</text>
+<line x1="86" y1="410" x2="86" y2="440" stroke="#D8CBEE" stroke-width="2"/>
+<rect x="72" y="440" width="520" height="322" rx="14" fill="#FFFFFF" stroke="#E6DFD0" filter="url(#sh)"/>
+<rect x="72" y="452" width="4" height="298" rx="2" fill="#1F7A4D"/>
+<text x="94" y="474" font-family="Playfair Display, Georgia, serif" font-size="21" font-weight="600" fill="#3A3158">Home &amp; dashboards</text>
+<text x="94" y="494" font-size="11.5" fill="#7B7686">11 screens · Spec §15, §26.7 · UI/UX §4</text>
+<circle cx="98" cy="517" r="3.4" fill="#1F7A4D"/>
+<text x="110" y="520" font-size="12.5" fill="#3A3158">MD home</text>
+<text x="574" y="520" font-size="9.5" fill="#7B7686" text-anchor="end">MD</text>
+<rect x="84" y="530" width="496" height="22" rx="5" fill="#FCFAF4"/>
+<circle cx="98" cy="539" r="3.4" fill="#1F7A4D"/>
+<text x="110" y="542" font-size="12.5" fill="#3A3158">Sales Head home</text>
+<text x="574" y="542" font-size="9.5" fill="#7B7686" text-anchor="end">SH</text>
+<circle cx="98" cy="561" r="3.4" fill="#1F7A4D"/>
+<text x="110" y="564" font-size="12.5" fill="#3A3158">Sales rep home</text>
+<text x="574" y="564" font-size="9.5" fill="#7B7686" text-anchor="end">SR</text>
+<rect x="84" y="574" width="496" height="22" rx="5" fill="#FCFAF4"/>
+<circle cx="98" cy="583" r="3.4" fill="#1F7A4D"/>
+<text x="110" y="586" font-size="12.5" fill="#3A3158">Design Head home</text>
+<text x="574" y="586" font-size="9.5" fill="#7B7686" text-anchor="end">DH</text>
+<circle cx="98" cy="605" r="3.4" fill="#1F7A4D"/>
+<text x="110" y="608" font-size="12.5" fill="#3A3158">Design partner home</text>
+<text x="574" y="608" font-size="9.5" fill="#7B7686" text-anchor="end">DP</text>
+<rect x="84" y="618" width="496" height="22" rx="5" fill="#FCFAF4"/>
+<circle cx="98" cy="627" r="3.4" fill="#1F7A4D"/>
+<text x="110" y="630" font-size="12.5" fill="#3A3158">Production Head home</text>
+<text x="574" y="630" font-size="9.5" fill="#7B7686" text-anchor="end">PH</text>
+<circle cx="98" cy="649" r="3.4" fill="#1F7A4D"/>
+<text x="110" y="652" font-size="12.5" fill="#3A3158">Production Manager home</text>
+<text x="574" y="652" font-size="9.5" fill="#7B7686" text-anchor="end">PM</text>
+<rect x="84" y="662" width="496" height="22" rx="5" fill="#FCFAF4"/>
+<circle cx="98" cy="671" r="3.4" fill="#1F7A4D"/>
+<text x="110" y="674" font-size="12.5" fill="#3A3158">Marketing Head home</text>
+<text x="574" y="674" font-size="9.5" fill="#7B7686" text-anchor="end">MH</text>
+<circle cx="98" cy="693" r="3.4" fill="#1F7A4D"/>
+<text x="110" y="696" font-size="12.5" fill="#3A3158">Client home</text>
+<text x="574" y="696" font-size="9.5" fill="#7B7686" text-anchor="end">CL</text>
+<rect x="84" y="706" width="496" height="22" rx="5" fill="#FCFAF4"/>
+<circle cx="98" cy="715" r="3.4" fill="#1F7A4D"/>
+<text x="110" y="718" font-size="12.5" fill="#3A3158">Choose my charts</text>
+<text x="574" y="718" font-size="9.5" fill="#7B7686" text-anchor="end">all</text>
+<circle cx="98" cy="737" r="3.4" fill="#1F7A4D"/>
+<text x="110" y="740" font-size="12.5" fill="#3A3158">Targets &amp; success metrics</text>
+<text x="574" y="740" font-size="9.5" fill="#7B7686" text-anchor="end">MD</text>
+<line x1="86" y1="762" x2="86" y2="792" stroke="#D8CBEE" stroke-width="2"/>
+<rect x="72" y="792" width="520" height="322" rx="14" fill="#FFFFFF" stroke="#E6DFD0" filter="url(#sh)"/>
+<rect x="72" y="804" width="4" height="298" rx="2" fill="#1F7A4D"/>
+<text x="94" y="826" font-family="Playfair Display, Georgia, serif" font-size="21" font-weight="600" fill="#3A3158">Leads &amp; groups</text>
+<text x="94" y="846" font-size="11.5" fill="#7B7686">11 screens · Spec §3, §6, §26.2 · App Flow §2</text>
+<circle cx="98" cy="869" r="3.4" fill="#1F7A4D"/>
+<text x="110" y="872" font-size="12.5" fill="#3A3158">Lead intake</text>
+<text x="574" y="872" font-size="9.5" fill="#7B7686" text-anchor="end">SH</text>
+<rect x="84" y="882" width="496" height="22" rx="5" fill="#FCFAF4"/>
+<circle cx="98" cy="891" r="3.4" fill="#1F7A4D"/>
+<text x="110" y="894" font-size="12.5" fill="#3A3158">Lead inbox — every lead</text>
+<text x="574" y="894" font-size="9.5" fill="#7B7686" text-anchor="end">SH</text>
+<circle cx="98" cy="913" r="3.4" fill="#1F7A4D"/>
+<text x="110" y="916" font-size="12.5" fill="#3A3158">Lead card</text>
+<text x="574" y="916" font-size="9.5" fill="#7B7686" text-anchor="end">SH SR DH DP</text>
+<rect x="84" y="926" width="496" height="22" rx="5" fill="#FCFAF4"/>
+<circle cx="98" cy="935" r="3.4" fill="#1F7A4D"/>
+<text x="110" y="938" font-size="12.5" fill="#3A3158">Lead groups — AI grouping</text>
+<text x="574" y="938" font-size="9.5" fill="#7B7686" text-anchor="end">SH</text>
+<circle cx="98" cy="957" r="3.4" fill="#1F7A4D"/>
+<text x="110" y="960" font-size="12.5" fill="#3A3158">Group builder — the eight options</text>
+<text x="574" y="960" font-size="9.5" fill="#7B7686" text-anchor="end">SH</text>
+<rect x="84" y="970" width="496" height="22" rx="5" fill="#FCFAF4"/>
+<circle cx="98" cy="979" r="3.4" fill="#1F7A4D"/>
+<text x="110" y="982" font-size="12.5" fill="#3A3158">Assign a group</text>
+<text x="574" y="982" font-size="9.5" fill="#7B7686" text-anchor="end">SH</text>
+<circle cx="98" cy="1001" r="3.4" fill="#1F7A4D"/>
+<text x="110" y="1004" font-size="12.5" fill="#3A3158">Pull · reassign · hold · regroup</text>
+<text x="574" y="1004" font-size="9.5" fill="#7B7686" text-anchor="end">SH</text>
+<rect x="84" y="1014" width="496" height="22" rx="5" fill="#FCFAF4"/>
+<circle cx="98" cy="1023" r="3.4" fill="#1F7A4D"/>
+<text x="110" y="1026" font-size="12.5" fill="#3A3158">Closed-leads file</text>
+<text x="574" y="1026" font-size="9.5" fill="#7B7686" text-anchor="end">SH MD DH DP SR</text>
+<circle cx="98" cy="1045" r="3.4" fill="#1F7A4D"/>
+<text x="110" y="1048" font-size="12.5" fill="#3A3158">Unresponsive archive</text>
+<text x="574" y="1048" font-size="9.5" fill="#7B7686" text-anchor="end">SR SH MD</text>
+<rect x="84" y="1058" width="496" height="22" rx="5" fill="#FCFAF4"/>
+<circle cx="98" cy="1067" r="3.4" fill="#1F7A4D"/>
+<text x="110" y="1070" font-size="12.5" fill="#3A3158">Stalled quotes</text>
+<text x="574" y="1070" font-size="9.5" fill="#7B7686" text-anchor="end">SR SH</text>
+<circle cx="98" cy="1089" r="3.4" fill="#1F7A4D"/>
+<text x="110" y="1092" font-size="12.5" fill="#3A3158">Cold archive</text>
+<text x="574" y="1092" font-size="9.5" fill="#7B7686" text-anchor="end">SH</text>
+<line x1="86" y1="1114" x2="86" y2="1144" stroke="#D8CBEE" stroke-width="2"/>
+<rect x="72" y="1144" width="520" height="234" rx="14" fill="#FFFFFF" stroke="#E6DFD0" filter="url(#sh)"/>
+<rect x="72" y="1156" width="4" height="210" rx="2" fill="#8A5A00"/>
+<text x="94" y="1178" font-family="Playfair Display, Georgia, serif" font-size="21" font-weight="600" fill="#3A3158">Calls &amp; retry</text>
+<text x="94" y="1198" font-size="11.5" fill="#7B7686">7 screens · Spec §4, §26.2 · App Flow §3</text>
+<circle cx="98" cy="1221" r="3.4" fill="#1F7A4D"/>
+<text x="110" y="1224" font-size="12.5" fill="#3A3158">Today&#39;s calls</text>
+<text x="574" y="1224" font-size="9.5" fill="#7B7686" text-anchor="end">SR</text>
+<rect x="84" y="1234" width="496" height="22" rx="5" fill="#FCFAF4"/>
+<circle cx="98" cy="1243" r="3.4" fill="#1F7A4D"/>
+<text x="110" y="1246" font-size="12.5" fill="#3A3158">Call card</text>
+<text x="574" y="1246" font-size="9.5" fill="#7B7686" text-anchor="end">SR</text>
+<circle cx="98" cy="1265" r="3.4" fill="#8A5A00"/>
+<text x="110" y="1268" font-size="12.5" fill="#3A3158">Call outcome form</text>
+<text x="574" y="1268" font-size="9.5" fill="#7B7686" text-anchor="end">SR</text>
+<rect x="84" y="1278" width="496" height="22" rx="5" fill="#FCFAF4"/>
+<circle cx="98" cy="1287" r="3.4" fill="#1F7A4D"/>
+<text x="110" y="1290" font-size="12.5" fill="#3A3158">Meeting set</text>
+<text x="574" y="1290" font-size="9.5" fill="#7B7686" text-anchor="end">SR</text>
+<circle cx="98" cy="1309" r="3.4" fill="#1F7A4D"/>
+<text x="110" y="1312" font-size="12.5" fill="#3A3158">Retry cycle view</text>
+<text x="574" y="1312" font-size="9.5" fill="#7B7686" text-anchor="end">SR SH</text>
+<rect x="84" y="1322" width="496" height="22" rx="5" fill="#FCFAF4"/>
+<circle cx="98" cy="1331" r="3.4" fill="#1F7A4D"/>
+<text x="110" y="1334" font-size="12.5" fill="#3A3158">Call-back and delay</text>
+<text x="574" y="1334" font-size="9.5" fill="#7B7686" text-anchor="end">SR</text>
+<circle cx="98" cy="1353" r="3.4" fill="#1F7A4D"/>
+<text x="110" y="1356" font-size="12.5" fill="#3A3158">Call &amp; contact history</text>
+<text x="574" y="1356" font-size="9.5" fill="#7B7686" text-anchor="end">SR SH DP</text>
+<line x1="86" y1="1378" x2="86" y2="1408" stroke="#D8CBEE" stroke-width="2"/>
+<rect x="72" y="1408" width="520" height="212" rx="14" fill="#FFFFFF" stroke="#E6DFD0" filter="url(#sh)"/>
+<rect x="72" y="1420" width="4" height="188" rx="2" fill="#B42331"/>
+<text x="94" y="1442" font-family="Playfair Display, Georgia, serif" font-size="21" font-weight="600" fill="#3A3158">Meetings</text>
+<text x="94" y="1462" font-size="11.5" fill="#7B7686">6 screens · Spec §26.11 · App Flow §17</text>
+<circle cx="98" cy="1485" r="3.4" fill="#1F7A4D"/>
+<text x="110" y="1488" font-size="12.5" fill="#3A3158">Meeting booking</text>
+<text x="574" y="1488" font-size="9.5" fill="#7B7686" text-anchor="end">SR DP</text>
+<rect x="84" y="1498" width="496" height="22" rx="5" fill="#FCFAF4"/>
+<circle cx="98" cy="1507" r="3.4" fill="#1F7A4D"/>
+<text x="110" y="1510" font-size="12.5" fill="#3A3158">Design partner accept / reject</text>
+<text x="574" y="1510" font-size="9.5" fill="#7B7686" text-anchor="end">DP</text>
+<circle cx="98" cy="1529" r="3.4" fill="#1F7A4D"/>
+<text x="110" y="1532" font-size="12.5" fill="#3A3158">Google Meet link</text>
+<text x="574" y="1532" font-size="9.5" fill="#7B7686" text-anchor="end">all</text>
+<rect x="84" y="1542" width="496" height="22" rx="5" fill="#FCFAF4"/>
+<circle cx="98" cy="1551" r="3.4" fill="#1F7A4D"/>
+<text x="110" y="1554" font-size="12.5" fill="#3A3158">Meeting reminder</text>
+<text x="574" y="1554" font-size="9.5" fill="#7B7686" text-anchor="end">SR CL</text>
+<circle cx="98" cy="1573" r="3.4" fill="#B42331"/>
+<text x="110" y="1576" font-size="12.5" fill="#3A3158">Transcript &amp; notes</text>
+<text x="574" y="1576" font-size="9.5" fill="#7B7686" text-anchor="end">SR DP DH</text>
+<rect x="84" y="1586" width="496" height="22" rx="5" fill="#FCFAF4"/>
+<circle cx="98" cy="1595" r="3.4" fill="#1F7A4D"/>
+<text x="110" y="1598" font-size="12.5" fill="#3A3158">Meetings this week</text>
+<text x="574" y="1598" font-size="9.5" fill="#7B7686" text-anchor="end">DH DP SR</text>
+<rect x="622" y="220" width="520" height="300" rx="14" fill="#FFFFFF" stroke="#E6DFD0" filter="url(#sh)"/>
+<rect x="622" y="232" width="4" height="276" rx="2" fill="#1F7A4D"/>
+<text x="644" y="254" font-family="Playfair Display, Georgia, serif" font-size="21" font-weight="600" fill="#3A3158">Projects</text>
+<text x="644" y="274" font-size="11.5" fill="#7B7686">10 screens · Spec §7, §23 · App Flow §5, §9</text>
+<circle cx="648" cy="297" r="3.4" fill="#1F7A4D"/>
+<text x="660" y="300" font-size="12.5" fill="#3A3158">Temporary project (pre-token)</text>
+<text x="1124" y="300" font-size="9.5" fill="#7B7686" text-anchor="end">DP DH MD</text>
+<rect x="634" y="310" width="496" height="22" rx="5" fill="#FCFAF4"/>
+<circle cx="648" cy="319" r="3.4" fill="#1F7A4D"/>
+<text x="660" y="322" font-size="12.5" fill="#3A3158">Token &amp; handover</text>
+<text x="1124" y="322" font-size="9.5" fill="#7B7686" text-anchor="end">DP MD CL</text>
+<circle cx="648" cy="341" r="3.4" fill="#1F7A4D"/>
+<text x="660" y="344" font-size="12.5" fill="#3A3158">Project team</text>
+<text x="1124" y="344" font-size="9.5" fill="#7B7686" text-anchor="end">MD DH DP</text>
+<rect x="634" y="354" width="496" height="22" rx="5" fill="#FCFAF4"/>
+<circle cx="648" cy="363" r="3.4" fill="#1F7A4D"/>
+<text x="660" y="366" font-size="12.5" fill="#3A3158">Project home / stage board</text>
+<text x="1124" y="366" font-size="9.5" fill="#7B7686" text-anchor="end">MD DH DP PM PH SR CL</text>
+<circle cx="648" cy="385" r="3.4" fill="#1F7A4D"/>
+<text x="660" y="388" font-size="12.5" fill="#3A3158">Stage timeline</text>
+<text x="1124" y="388" font-size="9.5" fill="#7B7686" text-anchor="end">all</text>
+<rect x="634" y="398" width="496" height="22" rx="5" fill="#FCFAF4"/>
+<circle cx="648" cy="407" r="3.4" fill="#1F7A4D"/>
+<text x="660" y="410" font-size="12.5" fill="#3A3158">Access request</text>
+<text x="1124" y="410" font-size="9.5" fill="#7B7686" text-anchor="end">SH MD DH DP SR</text>
+<circle cx="648" cy="429" r="3.4" fill="#1F7A4D"/>
+<text x="660" y="432" font-size="12.5" fill="#3A3158">Paused by client</text>
+<text x="1124" y="432" font-size="9.5" fill="#7B7686" text-anchor="end">all</text>
+<rect x="634" y="442" width="496" height="22" rx="5" fill="#FCFAF4"/>
+<circle cx="648" cy="451" r="3.4" fill="#1F7A4D"/>
+<text x="660" y="454" font-size="12.5" fill="#3A3158">Closed project</text>
+<text x="1124" y="454" font-size="9.5" fill="#7B7686" text-anchor="end">MD</text>
+<circle cx="648" cy="473" r="3.4" fill="#1F7A4D"/>
+<text x="660" y="476" font-size="12.5" fill="#3A3158">Project rating</text>
+<text x="1124" y="476" font-size="9.5" fill="#7B7686" text-anchor="end">MD DH PH SH</text>
+<rect x="634" y="486" width="496" height="22" rx="5" fill="#FCFAF4"/>
+<circle cx="648" cy="495" r="3.4" fill="#1F7A4D"/>
+<text x="660" y="498" font-size="12.5" fill="#3A3158">Client ID &amp; returning clients</text>
+<text x="1124" y="498" font-size="9.5" fill="#7B7686" text-anchor="end">SH MD DH</text>
+<line x1="636" y1="520" x2="636" y2="550" stroke="#D8CBEE" stroke-width="2"/>
+<rect x="622" y="550" width="520" height="256" rx="14" fill="#FFFFFF" stroke="#E6DFD0" filter="url(#sh)"/>
+<rect x="622" y="562" width="4" height="232" rx="2" fill="#1F7A4D"/>
+<text x="644" y="584" font-family="Playfair Display, Georgia, serif" font-size="21" font-weight="600" fill="#3A3158">Design &amp; approvals</text>
+<text x="644" y="604" font-size="11.5" fill="#7B7686">8 screens · Spec §8, §21.1, §23.3 · App Flow §6</text>
+<circle cx="648" cy="627" r="3.4" fill="#1F7A4D"/>
+<text x="660" y="630" font-size="12.5" fill="#3A3158">Upload renders &amp; quotations</text>
+<text x="1124" y="630" font-size="9.5" fill="#7B7686" text-anchor="end">DP</text>
+<rect x="634" y="640" width="496" height="22" rx="5" fill="#FCFAF4"/>
+<circle cx="648" cy="649" r="3.4" fill="#1F7A4D"/>
+<text x="660" y="652" font-size="12.5" fill="#3A3158">Design Head approval queue</text>
+<text x="1124" y="652" font-size="9.5" fill="#7B7686" text-anchor="end">DH</text>
+<circle cx="648" cy="671" r="3.4" fill="#1F7A4D"/>
+<text x="660" y="674" font-size="12.5" fill="#3A3158">Technical files</text>
+<text x="1124" y="674" font-size="9.5" fill="#7B7686" text-anchor="end">PM DH</text>
+<rect x="634" y="684" width="496" height="22" rx="5" fill="#FCFAF4"/>
+<circle cx="648" cy="693" r="3.4" fill="#1F7A4D"/>
+<text x="660" y="696" font-size="12.5" fill="#3A3158">Version history &amp; brief of change</text>
+<text x="1124" y="696" font-size="9.5" fill="#7B7686" text-anchor="end">all</text>
+<circle cx="648" cy="715" r="3.4" fill="#1F7A4D"/>
+<text x="660" y="718" font-size="12.5" fill="#3A3158">Pinned files</text>
+<text x="1124" y="718" font-size="9.5" fill="#7B7686" text-anchor="end">DP CL</text>
+<rect x="634" y="728" width="496" height="22" rx="5" fill="#FCFAF4"/>
+<circle cx="648" cy="737" r="3.4" fill="#1F7A4D"/>
+<text x="660" y="740" font-size="12.5" fill="#3A3158">Approve on the client&#39;s behalf</text>
+<text x="1124" y="740" font-size="9.5" fill="#7B7686" text-anchor="end">DP</text>
+<circle cx="648" cy="759" r="3.4" fill="#1F7A4D"/>
+<text x="660" y="762" font-size="12.5" fill="#3A3158">Client-requested changes &amp; add-ons</text>
+<text x="1124" y="762" font-size="9.5" fill="#7B7686" text-anchor="end">DP DH</text>
+<rect x="634" y="772" width="496" height="22" rx="5" fill="#FCFAF4"/>
+<circle cx="648" cy="781" r="3.4" fill="#1F7A4D"/>
+<text x="660" y="784" font-size="12.5" fill="#3A3158">Rejected versions</text>
+<text x="1124" y="784" font-size="9.5" fill="#7B7686" text-anchor="end">DH DP MD</text>
+<line x1="636" y1="806" x2="636" y2="836" stroke="#D8CBEE" stroke-width="2"/>
+<rect x="622" y="836" width="520" height="190" rx="14" fill="#FFFFFF" stroke="#E6DFD0" filter="url(#sh)"/>
+<rect x="622" y="848" width="4" height="166" rx="2" fill="#1F7A4D"/>
+<text x="644" y="870" font-family="Playfair Display, Georgia, serif" font-size="21" font-weight="600" fill="#3A3158">Quotations</text>
+<text x="644" y="890" font-size="11.5" fill="#7B7686">5 screens · Spec §9</text>
+<circle cx="648" cy="913" r="3.4" fill="#1F7A4D"/>
+<text x="660" y="916" font-size="12.5" fill="#3A3158">Estimate</text>
+<text x="1124" y="916" font-size="9.5" fill="#7B7686" text-anchor="end">DP DH</text>
+<rect x="634" y="926" width="496" height="22" rx="5" fill="#FCFAF4"/>
+<circle cx="648" cy="935" r="3.4" fill="#1F7A4D"/>
+<text x="660" y="938" font-size="12.5" fill="#3A3158">Revision</text>
+<text x="1124" y="938" font-size="9.5" fill="#7B7686" text-anchor="end">DP</text>
+<circle cx="648" cy="957" r="3.4" fill="#1F7A4D"/>
+<text x="660" y="960" font-size="12.5" fill="#3A3158">Approved quotation</text>
+<text x="1124" y="960" font-size="9.5" fill="#7B7686" text-anchor="end">DP DH MD</text>
+<rect x="634" y="970" width="496" height="22" rx="5" fill="#FCFAF4"/>
+<circle cx="648" cy="979" r="3.4" fill="#1F7A4D"/>
+<text x="660" y="982" font-size="12.5" fill="#3A3158">Signed quotation</text>
+<text x="1124" y="982" font-size="9.5" fill="#7B7686" text-anchor="end">PM MD</text>
+<circle cx="648" cy="1001" r="3.4" fill="#1F7A4D"/>
+<text x="660" y="1004" font-size="12.5" fill="#3A3158">Calculator quotation</text>
+<text x="1124" y="1004" font-size="9.5" fill="#7B7686" text-anchor="end">SH SR</text>
+<line x1="636" y1="1026" x2="636" y2="1056" stroke="#D8CBEE" stroke-width="2"/>
+<rect x="622" y="1056" width="520" height="300" rx="14" fill="#FFFFFF" stroke="#E6DFD0" filter="url(#sh)"/>
+<rect x="622" y="1068" width="4" height="276" rx="2" fill="#8A5A00"/>
+<text x="644" y="1090" font-family="Playfair Display, Georgia, serif" font-size="21" font-weight="600" fill="#3A3158">Client payments</text>
+<text x="644" y="1110" font-size="11.5" fill="#7B7686">10 screens · Spec §9, §23.5, §23.7, §26.1 · App Flow §7</text>
+<circle cx="648" cy="1133" r="3.4" fill="#1F7A4D"/>
+<text x="660" y="1136" font-size="12.5" fill="#3A3158">Payment schedule</text>
+<text x="1124" y="1136" font-size="9.5" fill="#7B7686" text-anchor="end">MD DP CL</text>
+<rect x="634" y="1146" width="496" height="22" rx="5" fill="#FCFAF4"/>
+<circle cx="648" cy="1155" r="3.4" fill="#1F7A4D"/>
+<text x="660" y="1158" font-size="12.5" fill="#3A3158">Payment request to client</text>
+<text x="1124" y="1158" font-size="9.5" fill="#7B7686" text-anchor="end">DP CL</text>
+<circle cx="648" cy="1177" r="3.4" fill="#1F7A4D"/>
+<text x="660" y="1180" font-size="12.5" fill="#3A3158">Proof upload</text>
+<text x="1124" y="1180" font-size="9.5" fill="#7B7686" text-anchor="end">CL DP</text>
+<rect x="634" y="1190" width="496" height="22" rx="5" fill="#FCFAF4"/>
+<circle cx="648" cy="1199" r="3.4" fill="#1F7A4D"/>
+<text x="660" y="1202" font-size="12.5" fill="#3A3158">MD confirmation queue</text>
+<text x="1124" y="1202" font-size="9.5" fill="#7B7686" text-anchor="end">MD</text>
+<circle cx="648" cy="1221" r="3.4" fill="#8A5A00"/>
+<text x="660" y="1224" font-size="12.5" fill="#3A3158">Optional proof reader</text>
+<text x="1124" y="1224" font-size="9.5" fill="#7B7686" text-anchor="end">MD</text>
+<rect x="634" y="1234" width="496" height="22" rx="5" fill="#FCFAF4"/>
+<circle cx="648" cy="1243" r="3.4" fill="#1F7A4D"/>
+<text x="660" y="1246" font-size="12.5" fill="#3A3158">Reject with reason</text>
+<text x="1124" y="1246" font-size="9.5" fill="#7B7686" text-anchor="end">MD DH</text>
+<circle cx="648" cy="1265" r="3.4" fill="#1F7A4D"/>
+<text x="660" y="1268" font-size="12.5" fill="#3A3158">Resubmission</text>
+<text x="1124" y="1268" font-size="9.5" fill="#7B7686" text-anchor="end">CL DP MD</text>
+<rect x="634" y="1278" width="496" height="22" rx="5" fill="#FCFAF4"/>
+<circle cx="648" cy="1287" r="3.4" fill="#1F7A4D"/>
+<text x="660" y="1290" font-size="12.5" fill="#3A3158">Automatic receipt</text>
+<text x="1124" y="1290" font-size="9.5" fill="#7B7686" text-anchor="end">CL</text>
+<circle cx="648" cy="1309" r="3.4" fill="#1F7A4D"/>
+<text x="660" y="1312" font-size="12.5" fill="#3A3158">Ledger &amp; reconciliation</text>
+<text x="1124" y="1312" font-size="9.5" fill="#7B7686" text-anchor="end">MD DP</text>
+<rect x="634" y="1322" width="496" height="22" rx="5" fill="#FCFAF4"/>
+<circle cx="648" cy="1331" r="3.4" fill="#1F7A4D"/>
+<text x="660" y="1334" font-size="12.5" fill="#3A3158">Locked payments &amp; corrections</text>
+<text x="1124" y="1334" font-size="9.5" fill="#7B7686" text-anchor="end">MD</text>
+<line x1="636" y1="1356" x2="636" y2="1386" stroke="#D8CBEE" stroke-width="2"/>
+<rect x="622" y="1386" width="520" height="234" rx="14" fill="#FFFFFF" stroke="#E6DFD0" filter="url(#sh)"/>
+<rect x="622" y="1398" width="4" height="210" rx="2" fill="#1F7A4D"/>
+<text x="644" y="1420" font-family="Playfair Display, Georgia, serif" font-size="21" font-weight="600" fill="#3A3158">Internal money</text>
+<text x="644" y="1440" font-size="11.5" fill="#7B7686">7 screens · Spec §9, §14 · App Flow §13</text>
+<circle cx="648" cy="1463" r="3.4" fill="#1F7A4D"/>
+<text x="660" y="1466" font-size="12.5" fill="#3A3158">Design partner ledger &amp; 5% share</text>
+<text x="1124" y="1466" font-size="9.5" fill="#7B7686" text-anchor="end">DP MD</text>
+<rect x="634" y="1476" width="496" height="22" rx="5" fill="#FCFAF4"/>
+<circle cx="648" cy="1485" r="3.4" fill="#1F7A4D"/>
+<text x="660" y="1488" font-size="12.5" fill="#3A3158">Pay windows</text>
+<text x="1124" y="1488" font-size="9.5" fill="#7B7686" text-anchor="end">MD DP</text>
+<circle cx="648" cy="1507" r="3.4" fill="#1F7A4D"/>
+<text x="660" y="1510" font-size="12.5" fill="#3A3158">Salary — default, limit, per-payment</text>
+<text x="1124" y="1510" font-size="9.5" fill="#7B7686" text-anchor="end">MD</text>
+<rect x="634" y="1520" width="496" height="22" rx="5" fill="#FCFAF4"/>
+<circle cx="648" cy="1529" r="3.4" fill="#1F7A4D"/>
+<text x="660" y="1532" font-size="12.5" fill="#3A3158">Payslip approval</text>
+<text x="1124" y="1532" font-size="9.5" fill="#7B7686" text-anchor="end">MD staff</text>
+<circle cx="648" cy="1551" r="3.4" fill="#1F7A4D"/>
+<text x="660" y="1554" font-size="12.5" fill="#3A3158">Reimbursements</text>
+<text x="1124" y="1554" font-size="9.5" fill="#7B7686" text-anchor="end">staff MD</text>
+<rect x="634" y="1564" width="496" height="22" rx="5" fill="#FCFAF4"/>
+<circle cx="648" cy="1573" r="3.4" fill="#1F7A4D"/>
+<text x="660" y="1576" font-size="12.5" fill="#3A3158">Production expenses</text>
+<text x="1124" y="1576" font-size="9.5" fill="#7B7686" text-anchor="end">PM PH MD</text>
+<circle cx="648" cy="1595" r="3.4" fill="#1F7A4D"/>
+<text x="660" y="1598" font-size="12.5" fill="#3A3158">Marketing spend</text>
+<text x="1124" y="1598" font-size="9.5" fill="#7B7686" text-anchor="end">MH MD</text>
+<rect x="1172" y="220" width="520" height="388" rx="14" fill="#FFFFFF" stroke="#E6DFD0" filter="url(#sh)"/>
+<rect x="1172" y="232" width="4" height="364" rx="2" fill="#7B7686"/>
+<text x="1194" y="254" font-family="Playfair Display, Georgia, serif" font-size="21" font-weight="600" fill="#3A3158">Production &amp; inventory</text>
+<text x="1194" y="274" font-size="11.5" fill="#7B7686">14 screens · Spec §10, §13, §21.3 · App Flow §8</text>
+<circle cx="1198" cy="297" r="3.4" fill="#1F7A4D"/>
+<text x="1210" y="300" font-size="12.5" fill="#3A3158">BOQ builder</text>
+<text x="1674" y="300" font-size="9.5" fill="#7B7686" text-anchor="end">PM</text>
+<rect x="1184" y="310" width="496" height="22" rx="5" fill="#FCFAF4"/>
+<circle cx="1198" cy="319" r="3.4" fill="#1F7A4D"/>
+<text x="1210" y="322" font-size="12.5" fill="#3A3158">Material lines</text>
+<text x="1674" y="322" font-size="9.5" fill="#7B7686" text-anchor="end">PM</text>
+<circle cx="1198" cy="341" r="3.4" fill="#1F7A4D"/>
+<text x="1210" y="344" font-size="12.5" fill="#3A3158">Staged purchases</text>
+<text x="1674" y="344" font-size="9.5" fill="#7B7686" text-anchor="end">PM</text>
+<rect x="1184" y="354" width="496" height="22" rx="5" fill="#FCFAF4"/>
+<circle cx="1198" cy="363" r="3.4" fill="#1F7A4D"/>
+<text x="1210" y="366" font-size="12.5" fill="#3A3158">Project inventory</text>
+<text x="1674" y="366" font-size="9.5" fill="#7B7686" text-anchor="end">PM PH MD</text>
+<circle cx="1198" cy="385" r="3.4" fill="#1F7A4D"/>
+<text x="1210" y="388" font-size="12.5" fill="#3A3158">PM workspace</text>
+<text x="1674" y="388" font-size="9.5" fill="#7B7686" text-anchor="end">PM</text>
+<rect x="1184" y="398" width="496" height="22" rx="5" fill="#FCFAF4"/>
+<circle cx="1198" cy="407" r="3.4" fill="#1F7A4D"/>
+<text x="1210" y="410" font-size="12.5" fill="#3A3158">Stock &amp; material payments due</text>
+<text x="1674" y="410" font-size="9.5" fill="#7B7686" text-anchor="end">PM</text>
+<circle cx="1198" cy="429" r="3.4" fill="#1F7A4D"/>
+<text x="1210" y="432" font-size="12.5" fill="#3A3158">Vendor list &amp; catalogues</text>
+<text x="1674" y="432" font-size="9.5" fill="#7B7686" text-anchor="end">PM PH</text>
+<rect x="1184" y="442" width="496" height="22" rx="5" fill="#FCFAF4"/>
+<circle cx="1198" cy="451" r="3.4" fill="#1F7A4D"/>
+<text x="1210" y="454" font-size="12.5" fill="#3A3158">Vendor invoices</text>
+<text x="1674" y="454" font-size="9.5" fill="#7B7686" text-anchor="end">PM PH</text>
+<circle cx="1198" cy="473" r="3.4" fill="#1F7A4D"/>
+<text x="1210" y="476" font-size="12.5" fill="#3A3158">Deliveries &amp; receiving</text>
+<text x="1674" y="476" font-size="9.5" fill="#7B7686" text-anchor="end">PM</text>
+<rect x="1184" y="486" width="496" height="22" rx="5" fill="#FCFAF4"/>
+<circle cx="1198" cy="495" r="3.4" fill="#1F7A4D"/>
+<text x="1210" y="498" font-size="12.5" fill="#3A3158">Delivery &amp; installation schedule</text>
+<text x="1674" y="498" font-size="9.5" fill="#7B7686" text-anchor="end">PM PH</text>
+<circle cx="1198" cy="517" r="3.4" fill="#1F7A4D"/>
+<text x="1210" y="520" font-size="12.5" fill="#3A3158">Crew directory &amp; assignments</text>
+<text x="1674" y="520" font-size="9.5" fill="#7B7686" text-anchor="end">PM PH</text>
+<rect x="1184" y="530" width="496" height="22" rx="5" fill="#FCFAF4"/>
+<circle cx="1198" cy="539" r="3.4" fill="#1F7A4D"/>
+<text x="1210" y="542" font-size="12.5" fill="#3A3158">Crew attendance</text>
+<text x="1674" y="542" font-size="9.5" fill="#7B7686" text-anchor="end">PM PH</text>
+<circle cx="1198" cy="561" r="3.4" fill="#1F7A4D"/>
+<text x="1210" y="564" font-size="12.5" fill="#3A3158">Double-booking warning</text>
+<text x="1674" y="564" font-size="9.5" fill="#7B7686" text-anchor="end">PM</text>
+<rect x="1184" y="574" width="496" height="22" rx="5" fill="#FCFAF4"/>
+<circle cx="1198" cy="583" r="3.4" fill="#7B7686"/>
+<text x="1210" y="586" font-size="12.5" fill="#3A3158">Snags &amp; quality checks</text>
+<text x="1674" y="586" font-size="9.5" fill="#7B7686" text-anchor="end">PM</text>
+<line x1="1186" y1="608" x2="1186" y2="638" stroke="#D8CBEE" stroke-width="2"/>
+<rect x="1172" y="638" width="520" height="234" rx="14" fill="#FFFFFF" stroke="#E6DFD0" filter="url(#sh)"/>
+<rect x="1172" y="650" width="4" height="210" rx="2" fill="#1F7A4D"/>
+<text x="1194" y="672" font-family="Playfair Display, Georgia, serif" font-size="21" font-weight="600" fill="#3A3158">Client portal</text>
+<text x="1194" y="692" font-size="11.5" fill="#7B7686">7 screens · Spec §21.1, §23.2 · Mobile §7</text>
+<circle cx="1198" cy="715" r="3.4" fill="#1F7A4D"/>
+<text x="1210" y="718" font-size="12.5" fill="#3A3158">Project home</text>
+<text x="1674" y="718" font-size="9.5" fill="#7B7686" text-anchor="end">CL</text>
+<rect x="1184" y="728" width="496" height="22" rx="5" fill="#FCFAF4"/>
+<circle cx="1198" cy="737" r="3.4" fill="#1F7A4D"/>
+<text x="1210" y="740" font-size="12.5" fill="#3A3158">Files</text>
+<text x="1674" y="740" font-size="9.5" fill="#7B7686" text-anchor="end">CL</text>
+<circle cx="1198" cy="759" r="3.4" fill="#1F7A4D"/>
+<text x="1210" y="762" font-size="12.5" fill="#3A3158">Payments &amp; receipts</text>
+<text x="1674" y="762" font-size="9.5" fill="#7B7686" text-anchor="end">CL</text>
+<rect x="1184" y="772" width="496" height="22" rx="5" fill="#FCFAF4"/>
+<circle cx="1198" cy="781" r="3.4" fill="#1F7A4D"/>
+<text x="1210" y="784" font-size="12.5" fill="#3A3158">Messages</text>
+<text x="1674" y="784" font-size="9.5" fill="#7B7686" text-anchor="end">CL</text>
+<circle cx="1198" cy="803" r="3.4" fill="#1F7A4D"/>
+<text x="1210" y="806" font-size="12.5" fill="#3A3158">Warranty status</text>
+<text x="1674" y="806" font-size="9.5" fill="#7B7686" text-anchor="end">CL</text>
+<rect x="1184" y="816" width="496" height="22" rx="5" fill="#FCFAF4"/>
+<circle cx="1198" cy="825" r="3.4" fill="#1F7A4D"/>
+<text x="1210" y="828" font-size="12.5" fill="#3A3158">Feedback at close</text>
+<text x="1674" y="828" font-size="9.5" fill="#7B7686" text-anchor="end">CL</text>
+<circle cx="1198" cy="847" r="3.4" fill="#1F7A4D"/>
+<text x="1210" y="850" font-size="12.5" fill="#3A3158">Contact the office</text>
+<text x="1674" y="850" font-size="9.5" fill="#7B7686" text-anchor="end">CL</text>
+<line x1="1186" y1="872" x2="1186" y2="902" stroke="#D8CBEE" stroke-width="2"/>
+<rect x="1172" y="902" width="520" height="234" rx="14" fill="#FFFFFF" stroke="#E6DFD0" filter="url(#sh)"/>
+<rect x="1172" y="914" width="4" height="210" rx="2" fill="#1F7A4D"/>
+<text x="1194" y="936" font-family="Playfair Display, Georgia, serif" font-size="21" font-weight="600" fill="#3A3158">Communication</text>
+<text x="1194" y="956" font-size="11.5" fill="#7B7686">7 screens · Spec §26.4, §26.8, §26.12, §26.14 · App Flow §17, §18</text>
+<circle cx="1198" cy="979" r="3.4" fill="#1F7A4D"/>
+<text x="1210" y="982" font-size="12.5" fill="#3A3158">Company WhatsApp number</text>
+<text x="1674" y="982" font-size="9.5" fill="#7B7686" text-anchor="end">all</text>
+<rect x="1184" y="992" width="496" height="22" rx="5" fill="#FCFAF4"/>
+<circle cx="1198" cy="1001" r="3.4" fill="#1F7A4D"/>
+<text x="1210" y="1004" font-size="12.5" fill="#3A3158">Project WhatsApp group</text>
+<text x="1674" y="1004" font-size="9.5" fill="#7B7686" text-anchor="end">all</text>
+<circle cx="1198" cy="1023" r="3.4" fill="#1F7A4D"/>
+<text x="1210" y="1026" font-size="12.5" fill="#3A3158">Group invitation</text>
+<text x="1674" y="1026" font-size="9.5" fill="#7B7686" text-anchor="end">CL</text>
+<rect x="1184" y="1036" width="496" height="22" rx="5" fill="#FCFAF4"/>
+<circle cx="1198" cy="1045" r="3.4" fill="#1F7A4D"/>
+<text x="1210" y="1048" font-size="12.5" fill="#3A3158">Pre-written message library</text>
+<text x="1674" y="1048" font-size="9.5" fill="#7B7686" text-anchor="end">MD staff</text>
+<circle cx="1198" cy="1067" r="3.4" fill="#1F7A4D"/>
+<text x="1210" y="1070" font-size="12.5" fill="#3A3158">One-off messages</text>
+<text x="1674" y="1070" font-size="9.5" fill="#7B7686" text-anchor="end">MD staff</text>
+<rect x="1184" y="1080" width="496" height="22" rx="5" fill="#FCFAF4"/>
+<circle cx="1198" cy="1089" r="3.4" fill="#1F7A4D"/>
+<text x="1210" y="1092" font-size="12.5" fill="#3A3158">Templates &amp; content SIDs</text>
+<text x="1674" y="1092" font-size="9.5" fill="#7B7686" text-anchor="end">MD</text>
+<circle cx="1198" cy="1111" r="3.4" fill="#1F7A4D"/>
+<text x="1210" y="1114" font-size="12.5" fill="#3A3158">8 a.m. to 10 p.m. window</text>
+<text x="1674" y="1114" font-size="9.5" fill="#7B7686" text-anchor="end">MD</text>
+<line x1="1186" y1="1136" x2="1186" y2="1166" stroke="#D8CBEE" stroke-width="2"/>
+<rect x="1172" y="1166" width="520" height="168" rx="14" fill="#FFFFFF" stroke="#E6DFD0" filter="url(#sh)"/>
+<rect x="1172" y="1178" width="4" height="144" rx="2" fill="#B42331"/>
+<text x="1194" y="1200" font-family="Playfair Display, Georgia, serif" font-size="21" font-weight="600" fill="#3A3158">Alerts &amp; delivery</text>
+<text x="1194" y="1220" font-size="11.5" fill="#7B7686">4 screens · Spec §12, §26.3 · Architecture d7, d8</text>
+<circle cx="1198" cy="1243" r="3.4" fill="#1F7A4D"/>
+<text x="1210" y="1246" font-size="12.5" fill="#3A3158">Alert classes</text>
+<text x="1674" y="1246" font-size="9.5" fill="#7B7686" text-anchor="end">MD</text>
+<rect x="1184" y="1256" width="496" height="22" rx="5" fill="#FCFAF4"/>
+<circle cx="1198" cy="1265" r="3.4" fill="#1F7A4D"/>
+<text x="1210" y="1268" font-size="12.5" fill="#3A3158">Retry schedule</text>
+<text x="1674" y="1268" font-size="9.5" fill="#7B7686" text-anchor="end">MD</text>
+<circle cx="1198" cy="1287" r="3.4" fill="#B42331"/>
+<text x="1210" y="1290" font-size="12.5" fill="#3A3158">Delivery Problems list</text>
+<text x="1674" y="1290" font-size="9.5" fill="#7B7686" text-anchor="end">MD DH PH</text>
+<rect x="1184" y="1300" width="496" height="22" rx="5" fill="#FCFAF4"/>
+<circle cx="1198" cy="1309" r="3.4" fill="#1F7A4D"/>
+<text x="1210" y="1312" font-size="12.5" fill="#3A3158">Alert delivery metric</text>
+<text x="1674" y="1312" font-size="9.5" fill="#7B7686" text-anchor="end">MD</text>
+<line x1="1186" y1="1334" x2="1186" y2="1364" stroke="#D8CBEE" stroke-width="2"/>
+<rect x="1172" y="1364" width="520" height="344" rx="14" fill="#FFFFFF" stroke="#E6DFD0" filter="url(#sh)"/>
+<rect x="1172" y="1376" width="4" height="320" rx="2" fill="#1F7A4D"/>
+<text x="1194" y="1398" font-family="Playfair Display, Georgia, serif" font-size="21" font-weight="600" fill="#3A3158">People, leave &amp; performance</text>
+<text x="1194" y="1418" font-size="11.5" fill="#7B7686">12 screens · Spec §13, §14, §24 · App Flow §12, §14</text>
+<circle cx="1198" cy="1441" r="3.4" fill="#1F7A4D"/>
+<text x="1210" y="1444" font-size="12.5" fill="#3A3158">Apply for leave</text>
+<text x="1674" y="1444" font-size="9.5" fill="#7B7686" text-anchor="end">staff</text>
+<rect x="1184" y="1454" width="496" height="22" rx="5" fill="#FCFAF4"/>
+<circle cx="1198" cy="1463" r="3.4" fill="#1F7A4D"/>
+<text x="1210" y="1466" font-size="12.5" fill="#3A3158">Leave approvals</text>
+<text x="1674" y="1466" font-size="9.5" fill="#7B7686" text-anchor="end">MD SH DH PH</text>
+<circle cx="1198" cy="1485" r="3.4" fill="#1F7A4D"/>
+<text x="1210" y="1488" font-size="12.5" fill="#3A3158">Cover scope</text>
+<text x="1674" y="1488" font-size="9.5" fill="#7B7686" text-anchor="end">MD SH DH PH</text>
+<rect x="1184" y="1498" width="496" height="22" rx="5" fill="#FCFAF4"/>
+<circle cx="1198" cy="1507" r="3.4" fill="#1F7A4D"/>
+<text x="1210" y="1510" font-size="12.5" fill="#3A3158">Return &amp; handover</text>
+<text x="1674" y="1510" font-size="9.5" fill="#7B7686" text-anchor="end">staff MD</text>
+<circle cx="1198" cy="1529" r="3.4" fill="#1F7A4D"/>
+<text x="1210" y="1532" font-size="12.5" fill="#3A3158">Staff directory</text>
+<text x="1674" y="1532" font-size="9.5" fill="#7B7686" text-anchor="end">MD SH DH PH</text>
+<rect x="1184" y="1542" width="496" height="22" rx="5" fill="#FCFAF4"/>
+<circle cx="1198" cy="1551" r="3.4" fill="#1F7A4D"/>
+<text x="1210" y="1554" font-size="12.5" fill="#3A3158">Onboard staff</text>
+<text x="1674" y="1554" font-size="9.5" fill="#7B7686" text-anchor="end">MD</text>
+<circle cx="1198" cy="1573" r="3.4" fill="#1F7A4D"/>
+<text x="1210" y="1576" font-size="12.5" fill="#3A3158">Salary settings</text>
+<text x="1674" y="1576" font-size="9.5" fill="#7B7686" text-anchor="end">MD</text>
+<rect x="1184" y="1586" width="496" height="22" rx="5" fill="#FCFAF4"/>
+<circle cx="1198" cy="1595" r="3.4" fill="#1F7A4D"/>
+<text x="1210" y="1598" font-size="12.5" fill="#3A3158">Performance &amp; ratings</text>
+<text x="1674" y="1598" font-size="9.5" fill="#7B7686" text-anchor="end">all</text>
+<circle cx="1198" cy="1617" r="3.4" fill="#1F7A4D"/>
+<text x="1210" y="1620" font-size="12.5" fill="#3A3158">Monday review</text>
+<text x="1674" y="1620" font-size="9.5" fill="#7B7686" text-anchor="end">MD SH DH PH</text>
+<rect x="1184" y="1630" width="496" height="22" rx="5" fill="#FCFAF4"/>
+<circle cx="1198" cy="1639" r="3.4" fill="#1F7A4D"/>
+<text x="1210" y="1642" font-size="12.5" fill="#3A3158">Leaver flow</text>
+<text x="1674" y="1642" font-size="9.5" fill="#7B7686" text-anchor="end">MD</text>
+<circle cx="1198" cy="1661" r="3.4" fill="#1F7A4D"/>
+<text x="1210" y="1664" font-size="12.5" fill="#3A3158">Hibernated &amp; deleted accounts</text>
+<text x="1674" y="1664" font-size="9.5" fill="#7B7686" text-anchor="end">MD</text>
+<rect x="1184" y="1674" width="496" height="22" rx="5" fill="#FCFAF4"/>
+<circle cx="1198" cy="1683" r="3.4" fill="#1F7A4D"/>
+<text x="1210" y="1686" font-size="12.5" fill="#3A3158">Access-change notices</text>
+<text x="1674" y="1686" font-size="9.5" fill="#7B7686" text-anchor="end">all</text>
+<rect x="1722" y="220" width="520" height="234" rx="14" fill="#FFFFFF" stroke="#E6DFD0" filter="url(#sh)"/>
+<rect x="1722" y="232" width="4" height="210" rx="2" fill="#1F7A4D"/>
+<text x="1744" y="254" font-family="Playfair Display, Georgia, serif" font-size="21" font-weight="600" fill="#3A3158">Marketing</text>
+<text x="1744" y="274" font-size="11.5" fill="#7B7686">7 screens · Spec §15, §21.5 · App Flow §13</text>
+<circle cx="1748" cy="297" r="3.4" fill="#1F7A4D"/>
+<text x="1760" y="300" font-size="12.5" fill="#3A3158">Brand template</text>
+<text x="2224" y="300" font-size="9.5" fill="#7B7686" text-anchor="end">MH</text>
+<rect x="1734" y="310" width="496" height="22" rx="5" fill="#FCFAF4"/>
+<circle cx="1748" cy="319" r="3.4" fill="#1F7A4D"/>
+<text x="1760" y="322" font-size="12.5" fill="#3A3158">Posts &amp; scheduling</text>
+<text x="2224" y="322" font-size="9.5" fill="#7B7686" text-anchor="end">MH</text>
+<circle cx="1748" cy="341" r="3.4" fill="#1F7A4D"/>
+<text x="1760" y="344" font-size="12.5" fill="#3A3158">Post history &amp; performance</text>
+<text x="2224" y="344" font-size="9.5" fill="#7B7686" text-anchor="end">MH</text>
+<rect x="1734" y="354" width="496" height="22" rx="5" fill="#FCFAF4"/>
+<circle cx="1748" cy="363" r="3.4" fill="#1F7A4D"/>
+<text x="1760" y="366" font-size="12.5" fill="#3A3158">Funnel per post and channel</text>
+<text x="2224" y="366" font-size="9.5" fill="#7B7686" text-anchor="end">MH MD</text>
+<circle cx="1748" cy="385" r="3.4" fill="#1F7A4D"/>
+<text x="1760" y="388" font-size="12.5" fill="#3A3158">Content pipeline</text>
+<text x="2224" y="388" font-size="9.5" fill="#7B7686" text-anchor="end">MH</text>
+<rect x="1734" y="398" width="496" height="22" rx="5" fill="#FCFAF4"/>
+<circle cx="1748" cy="407" r="3.4" fill="#1F7A4D"/>
+<text x="1760" y="410" font-size="12.5" fill="#3A3158">Spend requests</text>
+<text x="2224" y="410" font-size="9.5" fill="#7B7686" text-anchor="end">MH MD</text>
+<circle cx="1748" cy="429" r="3.4" fill="#1F7A4D"/>
+<text x="1760" y="432" font-size="12.5" fill="#3A3158">Finished project packages</text>
+<text x="2224" y="432" font-size="9.5" fill="#7B7686" text-anchor="end">MH</text>
+<line x1="1736" y1="454" x2="1736" y2="484" stroke="#D8CBEE" stroke-width="2"/>
+<rect x="1722" y="484" width="520" height="168" rx="14" fill="#FFFFFF" stroke="#E6DFD0" filter="url(#sh)"/>
+<rect x="1722" y="496" width="4" height="144" rx="2" fill="#1F7A4D"/>
+<text x="1744" y="518" font-family="Playfair Display, Georgia, serif" font-size="21" font-weight="600" fill="#3A3158">Logs &amp; audit</text>
+<text x="1744" y="538" font-size="11.5" fill="#7B7686">4 screens · Spec §16</text>
+<circle cx="1748" cy="561" r="3.4" fill="#1F7A4D"/>
+<text x="1760" y="564" font-size="12.5" fill="#3A3158">Activity log</text>
+<text x="2224" y="564" font-size="9.5" fill="#7B7686" text-anchor="end">all</text>
+<rect x="1734" y="574" width="496" height="22" rx="5" fill="#FCFAF4"/>
+<circle cx="1748" cy="583" r="3.4" fill="#1F7A4D"/>
+<text x="1760" y="586" font-size="12.5" fill="#3A3158">Corrections</text>
+<text x="2224" y="586" font-size="9.5" fill="#7B7686" text-anchor="end">all</text>
+<circle cx="1748" cy="605" r="3.4" fill="#1F7A4D"/>
+<text x="1760" y="608" font-size="12.5" fill="#3A3158">Payment correction notice</text>
+<text x="2224" y="608" font-size="9.5" fill="#7B7686" text-anchor="end">MD</text>
+<rect x="1734" y="618" width="496" height="22" rx="5" fill="#FCFAF4"/>
+<circle cx="1748" cy="627" r="3.4" fill="#1F7A4D"/>
+<text x="1760" y="630" font-size="12.5" fill="#3A3158">Who sees which log</text>
+<text x="2224" y="630" font-size="9.5" fill="#7B7686" text-anchor="end">MD SH DH PH</text>
+<line x1="1736" y1="652" x2="1736" y2="682" stroke="#D8CBEE" stroke-width="2"/>
+<rect x="1722" y="682" width="520" height="366" rx="14" fill="#FFFFFF" stroke="#E6DFD0" filter="url(#sh)"/>
+<rect x="1722" y="694" width="4" height="342" rx="2" fill="#8A5A00"/>
+<text x="1744" y="716" font-family="Playfair Display, Georgia, serif" font-size="21" font-weight="600" fill="#3A3158">Tenant settings</text>
+<text x="1744" y="736" font-size="11.5" fill="#7B7686">13 screens · Settings §3 to §13</text>
+<circle cx="1748" cy="759" r="3.4" fill="#1F7A4D"/>
+<text x="1760" y="762" font-size="12.5" fill="#3A3158">Messaging &amp; timing</text>
+<text x="2224" y="762" font-size="9.5" fill="#7B7686" text-anchor="end">MD</text>
+<rect x="1734" y="772" width="496" height="22" rx="5" fill="#FCFAF4"/>
+<circle cx="1748" cy="781" r="3.4" fill="#1F7A4D"/>
+<text x="1760" y="784" font-size="12.5" fill="#3A3158">Call retry cycle &amp; archive</text>
+<text x="2224" y="784" font-size="9.5" fill="#7B7686" text-anchor="end">MD</text>
+<circle cx="1748" cy="803" r="3.4" fill="#1F7A4D"/>
+<text x="1760" y="806" font-size="12.5" fill="#3A3158">Stalled quotes</text>
+<text x="2224" y="806" font-size="9.5" fill="#7B7686" text-anchor="end">MD</text>
+<rect x="1734" y="816" width="496" height="22" rx="5" fill="#FCFAF4"/>
+<circle cx="1748" cy="825" r="3.4" fill="#1F7A4D"/>
+<text x="1760" y="828" font-size="12.5" fill="#3A3158">Alert retries</text>
+<text x="2224" y="828" font-size="9.5" fill="#7B7686" text-anchor="end">MD</text>
+<circle cx="1748" cy="847" r="3.4" fill="#1F7A4D"/>
+<text x="1760" y="850" font-size="12.5" fill="#3A3158">WhatsApp group &amp; meetings</text>
+<text x="2224" y="850" font-size="9.5" fill="#7B7686" text-anchor="end">MD</text>
+<rect x="1734" y="860" width="496" height="22" rx="5" fill="#FCFAF4"/>
+<circle cx="1748" cy="869" r="3.4" fill="#1F7A4D"/>
+<text x="1760" y="872" font-size="12.5" fill="#3A3158">Payments &amp; pay</text>
+<text x="2224" y="872" font-size="9.5" fill="#7B7686" text-anchor="end">MD</text>
+<circle cx="1748" cy="891" r="3.4" fill="#1F7A4D"/>
+<text x="1760" y="894" font-size="12.5" fill="#3A3158">Stages &amp; performance</text>
+<text x="2224" y="894" font-size="9.5" fill="#7B7686" text-anchor="end">MD</text>
+<rect x="1734" y="904" width="496" height="22" rx="5" fill="#FCFAF4"/>
+<circle cx="1748" cy="913" r="3.4" fill="#1F7A4D"/>
+<text x="1760" y="916" font-size="12.5" fill="#3A3158">Warranty &amp; sessions</text>
+<text x="2224" y="916" font-size="9.5" fill="#7B7686" text-anchor="end">MD</text>
+<circle cx="1748" cy="935" r="3.4" fill="#1F7A4D"/>
+<text x="1760" y="938" font-size="12.5" fill="#3A3158">Dashboard defaults</text>
+<text x="2224" y="938" font-size="9.5" fill="#7B7686" text-anchor="end">MD</text>
+<rect x="1734" y="948" width="496" height="22" rx="5" fill="#FCFAF4"/>
+<circle cx="1748" cy="957" r="3.4" fill="#1F7A4D"/>
+<text x="1760" y="960" font-size="12.5" fill="#3A3158">Targets</text>
+<text x="2224" y="960" font-size="9.5" fill="#7B7686" text-anchor="end">MD</text>
+<circle cx="1748" cy="979" r="3.4" fill="#1F7A4D"/>
+<text x="1760" y="982" font-size="12.5" fill="#3A3158">Pre-written messages</text>
+<text x="2224" y="982" font-size="9.5" fill="#7B7686" text-anchor="end">MD</text>
+<rect x="1734" y="992" width="496" height="22" rx="5" fill="#FCFAF4"/>
+<circle cx="1748" cy="1001" r="3.4" fill="#1F7A4D"/>
+<text x="1760" y="1004" font-size="12.5" fill="#3A3158">Change history</text>
+<text x="2224" y="1004" font-size="9.5" fill="#7B7686" text-anchor="end">MD</text>
+<circle cx="1748" cy="1023" r="3.4" fill="#8A5A00"/>
+<text x="1760" y="1026" font-size="12.5" fill="#3A3158">Company-wide change guard</text>
+<text x="2224" y="1026" font-size="9.5" fill="#7B7686" text-anchor="end">MD</text>
+<line x1="1736" y1="1048" x2="1736" y2="1078" stroke="#D8CBEE" stroke-width="2"/>
+<rect x="1722" y="1078" width="520" height="146" rx="14" fill="#FFFFFF" stroke="#E6DFD0" filter="url(#sh)"/>
+<rect x="1722" y="1090" width="4" height="122" rx="2" fill="#B42331"/>
+<text x="1744" y="1112" font-family="Playfair Display, Georgia, serif" font-size="21" font-weight="600" fill="#3A3158">Optional plugins</text>
+<text x="1744" y="1132" font-size="11.5" fill="#7B7686">3 screens · Spec §12 · AI brief §21</text>
+<circle cx="1748" cy="1155" r="3.4" fill="#B42331"/>
+<text x="1760" y="1158" font-size="12.5" fill="#3A3158">Call agent</text>
+<text x="2224" y="1158" font-size="9.5" fill="#7B7686" text-anchor="end">staff</text>
+<rect x="1734" y="1168" width="496" height="22" rx="5" fill="#FCFAF4"/>
+<circle cx="1748" cy="1177" r="3.4" fill="#B42331"/>
+<text x="1760" y="1180" font-size="12.5" fill="#3A3158">Overseer</text>
+<text x="2224" y="1180" font-size="9.5" fill="#7B7686" text-anchor="end">MD</text>
+<circle cx="1748" cy="1199" r="3.4" fill="#B42331"/>
+<text x="1760" y="1202" font-size="12.5" fill="#3A3158">Transcript &amp; approval proof</text>
+<text x="2224" y="1202" font-size="9.5" fill="#7B7686" text-anchor="end">all</text>
+<line x1="1736" y1="1224" x2="1736" y2="1254" stroke="#D8CBEE" stroke-width="2"/>
+<rect x="1722" y="1254" width="520" height="190" rx="14" fill="#FFFFFF" stroke="#E6DFD0" filter="url(#sh)"/>
+<rect x="1722" y="1266" width="4" height="166" rx="2" fill="#7B7686"/>
+<text x="1744" y="1288" font-family="Playfair Display, Georgia, serif" font-size="21" font-weight="600" fill="#3A3158">Not in First Light</text>
+<text x="1744" y="1308" font-size="11.5" fill="#7B7686">5 screens · PRD §6 · Spec §17</text>
+<circle cx="1748" cy="1331" r="3.4" fill="#7B7686"/>
+<text x="1760" y="1334" font-size="12.5" fill="#3A3158">Bank statement matching</text>
+<text x="2224" y="1334" font-size="9.5" fill="#7B7686" text-anchor="end">MD</text>
+<rect x="1734" y="1344" width="496" height="22" rx="5" fill="#FCFAF4"/>
+<circle cx="1748" cy="1353" r="3.4" fill="#7B7686"/>
+<text x="1760" y="1356" font-size="12.5" fill="#3A3158">Office expense categories &amp; limits</text>
+<text x="2224" y="1356" font-size="9.5" fill="#7B7686" text-anchor="end">MD</text>
+<circle cx="1748" cy="1375" r="3.4" fill="#7B7686"/>
+<text x="1760" y="1378" font-size="12.5" fill="#3A3158">Blacklisting</text>
+<text x="2224" y="1378" font-size="9.5" fill="#7B7686" text-anchor="end">MD</text>
+<rect x="1734" y="1388" width="496" height="22" rx="5" fill="#FCFAF4"/>
+<circle cx="1748" cy="1397" r="3.4" fill="#7B7686"/>
+<text x="1760" y="1400" font-size="12.5" fill="#3A3158">History requests</text>
+<text x="2224" y="1400" font-size="9.5" fill="#7B7686" text-anchor="end">MD</text>
+<circle cx="1748" cy="1419" r="3.4" fill="#7B7686"/>
+<text x="1760" y="1422" font-size="12.5" fill="#3A3158">Platform / tenant admin console</text>
+<text x="2224" y="1422" font-size="9.5" fill="#7B7686" text-anchor="end">MD</text>
+<text x="72" y="1812" font-family="Playfair Display, Georgia, serif" font-size="22" fill="#3A3158">Journey gates</text>
+<rect x="72" y="1828" width="146.60000000000002" height="24" rx="12" fill="#EFE9F8"/>
+<text x="85" y="1844" font-size="11.5" fill="#3A3158">1. Enquiry arrives</text>
+<rect x="226.60000000000002" y="1828" width="166.70000000000002" height="24" rx="12" fill="#EFE9F8"/>
+<text x="239.60000000000002" y="1844" font-size="11.5" fill="#3A3158">2. AI groups the lead</text>
+<rect x="401.30000000000007" y="1828" width="139.9" height="24" rx="12" fill="#EFE9F8"/>
+<text x="414.30000000000007" y="1844" font-size="11.5" fill="#3A3158">3. Group assigned</text>
+<rect x="549.2" y="1828" width="153.3" height="24" rx="12" fill="#EFE9F8"/>
+<text x="562.2" y="1844" font-size="11.5" fill="#3A3158">4. Call and outcome</text>
+<rect x="710.5" y="1828" width="119.8" height="24" rx="12" fill="#EFE9F8"/>
+<text x="723.5" y="1844" font-size="11.5" fill="#3A3158">5. Retry cycle</text>
+<rect x="838.3" y="1828" width="119.8" height="24" rx="12" fill="#EFE9F8"/>
+<text x="851.3" y="1844" font-size="11.5" fill="#3A3158">6. Meeting set</text>
+<rect x="966.0999999999999" y="1828" width="160" height="24" rx="12" fill="#EFE9F8"/>
+<text x="979.0999999999999" y="1844" font-size="11.5" fill="#3A3158">7. Temporary project</text>
+<rect x="1134.1" y="1828" width="119.8" height="24" rx="12" fill="#EFE9F8"/>
+<text x="1147.1" y="1844" font-size="11.5" fill="#3A3158">8. Token — 10%</text>
+<rect x="1261.8999999999999" y="1828" width="126.5" height="24" rx="12" fill="#EFE9F8"/>
+<text x="1274.8999999999999" y="1844" font-size="11.5" fill="#3A3158">9. Design phase</text>
+<rect x="1396.3999999999999" y="1828" width="193.5" height="24" rx="12" fill="#EFE9F8"/>
+<text x="1409.3999999999999" y="1844" font-size="11.5" fill="#3A3158">10. 50% before production</text>
+<rect x="1597.8999999999999" y="1828" width="119.8" height="24" rx="12" fill="#EFE9F8"/>
+<text x="1610.8999999999999" y="1844" font-size="11.5" fill="#3A3158">11. Production</text>
+<rect x="1725.6999999999998" y="1828" width="180.1" height="24" rx="12" fill="#EFE9F8"/>
+<text x="1738.6999999999998" y="1844" font-size="11.5" fill="#3A3158">12. 35% near completion</text>
+<rect x="1913.7999999999997" y="1828" width="133.2" height="24" rx="12" fill="#EFE9F8"/>
+<text x="1926.7999999999997" y="1844" font-size="11.5" fill="#3A3158">13. Installation</text>
+<rect x="2054.9999999999995" y="1828" width="180.1" height="24" rx="12" fill="#EFE9F8"/>
+<text x="2067.9999999999995" y="1844" font-size="11.5" fill="#3A3158">14. Handover — final 5%</text>
+<rect x="72" y="1860" width="193.5" height="24" rx="12" fill="#EFE9F8"/>
+<text x="85" y="1876" font-size="11.5" fill="#3A3158">15. Warranty and feedback</text>
+<text x="72" y="1940" font-size="11.5" fill="#7B7686">Open items that change this structure: 3 structural, 3 major, 3 minor. See the Gaps tab in the interactive version.</text>
+</svg>
