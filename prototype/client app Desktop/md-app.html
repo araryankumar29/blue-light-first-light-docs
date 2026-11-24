@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>First Light · MD console</title>
+<link rel="stylesheet" href="md-app.css">
+</head>
+<body>
+<div class="app" id="app"></div>
+<script src="md-app.js"></script>
+<script>
+window.addEventListener('error', e => {
+  const bar = document.createElement('div');
+  bar.className = 'err';
+  bar.textContent = 'JS error: ' + e.message + ' (' + (e.filename||'').split('/').pop() + ':' + e.lineno + ')';
+  document.body.prepend(bar);
+});
+</script>
+</body>
+</html>
