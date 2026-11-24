@@ -1,6 +1,6 @@
-# First Light · Client app prototype
+# First Light · Client app · Mobile UI prototype
 
-A clickable, single-file prototype of the client app for HOMESIC (Ms. Rao, Villa 4B).
+A clickable, single-file prototype of the mobile client app for HOMESIC (Ms. Rao, Villa 4B).
 
 - `index.html`: the whole app (HTML, CSS and JavaScript in one file). Open it in any browser.
 - Covers sign-in (OTP is auto-filled because no SMS is sent in the prototype), Home, Projects (stage strip opens at the current stage), Designs and files (renders, quotations, drawings, invoices and receipts with categories), Payments, Meetings (calendar and clock, client confirmation only), Messages (call sheet, WhatsApp group), Catalogue, Settings and Terms.
