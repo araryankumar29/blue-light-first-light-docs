@@ -10,6 +10,7 @@ clickable, and run from disk with no server or install.
 | `client-app/` | One client link: chooses mobile or desktop and links both. | Built and clickable |
 | `client-app-desktop/` | The client portal at 1440 × 900: home, project, designs, payments, meetings, messages, catalogue, settings. | Built and clickable |
 | `client-app-mobile/` | The client portal at 390 × 844, in the MD visual language. | Built and clickable |
+| `design-partner-mobile/` | The design partner's five-tab mobile workspace: home, projects, approvals, meetings, more. | Built and clickable |
 
 The two MD builds load the same model, `md console mobile/data.js`. Change the seed, an entity or a
 derived helper there once and both surfaces follow. The client apps have their own model and a copy
@@ -52,6 +53,17 @@ on a wide screen it leads with the desktop app; both are also shown as cards.
 The client apps carry 13 proxy renders and 6 real HOMESIC PDFs (three quotations, a proposal, the
 Ashish Raj kitchen pitch and the estimator brief). They open from **Designs → HOMESIC documents**
 in both surfaces. The PDFs are proxies for layout testing, not Ms. Rao's contract.
+
+## Opening the design partner app
+
+Open `design-partner-mobile/index.html`. The five tabs are **Home · Projects · Approvals ·
+Meetings · More**. Demo deep links: `?demo=home`, `?demo=projects`, `?demo=approvals`,
+`?demo=project`, `?demo=estimate`, `?demo=docs`, `?demo=ledger`, `?demo=messages`,
+`?demo=meetings`, `?demo=meeting`, `?demo=more`, `?demo=settings`.
+
+It uses the same 13 proxy renders and 6 HOMESIC PDFs, plus the design-partner model: temporary
+pre-token projects, token at 10% of the accepted estimate, Design Head approval, approving on the
+client's behalf, proof to the MD and the 5% partner share.
 
 ## What is real and what is not
 

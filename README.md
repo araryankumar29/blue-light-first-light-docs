@@ -10,7 +10,7 @@ The document set for **First Light**, version 1 of **Blue Light** — the busine
 
 ## Prototype
 
-The MD console and the client app are clickable prototypes. They open from disk with no server, no build step and no install. The two MD surfaces share `prototype/md console mobile/data.js`; the client app has its own client model and copy of the proxy renders and HOMESIC PDFs.
+The MD console, client app and design partner workspace are clickable prototypes. They open from disk with no server, no build step and no install. The two MD surfaces share `prototype/md console mobile/data.js`; the client and design partner apps have their own models and copies of the proxy renders and HOMESIC PDFs.
 
 | Surface | Open | Guide |
 |---|---|---|
@@ -19,11 +19,12 @@ The MD console and the client app are clickable prototypes. They open from disk 
 | Client app, one link | [`prototype/client-app/index.html`](prototype/client-app/index.html) | [client README](prototype/client-app/README.md) |
 | Client desktop, 1440 × 900 | [`prototype/client-app-desktop/index.html`](prototype/client-app-desktop/index.html) | [client desktop README](prototype/client-app-desktop/README.md) |
 | Client mobile, 390 × 844 | [`prototype/client-app-mobile/index.html`](prototype/client-app-mobile/index.html) | [client mobile README](prototype/client-app-mobile/README.md) |
+| Design partner mobile, 390 × 844 | [`prototype/design-partner-mobile/index.html`](prototype/design-partner-mobile/index.html) | [design partner README](prototype/design-partner-mobile/README.md) |
 
 Both MD builds and the client desktop build have a self-test: `?selftest=1`. The prototype README lists every demo deep link:
 [`prototype/README.md`](prototype/README.md).
 
-**Live:** [araryankumar29.github.io/blue-light-first-light-docs](https://araryankumar29.github.io/blue-light-first-light-docs/) — the landing page for the MD console and client app prototypes.
+**Live:** [araryankumar29.github.io/blue-light-first-light-docs](https://araryankumar29.github.io/blue-light-first-light-docs/) — the landing page for the MD console, client app and design partner prototypes.
 
 ## What is in the set
 
