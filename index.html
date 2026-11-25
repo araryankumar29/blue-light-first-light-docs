@@ -2,120 +2,137 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>First Light · prototypes</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>First Light · choose how to log in</title>
 <style>
   @font-face{font-family:"Manrope";src:url("prototype/md console mobile/fonts/Manrope-400.woff2") format("woff2");font-weight:400;font-display:swap}
   @font-face{font-family:"Manrope";src:url("prototype/md console mobile/fonts/Manrope-600.woff2") format("woff2");font-weight:600;font-display:swap}
   @font-face{font-family:"Manrope";src:url("prototype/md console mobile/fonts/Manrope-800.woff2") format("woff2");font-weight:800;font-display:swap}
-  :root{--ink:#15162B;--ink2:#5A5D74;--ink3:#6E7288;--line:#E3E5F0;--canvas:#EEEFF5;--cobalt:#2E4BF2;--coral:#F26A5B}
+  :root{--ink:#15162B;--ink2:#4F5268;--ink3:#6E7288;--line:#E3E5F0;--canvas:#EEEFF5;--cobalt:#2E4BF2;--coral:#F26A5B;--mint:#1E9E6A;--plum:#7A3FD6}
   *{box-sizing:border-box;margin:0;padding:0}
-  body{min-height:100dvh;background:var(--canvas);color:var(--ink);font-family:"Manrope",system-ui,sans-serif;display:grid;place-items:center;padding:32px 20px}
-  main{width:min(1060px,100%)}
-  header{display:flex;align-items:flex-start;gap:16px;margin-bottom:32px}
-  .logo{width:52px;height:52px;border-radius:14px;background:var(--ink);color:#fff;display:grid;place-items:center;font-weight:800;font-size:17px;flex:0 0 auto}
-  .kicker{font-size:11px;font-weight:800;letter-spacing:.09em;text-transform:uppercase;color:var(--coral)}
-  h1{font-size:40px;font-weight:800;letter-spacing:-.045em;line-height:1;margin-top:8px}
-  .lede{font-size:14.5px;line-height:1.6;color:var(--ink2);margin-top:10px;max-width:620px}
-  .cards{display:grid;grid-template-columns:1.15fr .85fr;gap:14px}
-  .card{display:flex;flex-direction:column;background:#fff;border:1px solid var(--line);border-radius:20px;padding:24px;
-    box-shadow:0 18px 40px -32px rgba(21,22,43,.5);text-decoration:none;color:inherit;transition:transform .16s,border-color .16s,box-shadow .16s}
-  .card:hover{transform:translateY(-2px);border-color:#C9CEE6;box-shadow:0 26px 50px -32px rgba(21,22,43,.45)}
-  .card-top{display:flex;justify-content:space-between;align-items:center;font-size:10.5px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--ink3)}
-  .pill{font-size:10px;font-weight:800;letter-spacing:.04em;color:var(--cobalt);background:#E7EAFE;border-radius:999px;padding:4px 9px}
-  .card h2{font-size:21px;font-weight:800;letter-spacing:-.03em;line-height:1.2;margin-top:28px}
-  .card p{font-size:12.5px;line-height:1.6;color:var(--ink2);margin-top:8px;max-width:440px}
-  .open{margin-top:30px;font-size:12.5px;font-weight:800;color:var(--cobalt)}
-  .card.mobile h2{margin-top:28px}
-  .card.client{grid-column:1/-1;background:linear-gradient(135deg,#17162A 0%,#1E2D90 58%,#2E4BF2 100%);border-color:transparent;color:#fff}
-  .card.client .card-top{color:#B9C0EA}
-  .card.client .pill{background:rgba(255,255,255,.14);color:#fff}
-  .card.client h2{color:#fff;margin-top:22px}
-  .card.client p{color:#C9CEF2}
-  .card.client .open{color:#fff}
-  .card.dp{grid-column:1/-1;background:#fff;border-color:var(--line)}
-  .card.dp .card-top{color:var(--coral)}
-  .meta{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px}
-  .panel{background:rgba(255,255,255,.55);border:1px solid var(--line);border-radius:16px;padding:16px 18px}
-  .panel h3{font-size:10px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--ink3);margin-bottom:8px}
-  .links{display:flex;flex-wrap:wrap;gap:8px 18px}
-  a.plain{font-size:12px;font-weight:700;color:var(--ink2);text-decoration:none}
-  a.plain:hover{color:var(--cobalt)}
-  footer{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;margin-top:28px;font-size:11px;font-weight:600;color:var(--ink3)}
-  @media (max-width: 760px){
-    .cards,.meta{grid-template-columns:1fr}
-    h1{font-size:32px}
-    .card h2{margin-top:20px}
+  html{-webkit-text-size-adjust:100%}
+  body{min-height:100dvh;background:var(--canvas);color:var(--ink);font-family:"Manrope",system-ui,-apple-system,sans-serif;font-size:16px;line-height:1.5}
+  main{width:100%;max-width:980px;margin:0 auto;padding:max(24px,env(safe-area-inset-top)) max(16px,env(safe-area-inset-right)) 40px max(16px,env(safe-area-inset-left))}
+  .logo{display:inline-grid;place-items:center;width:48px;height:48px;border-radius:14px;background:var(--ink);color:#fff;font-weight:800;font-size:16px}
+  h1{font-size:30px;font-weight:800;letter-spacing:-.03em;line-height:1.15;margin-top:16px}
+  .sub{font-size:16px;color:var(--ink2);margin-top:8px}
+  .group{margin-top:28px}
+  .group h2{font-size:13px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--ink3);margin-bottom:4px}
+  .group .who{font-size:14px;color:var(--ink2);margin-bottom:12px}
+  .opts{display:grid;gap:12px}
+  .opt{display:flex;align-items:center;gap:16px;background:#fff;border:1px solid var(--line);border-radius:18px;padding:16px;text-decoration:none;color:inherit;min-height:88px;box-shadow:0 14px 30px -26px rgba(21,22,43,.5)}
+  .opt:active{transform:scale(.99)}
+  .opt:hover{border-color:#C9CEE6}
+  .ico{flex:0 0 auto;width:60px;height:60px;border-radius:16px;display:grid;place-items:center}
+  .ico svg{width:30px;height:30px;stroke:#fff;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+  .c-md{background:var(--cobalt)}
+  .c-client{background:var(--mint)}
+  .c-dp{background:var(--plum)}
+  .c-off{background:#B9BDD0}
+  .txt{flex:1;min-width:0;display:grid;gap:2px}
+  .tag{font-size:12px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--ink3)}
+  .title{font-size:18px;font-weight:800;letter-spacing:-.01em;line-height:1.25}
+  .desc{font-size:14px;color:var(--ink2);line-height:1.45}
+  .go{flex:0 0 auto;font-size:14px;font-weight:800;color:var(--cobalt);white-space:nowrap}
+  .opt.off{background:#F5F6FA;border-style:dashed;cursor:default;box-shadow:none}
+  .opt.off .title,.opt.off .desc{color:var(--ink3)}
+  .opt.off .go{color:var(--ink3)}
+  .extra{margin-top:32px;background:#fff;border:1px solid var(--line);border-radius:18px;padding:18px}
+  .extra h3{font-size:13px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--ink3);margin-bottom:10px}
+  .extra ul{list-style:none;display:grid;gap:10px}
+  .extra a{color:var(--ink2);font-size:15px;font-weight:700;text-decoration:none}
+  .extra a:hover{color:var(--cobalt)}
+  .extra small{display:block;font-size:13px;color:var(--ink3);font-weight:600}
+  footer{margin-top:28px;font-size:13px;color:var(--ink3);font-weight:600}
+  @media (min-width: 760px){
+    h1{font-size:38px}
+    .groups{display:grid;grid-template-columns:1fr 1fr;gap:0 18px;align-items:start}
+    .group.wide{grid-column:1/-1}
+    .extra{display:grid;grid-template-columns:1fr 1fr;gap:20px}
   }
 </style>
 </head>
 <body>
 <main>
-  <header>
-    <div class="logo">FL</div>
+  <div class="logo">FL</div>
+  <h1>Choose how you want to log in</h1>
+  <p class="sub">Pick who you are, then the device you are using. Each option opens its own prototype.</p>
+
+  <div class="groups">
+
+    <section class="group">
+      <h2>MD</h2>
+      <p class="who">For the managing director.</p>
+      <div class="opts">
+        <a class="opt" href="prototype/md%20console%20mobile/m-app.html">
+          <span class="ico c-md"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="7" y="2.5" width="10" height="19" rx="2.5"/><path d="M11 18.5h2"/></svg></span>
+          <span class="txt"><span class="tag">MD · Phone</span><span class="title">MD console on phone</span><span class="desc">Approvals, meetings, money and people. Built for a phone screen.</span></span>
+          <span class="go">Open →</span>
+        </a>
+        <a class="opt" href="prototype/md%20console%20Desktop/md-app.html">
+          <span class="ico c-md"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></svg></span>
+          <span class="txt"><span class="tag">MD · Computer</span><span class="title">MD console on computer</span><span class="desc">Full tables, ledgers and queues. Built for a laptop or desktop screen.</span></span>
+          <span class="go">Open →</span>
+        </a>
+      </div>
+    </section>
+
+    <section class="group">
+      <h2>Client</h2>
+      <p class="who">For Ms. Rao (Villa 4B) and other clients.</p>
+      <div class="opts">
+        <a class="opt" href="prototype/client-app-mobile/index.html">
+          <span class="ico c-client"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="7" y="2.5" width="10" height="19" rx="2.5"/><path d="M11 18.5h2"/></svg></span>
+          <span class="txt"><span class="tag">Client · Phone</span><span class="title">Client app on phone</span><span class="desc">Your design, payments, meetings and messages.</span></span>
+          <span class="go">Open →</span>
+        </a>
+        <a class="opt" href="prototype/client-app-desktop/index.html">
+          <span class="ico c-client"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></svg></span>
+          <span class="txt"><span class="tag">Client · Computer</span><span class="title">Client app on computer</span><span class="desc">Your design, payments, meetings and messages on a large screen.</span></span>
+          <span class="go">Open →</span>
+        </a>
+      </div>
+    </section>
+
+    <section class="group wide">
+      <h2>Design partner</h2>
+      <p class="who">For Arjun and the design team.</p>
+      <div class="opts">
+        <a class="opt" href="prototype/design-partner-mobile/index.html">
+          <span class="ico c-dp"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="7" y="2.5" width="10" height="19" rx="2.5"/><path d="M11 18.5h2"/></svg></span>
+          <span class="txt"><span class="tag">Design partner · Phone</span><span class="title">Design partner app on phone</span><span class="desc">Projects, approvals, meetings and your 5% share.</span></span>
+          <span class="go">Open →</span>
+        </a>
+        <div class="opt off" aria-disabled="true">
+          <span class="ico c-off"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></svg></span>
+          <span class="txt"><span class="tag">Design partner · Computer</span><span class="title">Not built yet</span><span class="desc">A computer version is planned. It is not in this set.</span></span>
+          <span class="go">Coming</span>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <section class="extra">
     <div>
-      <div class="kicker">First Light</div>
-      <h1>Prototypes</h1>
-      <p class="lede">The MD console, the client app and the design partner workspace, built from the
-        handover set. Plain HTML, CSS and JavaScript — no server, no build step, no install.</p>
-    </div>
-  </header>
-
-  <section class="cards">
-    <a class="card" href="prototype/md%20console%20Desktop/md-app.html">
-      <div class="card-top"><span>Desktop</span><span class="pill">1440 × 900</span></div>
-      <h2>Every queue, table and ledger</h2>
-      <p>Dashboard, approvals, meetings and threads, projects, performance, money and payroll,
-        clients, people, activity, connections and settings.</p>
-      <span class="open">Open the desktop console →</span>
-    </a>
-    <a class="card mobile" href="prototype/md%20console%20mobile/m-app.html">
-      <div class="card-top"><span>Mobile</span><span class="pill">390 × 844</span></div>
-      <h2>The same product, thumb-first</h2>
-      <p>Five tabs and bottom sheets: the full MD workflow in a phone frame, sharing the same model.</p>
-      <span class="open">Open the mobile console →</span>
-    </a>
-    <a class="card client" href="prototype/client-app/index.html">
-      <div class="card-top"><span>Client app</span><span class="pill">Mobile + desktop · one link</span></div>
-      <h2>Ms. Rao's Villa 4B, in one place</h2>
-      <p>The approved design, version history, ₹1,40,000 payment due 14 Dec, meetings, messages,
-        catalogue and warranty. Proxy renders and six HOMESIC PDFs are in both surfaces.</p>
-      <span class="open">Open the client app →</span>
-    </a>
-    <a class="card dp" href="prototype/design-partner-mobile/index.html">
-      <div class="card-top"><span>Design partner</span><span class="pill">Mobile · 390 × 844</span></div>
-      <h2>Arjun's desk, in his pocket</h2>
-      <p>Live and temporary projects, token collection, Design Head approvals, approving on the
-        client's behalf, meetings, client payments and the 5% partner ledger.</p>
-      <span class="open">Open the design partner app →</span>
-    </a>
-  </section>
-
-  <section class="meta">
-    <div class="panel">
       <h3>Self-tests</h3>
-      <div class="links">
-        <a class="plain" href="prototype/md%20console%20Desktop/md-app.html?selftest=1">Desktop · 48 checks</a>
-        <a class="plain" href="prototype/md%20console%20mobile/m-app.html?selftest=1">Mobile · 13 checks</a>
-        <a class="plain" href="prototype/client-app-desktop/index.html?selftest=1">Client desktop · 15 checks</a>
-        <a class="plain" href="prototype/client-app/index.html">Client · one link</a>
-        <a class="plain" href="prototype/design-partner-mobile/index.html">Design partner · mobile</a>
-      </div>
+      <ul>
+        <li><a href="prototype/md%20console%20Desktop/md-app.html?selftest=1">MD computer <small>48 checks</small></a></li>
+        <li><a href="prototype/md%20console%20mobile/m-app.html?selftest=1">MD phone <small>13 checks</small></a></li>
+        <li><a href="prototype/client-app-desktop/index.html?selftest=1">Client computer <small>15 checks</small></a></li>
+      </ul>
     </div>
-    <div class="panel">
-      <h3>Build guides</h3>
-      <div class="links">
-        <a class="plain" href="https://github.com/araryankumar29/blue-light-first-light-docs/blob/main/DESKTOP_APP_GUIDE.md">Desktop guide</a>
-        <a class="plain" href="https://github.com/araryankumar29/blue-light-first-light-docs/blob/main/MOBILE_APP_GUIDE.md">Mobile guide</a>
-        <a class="plain" href="https://github.com/araryankumar29/blue-light-first-light-docs">Document set</a>
-      </div>
+    <div>
+      <h3>Guides and documents</h3>
+      <ul>
+        <li><a href="https://github.com/araryankumar29/blue-light-first-light-docs/blob/main/DESKTOP_APP_GUIDE.md">Computer app guide</a></li>
+        <li><a href="https://github.com/araryankumar29/blue-light-first-light-docs/blob/main/MOBILE_APP_GUIDE.md">Phone app guide</a></li>
+        <li><a href="https://github.com/araryankumar29/blue-light-first-light-docs">Full document set</a></li>
+      </ul>
     </div>
   </section>
 
-  <footer>
-    <span>Homesic · First Light prototype · 25 November 2026</span>
-    <span>MD builds share <code>prototype/md console mobile/data.js</code>; the client and design partner apps have their own models and proxy documents.</span>
-  </footer>
+  <footer>Homesic · First Light prototype · 25 November 2026</footer>
 </main>
 </body>
 </html>
