@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#EEEFF5">
+<title>First Light · mobile</title>
+<link rel="stylesheet" href="m-app.css">
+</head>
+<body>
+<div class="frame">
+  <div class="app" id="app"></div>
+  <div class="shade" id="shade" data-act="close"></div>
+  <div class="sheet" id="sheet"></div>
+  <div id="toast"></div>
+</div>
+<script src="data.js"></script>
+<script src="m-app.js"></script>
+<script>
+window.addEventListener('error', e => {
+  const t = document.getElementById('toast');
+  if (t) { t.textContent = 'Error: ' + e.message; t.classList.add('on'); }
+});
+</script>
+</body>
+</html>

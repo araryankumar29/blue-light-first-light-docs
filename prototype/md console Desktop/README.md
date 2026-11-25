@@ -1,4 +1,4 @@
-# Client app · Desktop
+# MD console · Desktop
 
 The MD console for First Light: the screen the managing director opens first, and everything behind it.
 
