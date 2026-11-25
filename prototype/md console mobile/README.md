@@ -62,8 +62,10 @@ sample-quotation.pdf    stand-in document used by the PDF previews
 The screens run against one deterministic seeded model: 55 projects, 30 people, 53 clients, and
 their payments, approvals, meetings and messages. Nothing is connected to a backend, a database or
 WhatsApp. WhatsApp threads, Meet links, RSVP responses, payment QR codes and uploaded files are
-local demonstrations; the Connections screen states this in the product. The desktop build uses the
-same generator with an inline copy of the model, so the two can drift.
+local demonstrations; the Connections screen states this in the product. The desktop build loads this
+same `data.js`, so both surfaces show one model. The desktop build lives in
+[`../md%20console%20Desktop/`](../md%20console%20Desktop/) and its guide is
+[`../../DESKTOP_APP_GUIDE.md`](../../DESKTOP_APP_GUIDE.md).
 
 The complete build guide — data model, every screen, every sheet, every action, and every stub —
 is [`../../MOBILE_APP_GUIDE.md`](../../MOBILE_APP_GUIDE.md).

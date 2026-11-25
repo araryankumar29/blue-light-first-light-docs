@@ -1,5 +1,5 @@
-/* First Light · the mobile model and seed. The desktop build uses the same generator with an
-   inline copy of the model; MOBILE_APP_GUIDE.md, section 12, records where the two can drift. */
+/* First Light · the shared model and seed. Both the mobile build (m-app.js) and the desktop
+   build (../md console Desktop/md-app.js) load this file. Change the data here, once. */
 
 /* ---------- utils ---------- */
 const TODAY = new Date('2026-11-22T09:41:00+05:30');

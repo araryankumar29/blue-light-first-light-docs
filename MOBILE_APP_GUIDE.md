@@ -16,7 +16,7 @@ Files:
 ```
 m-app.html    shell: loads fonts, css, data.js, m-app.js, error banner
 m-app.css     the whole design system (554 lines)
-data.js       the mobile model: seed, entities, derived helpers
+data.js       the shared model: seed, entities, derived helpers (also loaded by desktop)
 m-app.js      views, sheets, actions, router (~112 KB)
 fonts/        Manrope 400/500/600/700/800 woff2
 sample-quotation.pdf   stand-in document used by the PDF previews
@@ -24,8 +24,8 @@ sample-quotation.pdf   stand-in document used by the PDF previews
 
 `m-app.html` must load `data.js` **before** `m-app.js`. The app assumes the globals `projects`,
 `staff`, `approvals`, `proofs`, `salaries`, `meetings`, `activity`, `TODAY`, `MD` and the helpers
-below already exist. The desktop build starts from the same seeded generator but keeps its own
-inline copy of the model (section 12).
+below already exist. The desktop build loads the same `data.js`, so the two surfaces share one
+model (section 12).
 
 ---
 
@@ -272,8 +272,8 @@ tint for chips. Radii 18–20 for cards, 12–14 for rows, 99 for pills. Type sc
 - No authentication; "Log in as" records a name but does not change permissions.
 - Notifications badge counts are derived, not a real queue.
 - Files, payments and meetings are seeded, so numbers will not reconcile with a real ledger.
-- The desktop console keeps its own inline copy of the model. `data.js` is the mobile source of
-  truth; the two start from the same seed but can drift.
+- The desktop console loads the same `data.js`; there is one seeded model, not a copy. Both
+  surfaces can be open from disk at the same time without a server.
 
 ---
 
