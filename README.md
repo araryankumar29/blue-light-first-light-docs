@@ -20,6 +20,8 @@ The MD console exists as two clickable prototypes. Both open from disk with no s
 Both builds have a self-test: `?selftest=1`. The prototype README lists every demo deep link:
 [`prototype/README.md`](prototype/README.md).
 
+**Live:** [araryankumar29.github.io/blue-light-first-light-docs](https://araryankumar29.github.io/blue-light-first-light-docs/) — the landing page for both prototypes.
+
 ## What is in the set
 
 | Document | Version | Date | What it settles |
