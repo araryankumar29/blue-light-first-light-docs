@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>First Light · MD console prototypes</title>
+<title>First Light · prototypes</title>
 <style>
   @font-face{font-family:"Manrope";src:url("prototype/md console mobile/fonts/Manrope-400.woff2") format("woff2");font-weight:400;font-display:swap}
   @font-face{font-family:"Manrope";src:url("prototype/md console mobile/fonts/Manrope-600.woff2") format("woff2");font-weight:600;font-display:swap}
@@ -27,6 +27,12 @@
   .card p{font-size:12.5px;line-height:1.6;color:var(--ink2);margin-top:8px;max-width:440px}
   .open{margin-top:30px;font-size:12.5px;font-weight:800;color:var(--cobalt)}
   .card.mobile h2{margin-top:28px}
+  .card.client{grid-column:1/-1;background:linear-gradient(135deg,#17162A 0%,#1E2D90 58%,#2E4BF2 100%);border-color:transparent;color:#fff}
+  .card.client .card-top{color:#B9C0EA}
+  .card.client .pill{background:rgba(255,255,255,.14);color:#fff}
+  .card.client h2{color:#fff;margin-top:22px}
+  .card.client p{color:#C9CEF2}
+  .card.client .open{color:#fff}
   .meta{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px}
   .panel{background:rgba(255,255,255,.55);border:1px solid var(--line);border-radius:16px;padding:16px 18px}
   .panel h3{font-size:10px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--ink3);margin-bottom:8px}
@@ -47,9 +53,9 @@
     <div class="logo">FL</div>
     <div>
       <div class="kicker">First Light</div>
-      <h1>MD console</h1>
-      <p class="lede">Two clickable prototypes of the Managing Director's console, built from one seeded
-        model. Plain HTML, CSS and JavaScript — no server, no build step, no install.</p>
+      <h1>Prototypes</h1>
+      <p class="lede">The MD console and the client app, built from the handover set. Plain HTML, CSS
+        and JavaScript — no server, no build step, no install.</p>
     </div>
   </header>
 
@@ -67,6 +73,13 @@
       <p>Five tabs and bottom sheets: the full MD workflow in a phone frame, sharing the same model.</p>
       <span class="open">Open the mobile console →</span>
     </a>
+    <a class="card client" href="prototype/client-app/index.html">
+      <div class="card-top"><span>Client app</span><span class="pill">Mobile + desktop · one link</span></div>
+      <h2>Ms. Rao's Villa 4B, in one place</h2>
+      <p>The approved design, version history, ₹1,40,000 payment due 14 Dec, meetings, messages,
+        catalogue and warranty. Proxy renders and six HOMESIC PDFs are in both surfaces.</p>
+      <span class="open">Open the client app →</span>
+    </a>
   </section>
 
   <section class="meta">
@@ -75,6 +88,8 @@
       <div class="links">
         <a class="plain" href="prototype/md%20console%20Desktop/md-app.html?selftest=1">Desktop · 48 checks</a>
         <a class="plain" href="prototype/md%20console%20mobile/m-app.html?selftest=1">Mobile · 13 checks</a>
+        <a class="plain" href="prototype/client-app-desktop/index.html?selftest=1">Client desktop · 15 checks</a>
+        <a class="plain" href="prototype/client-app/index.html">Client · one link</a>
       </div>
     </div>
     <div class="panel">
@@ -88,8 +103,8 @@
   </section>
 
   <footer>
-    <span>Homesic · First Light prototype · 22 November 2026</span>
-    <span>Both builds share <code>prototype/md console mobile/data.js</code></span>
+    <span>Homesic · First Light prototype · 25 November 2026</span>
+    <span>MD builds share <code>prototype/md console mobile/data.js</code>; the client app has its own model and proxy documents.</span>
   </footer>
 </main>
 </body>

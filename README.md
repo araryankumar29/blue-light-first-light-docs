@@ -10,17 +10,20 @@ The document set for **First Light**, version 1 of **Blue Light** — the busine
 
 ## Prototype
 
-The MD console exists as two clickable prototypes. Both open from disk with no server, no build step and no install, and both load the same seeded model, `prototype/md console mobile/data.js`.
+The MD console and the client app are clickable prototypes. They open from disk with no server, no build step and no install. The two MD surfaces share `prototype/md console mobile/data.js`; the client app has its own client model and copy of the proxy renders and HOMESIC PDFs.
 
 | Surface | Open | Guide |
 |---|---|---|
-| Desktop, 1440 × 900 | [`prototype/md console Desktop/md-app.html`](prototype/md%20console%20Desktop/md-app.html) | [DESKTOP_APP_GUIDE.md](DESKTOP_APP_GUIDE.md) |
-| Mobile, 390 × 844 | [`prototype/md console mobile/m-app.html`](prototype/md%20console%20mobile/m-app.html) | [MOBILE_APP_GUIDE.md](MOBILE_APP_GUIDE.md) |
+| MD desktop, 1440 × 900 | [`prototype/md console Desktop/md-app.html`](prototype/md%20console%20Desktop/md-app.html) | [DESKTOP_APP_GUIDE.md](DESKTOP_APP_GUIDE.md) |
+| MD mobile, 390 × 844 | [`prototype/md console mobile/m-app.html`](prototype/md%20console%20mobile/m-app.html) | [MOBILE_APP_GUIDE.md](MOBILE_APP_GUIDE.md) |
+| Client app, one link | [`prototype/client-app/index.html`](prototype/client-app/index.html) | [client README](prototype/client-app/README.md) |
+| Client desktop, 1440 × 900 | [`prototype/client-app-desktop/index.html`](prototype/client-app-desktop/index.html) | [client desktop README](prototype/client-app-desktop/README.md) |
+| Client mobile, 390 × 844 | [`prototype/client-app-mobile/index.html`](prototype/client-app-mobile/index.html) | [client mobile README](prototype/client-app-mobile/README.md) |
 
-Both builds have a self-test: `?selftest=1`. The prototype README lists every demo deep link:
+Both MD builds and the client desktop build have a self-test: `?selftest=1`. The prototype README lists every demo deep link:
 [`prototype/README.md`](prototype/README.md).
 
-**Live:** [araryankumar29.github.io/blue-light-first-light-docs](https://araryankumar29.github.io/blue-light-first-light-docs/) — the landing page for both prototypes.
+**Live:** [araryankumar29.github.io/blue-light-first-light-docs](https://araryankumar29.github.io/blue-light-first-light-docs/) — the landing page for the MD console and client app prototypes.
 
 ## What is in the set
 
